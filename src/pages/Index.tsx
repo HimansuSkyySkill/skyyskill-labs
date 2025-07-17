@@ -80,226 +80,374 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImage} 
             alt="Modern Laboratory" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/90 to-aqua/80"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              India's Leading OEM for 
-              <span className="bg-gradient-to-r from-aqua to-green bg-clip-text text-transparent"> EV & Green Skill Labs</span>
+          <div className="max-w-5xl mx-auto animate-fade-in">
+            <div className="mb-8">
+              <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">
+                🏆 India's Premier Lab Equipment Manufacturer
+              </Badge>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              Advanced Lab Solutions for
+              <span className="block bg-gradient-to-r from-aqua via-green to-orange bg-clip-text text-transparent mt-2">
+                Next-Gen Industries
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              From Engineering Colleges to Research Labs, we power the next generation of mobility and renewable energy innovation.
+            
+            <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">
+              Comprehensive OEM solutions for EV, Solar, Drone, and Advanced Manufacturing labs. 
+              Trusted by IITs, NITs, and leading institutions across India.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-                <Play className="w-5 h-5 mr-2" />
-                Explore Labs
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
+                <Play className="w-6 h-6 mr-3" />
+                Explore Our Labs
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary">
-                <Download className="w-5 h-5 mr-2" />
-                Download Brochure
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
+                <Download className="w-6 h-6 mr-3" />
+                Download Catalog
               </Button>
             </div>
 
-            {/* Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">500+</div>
-                <div className="text-white/80 text-sm">Institutions Empowered</div>
+            {/* Enhanced Metrics */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">500+</div>
+                <div className="text-white/90 text-sm font-medium">Institutions Served</div>
+                <div className="text-white/70 text-xs mt-1">Across India</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green mb-2">30,000+</div>
-                <div className="text-white/80 text-sm">Students Trained</div>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <div className="text-4xl md:text-5xl font-bold text-green mb-3">30K+</div>
+                <div className="text-white/90 text-sm font-medium">Students Trained</div>
+                <div className="text-white/70 text-xs mt-1">Annually</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange mb-2">6</div>
-                <div className="text-white/80 text-sm">Centres of Excellence</div>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <div className="text-4xl md:text-5xl font-bold text-orange mb-3">6</div>
+                <div className="text-white/90 text-sm font-medium">Lab Categories</div>
+                <div className="text-white/70 text-xs mt-1">Cutting-edge Tech</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">Pan India</div>
-                <div className="text-white/80 text-sm">Delivery Network</div>
+              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">15+</div>
+                <div className="text-white/90 text-sm font-medium">Years Experience</div>
+                <div className="text-white/70 text-xs mt-1">Industry Leader</div>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 bg-aqua/20 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-green/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Why Us Section */}
-      <section id="about" className="py-20 bg-secondary/50">
+      <section id="about" className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Why Institutions Choose <span className="text-aqua">SkyySkill Labs</span>
+          <div className="text-center mb-20">
+            <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
+              The SkyySkill Advantage
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Why Leading Institutions Choose 
+              <span className="block text-aqua mt-2">SkyySkill Labs</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive solutions that bridge the gap between academic learning and industry requirements
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Bridging the gap between academic excellence and industry requirements with 
+              cutting-edge laboratory solutions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                icon: <Cog className="w-8 h-8 text-aqua" />,
+                icon: <Cog className="w-7 h-7" />,
                 title: "In-house Manufacturing & R&D",
-                description: "Complete control over quality and customization"
+                description: "Complete control over quality, customization, and innovation. Our state-of-the-art facilities ensure precision engineering.",
+                highlight: "100% Made in India"
               },
               {
-                icon: <Award className="w-8 h-8 text-green" />,
+                icon: <Award className="w-7 h-7" />,
                 title: "Sector Skill Council Approved",
-                description: "All models certified and industry-aligned"
+                description: "All lab models are certified and aligned with national skill development standards and industry requirements.",
+                highlight: "Government Certified"
               },
               {
-                icon: <Building2 className="w-8 h-8 text-orange" />,
-                title: "IITs, NITs & Govt. ITI Clients",
-                description: "Trusted by India's premier institutions"
+                icon: <Building2 className="w-7 h-7" />,
+                title: "Premier Institution Network",
+                description: "Trusted by IITs, NITs, Government ITIs, and leading private institutions across India.",
+                highlight: "50+ IITs & NITs"
               },
               {
-                icon: <BookOpen className="w-8 h-8 text-aqua" />,
-                title: "Curriculum-Aligned Skilling",
-                description: "Perfect integration with academic programs"
+                icon: <BookOpen className="w-7 h-7" />,
+                title: "Curriculum-Aligned Solutions",
+                description: "Perfect integration with academic programs, from basic concepts to advanced research applications.",
+                highlight: "Future-Ready Skills"
               },
               {
-                icon: <Cpu className="w-8 h-8 text-green" />,
+                icon: <Cpu className="w-7 h-7" />,
                 title: "AI & Digital Twin Enabled",
-                description: "Next-generation technology integration"
+                description: "Next-generation technology integration with simulation, virtual reality, and AI-powered learning modules.",
+                highlight: "Industry 4.0 Ready"
               },
               {
-                icon: <Settings className="w-8 h-8 text-orange" />,
-                title: "Customizable Lab Packages",
-                description: "From School to Research level configurations"
+                icon: <Settings className="w-7 h-7" />,
+                title: "Flexible Lab Configurations",
+                description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
+                highlight: "Scalable Solutions"
               }
             ].map((item, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-0 bg-gradient-card">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4">
-                    {item.icon}
+              <Card key={index} className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 border border-border/50 bg-background/50 backdrop-blur-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-aqua/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="pb-4 relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center text-white shadow-lg">
+                      {item.icon}
+                    </div>
+                    <Badge variant="secondary" className="text-xs bg-aqua/10 text-aqua border-aqua/20">
+                      {item.highlight}
+                    </Badge>
                   </div>
-                  <CardTitle className="text-xl text-primary">{item.title}</CardTitle>
+                  <CardTitle className="text-lg text-primary group-hover:text-aqua transition-colors duration-300">
+                    {item.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{item.description}</CardDescription>
+                <CardContent className="relative z-10">
+                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Stats Section */}
+          <div className="bg-gradient-to-r from-navy/10 via-aqua/5 to-green/10 rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                Proven Track Record
+              </h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our commitment to excellence is reflected in our achievements and client satisfaction.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-navy mb-2">15+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">99%</div>
+                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-green mb-2">24/7</div>
+                <div className="text-sm text-muted-foreground">Support Available</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-orange mb-2">ISO</div>
+                <div className="text-sm text-muted-foreground">Certified Quality</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Product Labs Section */}
-      <section id="labs" className="py-20">
+      <section id="labs" className="py-24 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Our <span className="text-aqua">Lab Solutions</span>
+          <div className="text-center mb-20">
+            <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
+              Advanced Laboratory Solutions
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Industry-Leading <span className="text-aqua">Lab Equipment</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive skill development labs designed for the future of technology
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              State-of-the-art laboratory solutions designed for next-generation skill development 
+              across emerging technology domains.
             </p>
           </div>
 
           <Tabs defaultValue="ev" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
-              <TabsTrigger value="ev" className="flex items-center gap-2">
-                <Car className="w-4 h-4" />
-                <span className="hidden sm:inline">EV Lab</span>
-              </TabsTrigger>
-              <TabsTrigger value="solar" className="flex items-center gap-2">
-                <Sun className="w-4 h-4" />
-                <span className="hidden sm:inline">Solar Lab</span>
-              </TabsTrigger>
-              <TabsTrigger value="drone" className="flex items-center gap-2">
-                <Plane className="w-4 h-4" />
-                <span className="hidden sm:inline">Drone Lab</span>
-              </TabsTrigger>
-              <TabsTrigger value="additive" className="flex items-center gap-2">
-                <Printer className="w-4 h-4" />
-                <span className="hidden sm:inline">3D Printing</span>
-              </TabsTrigger>
-              <TabsTrigger value="cnc" className="flex items-center gap-2">
-                <Settings className="w-4 h-4" />
-                <span className="hidden sm:inline">CNC Sim</span>
-              </TabsTrigger>
-              <TabsTrigger value="automotive" className="flex items-center gap-2">
-                <Wrench className="w-4 h-4" />
-                <span className="hidden sm:inline">Automotive</span>
-              </TabsTrigger>
-            </TabsList>
+            <div className="flex justify-center mb-12">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
+                <TabsTrigger value="ev" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
+                  <Car className="w-5 h-5" />
+                  <span className="text-xs font-medium">EV Lab</span>
+                </TabsTrigger>
+                <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
+                  <Sun className="w-5 h-5" />
+                  <span className="text-xs font-medium">Solar Lab</span>
+                </TabsTrigger>
+                <TabsTrigger value="drone" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
+                  <Plane className="w-5 h-5" />
+                  <span className="text-xs font-medium">Drone Lab</span>
+                </TabsTrigger>
+                <TabsTrigger value="additive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-orange data-[state=active]:text-white">
+                  <Printer className="w-5 h-5" />
+                  <span className="text-xs font-medium">3D Printing</span>
+                </TabsTrigger>
+                <TabsTrigger value="cnc" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
+                  <Settings className="w-5 h-5" />
+                  <span className="text-xs font-medium">CNC Sim</span>
+                </TabsTrigger>
+                <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
+                  <Wrench className="w-5 h-5" />
+                  <span className="text-xs font-medium">Automotive</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             {[
               {
                 id: "ev",
-                title: "Electric Vehicle Skill Lab",
-                description: "Comprehensive EV technology training with battery management, motor control, and charging systems",
-                features: ["Battery Pack Analysis", "Motor Control Systems", "Charging Infrastructure", "EV Diagnostics"]
+                title: "Electric Vehicle Technology Lab",
+                description: "Comprehensive EV ecosystem training covering battery technology, motor systems, charging infrastructure, and vehicle diagnostics for the next generation of automotive engineers.",
+                features: ["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology", "EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"],
+                color: "primary",
+                stats: { institutions: "200+", students: "15K+", certifications: "ASDC Approved" }
               },
               {
                 id: "solar",
-                title: "Solar/Renewable Energy Lab",
-                description: "Complete renewable energy solutions covering solar PV, wind, and energy storage systems",
-                features: ["Solar PV Systems", "Wind Energy", "Battery Storage", "Grid Integration"]
+                title: "Solar & Renewable Energy Lab",
+                description: "Complete renewable energy solutions covering photovoltaic systems, wind energy, energy storage, and smart grid integration for sustainable energy professionals.",
+                features: ["Solar PV Design & Installation", "Wind Energy Systems", "Battery Storage Solutions", "Grid-Tie Inverters", "Energy Monitoring", "Hybrid Power Systems"],
+                color: "aqua",
+                stats: { institutions: "150+", students: "12K+", certifications: "MNRE Aligned" }
               },
               {
                 id: "drone",
-                title: "Drone Technology Lab",
-                description: "UAV design, flight control, and applications in various industries",
-                features: ["Flight Control Systems", "Autonomous Navigation", "Payload Integration", "Industry Applications"]
+                title: "Unmanned Aerial Vehicle Lab",
+                description: "Advanced UAV technology covering drone assembly, flight control systems, autonomous navigation, and industry-specific applications for aerospace and surveillance sectors.",
+                features: ["Flight Control Systems", "Autonomous Navigation", "Gimbal & Camera Integration", "Mission Planning Software", "Industry Applications", "Safety Protocols"],
+                color: "green",
+                stats: { institutions: "100+", students: "8K+", certifications: "DGCA Guidelines" }
               },
               {
                 id: "additive",
                 title: "Additive Manufacturing Lab",
-                description: "3D printing technologies from design to production including metal and polymer printing",
-                features: ["FDM/SLA Printing", "Metal 3D Printing", "Design Software", "Post-Processing"]
+                description: "Cutting-edge 3D printing technologies from rapid prototyping to production-grade manufacturing, covering polymer, metal, and ceramic additive processes.",
+                features: ["FDM/SLA/SLS Printing", "Metal 3D Printing", "CAD/CAM Integration", "Post-Processing Techniques", "Quality Control", "Material Science"],
+                color: "orange",
+                stats: { institutions: "120+", students: "10K+", certifications: "Industry Standard" }
               },
               {
                 id: "cnc",
-                title: "CNC Simulator Lab",
-                description: "Virtual CNC machining with industry-standard software and simulation tools",
-                features: ["CNC Programming", "Virtual Machining", "CAM Software", "Industry Simulation"]
+                title: "CNC Simulation & Programming Lab",
+                description: "Virtual CNC machining environment with industry-standard software, simulation tools, and programming techniques for precision manufacturing education.",
+                features: ["CNC Programming (G & M Codes)", "Virtual Machining", "CAM Software Training", "Toolpath Optimization", "Industry Simulation", "Quality Inspection"],
+                color: "primary",
+                stats: { institutions: "180+", students: "14K+", certifications: "ISO Compliant" }
               },
               {
                 id: "automotive",
-                title: "Automotive Technology Lab",
-                description: "Traditional automotive systems with modern diagnostic and repair technologies",
-                features: ["Engine Diagnostics", "Transmission Systems", "Brake Technology", "Automotive Electronics"]
+                title: "Advanced Automotive Technology Lab",
+                description: "Modern automotive systems covering engine management, transmission technology, vehicle diagnostics, and emerging automotive electronics for future mobility.",
+                features: ["Engine Management Systems", "Transmission Technology", "Vehicle Diagnostics", "Automotive Electronics", "Connected Car Tech", "Emission Control"],
+                color: "aqua",
+                stats: { institutions: "250+", students: "18K+", certifications: "ARAI Recognized" }
               }
             ].map((lab) => (
-              <TabsContent key={lab.id} value={lab.id}>
-                <Card className="border-0 bg-gradient-card shadow-elegant">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-primary">{lab.title}</CardTitle>
-                    <CardDescription className="text-lg">{lab.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold text-primary mb-4">Key Features:</h4>
-                        <div className="space-y-2">
-                          {lab.features.map((feature, index) => (
-                            <div key={index} className="flex items-center gap-2">
-                              <CheckCircle className="w-5 h-5 text-green" />
-                              <span className="text-muted-foreground">{feature}</span>
-                            </div>
-                          ))}
+              <TabsContent key={lab.id} value={lab.id} className="mt-0">
+                <Card className="border-0 shadow-2xl bg-gradient-to-br from-background via-background to-secondary/20 overflow-hidden">
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    {/* Content Side */}
+                    <div className="p-8 lg:p-12">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-${lab.color} text-white shadow-lg`}>
+                          {lab.id === "ev" && <Car className="w-6 h-6" />}
+                          {lab.id === "solar" && <Sun className="w-6 h-6" />}
+                          {lab.id === "drone" && <Plane className="w-6 h-6" />}
+                          {lab.id === "additive" && <Printer className="w-6 h-6" />}
+                          {lab.id === "cnc" && <Settings className="w-6 h-6" />}
+                          {lab.id === "automotive" && <Wrench className="w-6 h-6" />}
+                        </div>
+                        <Badge className={`bg-${lab.color}/10 text-${lab.color} border-${lab.color}/20`}>
+                          Next-Gen Technology
+                        </Badge>
+                      </div>
+                      
+                      <h3 className="text-3xl font-bold text-primary mb-4">{lab.title}</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-8">{lab.description}</p>
+                      
+                      <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                        <div>
+                          <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-green" />
+                            Core Modules
+                          </h4>
+                          <div className="space-y-3">
+                            {lab.features.slice(0, 3).map((feature, index) => (
+                              <div key={index} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-sm text-muted-foreground">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-green" />
+                            Advanced Features
+                          </h4>
+                          <div className="space-y-3">
+                            {lab.features.slice(3).map((feature, index) => (
+                              <div key={index} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-orange rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-sm text-muted-foreground">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <Button variant="aqua" size="lg">
-                          Learn More
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button className={`bg-${lab.color} hover:bg-${lab.color}/90 text-white`} size="lg">
+                          Request Demo
                           <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                        <Button variant="outline" size="lg">
+                          Download Specs
+                          <Download className="w-4 h-4 ml-2" />
                         </Button>
                       </div>
                     </div>
-                  </CardContent>
+
+                    {/* Stats Side */}
+                    <div className="bg-gradient-to-br from-primary/5 via-aqua/5 to-green/5 p-8 lg:p-12 flex flex-col justify-center">
+                      <div className="text-center mb-8">
+                        <h4 className="text-xl font-bold text-primary mb-2">Lab Impact</h4>
+                        <p className="text-sm text-muted-foreground">Real numbers, real results</p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 gap-6">
+                        <div className="text-center p-6 bg-background/50 rounded-2xl border border-border/50">
+                          <div className="text-3xl font-bold text-primary mb-2">{lab.stats.institutions}</div>
+                          <div className="text-sm text-muted-foreground">Institutions Equipped</div>
+                        </div>
+                        <div className="text-center p-6 bg-background/50 rounded-2xl border border-border/50">
+                          <div className="text-3xl font-bold text-aqua mb-2">{lab.stats.students}</div>
+                          <div className="text-sm text-muted-foreground">Students Trained</div>
+                        </div>
+                        <div className="text-center p-6 bg-background/50 rounded-2xl border border-border/50">
+                          <div className="text-lg font-bold text-green mb-2">{lab.stats.certifications}</div>
+                          <div className="text-sm text-muted-foreground">Certification</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </Card>
               </TabsContent>
             ))}
