@@ -132,8 +132,7 @@ const Index = () => {
               Why Leading Institutions Choose 
               <span className="block text-aqua mt-2">SkyySkill Labs</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">We are a perfect blend of research, skill development, and training - delivering cutting-edge educational solutions that prepare students for the future.
-          </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">Bridging the gap between academic excellence and industry requirements with cutting-edge laboratory solutions.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -227,7 +226,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
-          </Badge>
+              Advanced Laboratory Solutions
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Industry-Leading <span className="text-aqua">Lab Equipment</span>
             </h2>
