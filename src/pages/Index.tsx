@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
-// import skyyskillLogo from "@/assets/skyskill-logo.png";
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -37,18 +36,19 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3 hover-lift">
+          <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">S</span>
             </div>
-            <span className="font-display font-bold text-xl text-primary">SkyySkill Labs</span>
+            <span className="font-bold text-xl text-primary">SkyySkill Labs
+          </span>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#labs" className="text-muted-foreground hover:text-primary transition-all duration-300 link-underline font-medium">Labs</a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-all duration-300 link-underline font-medium">About</a>
-            <a href="#clients" className="text-muted-foreground hover:text-primary transition-all duration-300 link-underline font-medium">Clients</a>
-            <a href="#contact" className="text-muted-foreground hover:text-primary transition-all duration-300 link-underline font-medium">Contact</a>
-            <Button variant="cta" size="sm" className="btn-hover-scale">
+            <a href="#labs" className="text-muted-foreground hover:text-primary transition-colors">Labs</a>
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
+            <a href="#clients" className="text-muted-foreground hover:text-primary transition-colors">Clients</a>
+            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+            <Button variant="cta" size="sm">
               <Download className="w-4 h-4 mr-2" />
               Brochure
             </Button>
@@ -69,20 +69,20 @@ const Index = () => {
               <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">🏆 India’s Leading OEM for EV & Green Skill Labs & CoEs</Badge>
             </div>
             
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
               Advanced Lab Solutions for
-              <span className="block bg-gradient-to-r from-aqua via-green to-orange bg-clip-text text-transparent mt-2 animate-shimmer">Next-Gen Universities & Skill Centers</span>
+              <span className="block bg-gradient-to-r from-aqua via-green to-orange bg-clip-text text-transparent mt-2">Next-Gen Universities & Skill Centers</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">Comprehensive OEM solutions for EV, Solar, Drone, and Advanced Manufacturing labs. Trusted by IITs, NITs, and leading institutions across India.
           </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto btn-hover-scale hover-glow transition-all duration-300">
+              <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
                 <Play className="w-6 h-6 mr-3" />
                 Explore Our Labs
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy btn-hover-scale transition-all duration-300">
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
                 <Download className="w-6 h-6 mr-3" />
                 Download Catalog
               </Button>
@@ -128,11 +128,12 @@ const Index = () => {
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
               The SkyySkill Advantage
             </Badge>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Why Leading Institutions Choose 
-              <span className="block text-gradient-primary mt-2">SkyySkill Labs</span>
+              <span className="block text-aqua mt-2">SkyySkill Labs</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">Bridging the gap between academic excellence and industry requirements with cutting-edge laboratory solutions.</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">We are a perfect blend of research, skill development, and training - delivering cutting-edge educational solutions that prepare students for the future.
+          </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -166,8 +167,8 @@ const Index = () => {
             title: "Flexible Lab Configurations",
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
             highlight: "Scalable Solutions"
-            }].map((item, index) => <Card key={index} className="stagger-item group card-interactive border border-border/50 bg-background/50 backdrop-blur-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-aqua/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          }].map((item, index) => <Card key={index} className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 border border-border/50 bg-background/50 backdrop-blur-sm overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-aqua/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center text-white shadow-lg">
@@ -177,7 +178,7 @@ const Index = () => {
                       {item.highlight}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg font-semibold text-primary group-hover:text-aqua transition-colors duration-300">
+                  <CardTitle className="text-lg text-primary group-hover:text-aqua transition-colors duration-300">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
@@ -192,7 +193,7 @@ const Index = () => {
           {/* Stats Section */}
           <div className="bg-gradient-to-r from-navy/10 via-aqua/5 to-green/10 rounded-3xl p-8 md:p-12">
             <div className="text-center mb-8">
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-primary mb-4 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                 Proven Track Record
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -226,10 +227,9 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
-              Advanced Laboratory Solutions
-            </Badge>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6 tracking-tight">
-              Industry-Leading <span className="text-gradient-primary">Lab Equipment</span>
+          </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Industry-Leading <span className="text-aqua">Lab Equipment</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               State-of-the-art laboratory solutions designed for next-generation skill development 
