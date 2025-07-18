@@ -396,44 +396,29 @@ const Index = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <LeadCaptureForm 
-                          type="demo" 
-                          trigger={
-                            <Button className={`bg-${lab.color} hover:bg-${lab.color}/90 text-white`} size="lg">
+                        <LeadCaptureForm type="demo" trigger={<Button className={`bg-${lab.color} hover:bg-${lab.color}/90 text-white`} size="lg">
                               Request Demo
                               <ArrowRight className="w-4 h-4 ml-2" />
-                            </Button>
-                          } 
-                        />
-                        <LeadCaptureForm 
-                          type="specs" 
-                          trigger={
-                            <Button variant="outline" size="lg">
+                            </Button>} />
+                        <LeadCaptureForm type="specs" trigger={<Button variant="outline" size="lg">
                               Download Specs
                               <Download className="w-4 h-4 ml-2" />
-                            </Button>
-                          } 
-                        />
-                        <Button 
-                          variant="secondary" 
-                          size="lg"
-                          onClick={() => {
-                            if (lab.id === "ev") {
-                              window.open("https://www.evskilllab.com", "_blank");
-                            } else if (lab.id === "solar") {
-                              window.open("https://www.evskilllab.com/solarlab", "_blank");
-                            } else if (lab.id === "cnc") {
-                              window.open("https://www.evskilllab.com/cnc-simulator", "_blank");
-                            } else if (lab.id === "drone") {
-                              window.location.href = "/drone-lab";
-                            } else if (lab.id === "automotive") {
-                              window.location.href = "/automotive-lab";
-                            } else if (lab.id === "additive") {
-                              window.location.href = "/3d-printing-lab";
-                            }
-                          }}
-                          className="bg-gradient-to-r from-aqua to-green text-white border-0 hover:from-aqua/90 hover:to-green/90"
-                        >
+                            </Button>} />
+                        <Button variant="secondary" size="lg" onClick={() => {
+                      if (lab.id === "ev") {
+                        window.open("https://www.evskilllab.com", "_blank");
+                      } else if (lab.id === "solar") {
+                        window.open("https://www.evskilllab.com/solarlab", "_blank");
+                      } else if (lab.id === "cnc") {
+                        window.open("https://www.evskilllab.com/cnc-simulator", "_blank");
+                      } else if (lab.id === "drone") {
+                        window.location.href = "/drone-lab";
+                      } else if (lab.id === "automotive") {
+                        window.location.href = "/automotive-lab";
+                      } else if (lab.id === "additive") {
+                        window.location.href = "/3d-printing-lab";
+                      }
+                    }} className="bg-gradient-to-r from-aqua to-green text-white border-0 hover:from-aqua/90 hover:to-green/90">
                           Know More
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
@@ -481,17 +466,13 @@ const Index = () => {
           {/* Auto-sliding logos */}
           <div className="relative">
             <div className="flex animate-marquee space-x-16 items-center">
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => 
-                <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>
-              )}
+                </div>)}
               {/* Duplicate for seamless loop */}
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => 
-                <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>
-              )}
+                </div>)}
             </div>
           </div>
         </div>
@@ -559,41 +540,30 @@ const Index = () => {
 
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent>
-              {[
-                {
-                  image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-                  title: "Advanced EV Lab Setup",
-                  description: "Complete electric vehicle training station with battery management systems"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-                  title: "Circuit Analysis Equipment",
-                  description: "High-precision electronic testing and measurement instruments"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-                  title: "Programming & Simulation",
-                  description: "Interactive software training modules for technical skills"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
-                  title: "Digital Learning Platform",
-                  description: "AI-powered learning management system for enhanced education"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop",
-                  title: "Portable Training Kits",
-                  description: "Compact and comprehensive skill development solutions"
-                }
-              ].map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              {[{
+              image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
+              title: "Advanced EV Lab Setup",
+              description: "Complete electric vehicle training station with battery management systems"
+            }, {
+              image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+              title: "Circuit Analysis Equipment",
+              description: "High-precision electronic testing and measurement instruments"
+            }, {
+              image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+              title: "Programming & Simulation",
+              description: "Interactive software training modules for technical skills"
+            }, {
+              image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
+              title: "Digital Learning Platform",
+              description: "AI-powered learning management system for enhanced education"
+            }, {
+              image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop",
+              title: "Portable Training Kits",
+              description: "Compact and comprehensive skill development solutions"
+            }].map((item, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                     <div className="relative overflow-hidden">
-                      <img 
-                        src={item.image} 
-                        alt={item.title}
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                      <img src={item.image} alt={item.title} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <CardContent className="p-6">
@@ -601,8 +571,7 @@ const Index = () => {
                       <p className="text-muted-foreground">{item.description}</p>
                     </CardContent>
                   </Card>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
@@ -628,46 +597,35 @@ const Index = () => {
 
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent>
-              {[
-                {
-                  image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop",
-                  title: "Digital Innovation Showcase",
-                  description: "Successfully demonstrated our AI-powered lab solutions at the National Education Technology Summit, receiving recognition from leading educational institutions.",
-                  badge: "Innovation Award"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
-                  title: "IIT Collaboration Summit",
-                  description: "Strategic partnership meeting with IIT consortium to develop next-generation engineering curricula aligned with Industry 4.0 requirements.",
-                  badge: "Partnership"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
-                  title: "State-of-the-Art Facility",
-                  description: "Inauguration of our new 50,000 sq ft manufacturing and R&D facility, expanding our capacity to serve 1000+ institutions annually.",
-                  badge: "Milestone"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
-                  title: "Corporate Excellence Recognition",
-                  description: "Awarded 'Best OEM Partner' by leading automotive companies for our contribution to electric vehicle skill development ecosystem.",
-                  badge: "Excellence"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
-                  title: "Government Partnership",
-                  description: "Signed MoU with Ministry of Skill Development to establish Centers of Excellence across 200+ government institutions nationwide.",
-                  badge: "Government MoU"
-                }
-              ].map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+              {[{
+              image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop",
+              title: "Digital Innovation Showcase",
+              description: "Successfully demonstrated our AI-powered lab solutions at the National Education Technology Summit, receiving recognition from leading educational institutions.",
+              badge: "Innovation Award"
+            }, {
+              image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+              title: "IIT Collaboration Summit",
+              description: "Strategic partnership meeting with IIT consortium to develop next-generation engineering curricula aligned with Industry 4.0 requirements.",
+              badge: "Partnership"
+            }, {
+              image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
+              title: "State-of-the-Art Facility",
+              description: "Inauguration of our new 50,000 sq ft manufacturing and R&D facility, expanding our capacity to serve 1000+ institutions annually.",
+              badge: "Milestone"
+            }, {
+              image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
+              title: "Corporate Excellence Recognition",
+              description: "Awarded 'Best OEM Partner' by leading automotive companies for our contribution to electric vehicle skill development ecosystem.",
+              badge: "Excellence"
+            }, {
+              image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
+              title: "Government Partnership",
+              description: "Signed MoU with Ministry of Skill Development to establish Centers of Excellence across 200+ government institutions nationwide.",
+              badge: "Government MoU"
+            }].map((item, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                   <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full">
                     <div className="relative overflow-hidden">
-                      <img 
-                        src={item.image} 
-                        alt={item.title}
-                        className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <img src={item.image} alt={item.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-gradient-to-r from-primary to-aqua text-white border-0 shadow-lg">
                           <Handshake className="w-4 h-4 mr-1" />
@@ -681,8 +639,7 @@ const Index = () => {
                       <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                     </CardContent>
                   </Card>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
@@ -709,14 +666,14 @@ const Index = () => {
                   <MapPin className="w-6 h-6 text-aqua" />
                   <div>
                     <div className="font-semibold">Headquarters</div>
-                    <div className="text-white/80">Bengaluru, Karnataka, India</div>
+                    <div className="text-white/80">Hyderabad, Telangana</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-white">
                   <Phone className="w-6 h-6 text-aqua" />
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-white/80">+91 9876543210</div>
+                    <div className="text-white/80">+91 9237378472</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-white">
