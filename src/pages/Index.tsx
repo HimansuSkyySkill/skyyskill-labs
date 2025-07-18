@@ -241,27 +241,27 @@ const Index = () => {
             <div className="flex justify-center mb-12">
               <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
                 <TabsTrigger value="ev" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
-                  <Car className="w-5 h-5" />
+                  <Car className="w-8 h-8" />
                   <span className="text-xs font-medium">EV Lab</span>
                 </TabsTrigger>
                 <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
-                  <Sun className="w-5 h-5" />
+                  <Sun className="w-8 h-8" />
                   <span className="text-xs font-medium">Solar Lab</span>
                 </TabsTrigger>
                 <TabsTrigger value="drone" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
-                  <Plane className="w-5 h-5" />
+                  <Plane className="w-8 h-8" />
                   <span className="text-xs font-medium">Drone Lab</span>
                 </TabsTrigger>
                 <TabsTrigger value="additive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-orange data-[state=active]:text-white">
-                  <Printer className="w-5 h-5" />
+                  <Printer className="w-8 h-8" />
                   <span className="text-xs font-medium">3D Printing</span>
                 </TabsTrigger>
                 <TabsTrigger value="cnc" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
-                  <Settings className="w-5 h-5" />
+                  <Settings className="w-8 h-8" />
                   <span className="text-xs font-medium">CNC Sim</span>
                 </TabsTrigger>
                 <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
-                  <Wrench className="w-5 h-5" />
+                  <Wrench className="w-8 h-8" />
                   <span className="text-xs font-medium">Automotive</span>
                 </TabsTrigger>
               </TabsList>
