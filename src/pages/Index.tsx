@@ -413,6 +413,29 @@ const Index = () => {
                             </Button>
                           } 
                         />
+                        <Button 
+                          variant="secondary" 
+                          size="lg"
+                          onClick={() => {
+                            if (lab.id === "ev") {
+                              window.open("https://www.evskilllab.com", "_blank");
+                            } else if (lab.id === "solar") {
+                              window.open("https://www.evskilllab.com/solarlab", "_blank");
+                            } else if (lab.id === "cnc") {
+                              window.open("https://www.evskilllab.com/cnc-simulator", "_blank");
+                            } else if (lab.id === "drone") {
+                              window.location.href = "/drone-lab";
+                            } else if (lab.id === "automotive") {
+                              window.location.href = "/automotive-lab";
+                            } else if (lab.id === "additive") {
+                              window.location.href = "/3d-printing-lab";
+                            }
+                          }}
+                          className="bg-gradient-to-r from-aqua to-green text-white border-0 hover:from-aqua/90 hover:to-green/90"
+                        >
+                          Know More
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
                       </div>
                     </div>
 
