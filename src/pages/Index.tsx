@@ -47,15 +47,10 @@ const Index = () => {
             <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
             <a href="#clients" className="text-muted-foreground hover:text-primary transition-colors">Clients</a>
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
-            <LeadCaptureForm
-              type="brochure"
-              trigger={
-                <Button variant="cta" size="sm">
+            <LeadCaptureForm type="brochure" trigger={<Button variant="cta" size="sm">
                   <Download className="w-4 h-4 mr-2" />
                   Brochure
-                </Button>
-              }
-            />
+                </Button>} />
           </div>
         </div>
       </nav>
@@ -88,15 +83,10 @@ const Index = () => {
                   Explore Our Labs
                 </Button>
               </Link>
-              <LeadCaptureForm
-                type="brochure"
-                trigger={
-                  <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
+              <LeadCaptureForm type="brochure" trigger={<Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
                     <Download className="w-6 h-6 mr-3" />
                     Download Catalog
-                  </Button>
-                }
-              />
+                  </Button>} />
             </div>
 
             {/* Enhanced Metrics */}
@@ -140,7 +130,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-24">
-            <Badge className="bg-gradient-to-r from-primary/20 to-aqua/20 text-primary border-primary/30 mb-8 px-6 py-3 text-base font-semibold bg-[#368fa6]">
+            <Badge className="bg-gradient-to-r from-primary/20 to-aqua/20 text-primary border-primary/30 mb-8 px-6 py-3 text-base font-semibold bg-[#01c1df]">
               ✨ The SkyySkill Advantage
             </Badge>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
