@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { Link } from "react-router-dom";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 const Index = () => {
@@ -36,22 +38,24 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
-            </div>
-            <span className="font-bold text-xl text-primary">SkyySkill Labs
-          </span>
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <img src="/lovable-uploads/aaf5a3d2-92bc-430c-8d2f-534eb35d7737.png" alt="SkyySkill Labs" className="w-10 h-10" />
+            <span className="font-bold text-xl text-primary">SkyySkill Labs</span>
+          </Link>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#labs" className="text-muted-foreground hover:text-primary transition-colors">Labs</a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
+            <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
+            <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
             <a href="#clients" className="text-muted-foreground hover:text-primary transition-colors">Clients</a>
-            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
-            <Button variant="cta" size="sm">
-              <Download className="w-4 h-4 mr-2" />
-              Brochure
-            </Button>
+            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
+            <LeadCaptureForm
+              type="brochure"
+              trigger={
+                <Button variant="cta" size="sm">
+                  <Download className="w-4 h-4 mr-2" />
+                  Brochure
+                </Button>
+              }
+            />
           </div>
         </div>
       </nav>
@@ -78,14 +82,21 @@ const Index = () => {
           </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
-                <Play className="w-6 h-6 mr-3" />
-                Explore Our Labs
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
-                <Download className="w-6 h-6 mr-3" />
-                Download Catalog
-              </Button>
+              <Link to="/ev-lab">
+                <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
+                  <Play className="w-6 h-6 mr-3" />
+                  Explore Our Labs
+                </Button>
+              </Link>
+              <LeadCaptureForm
+                type="brochure"
+                trigger={
+                  <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
+                    <Download className="w-6 h-6 mr-3" />
+                    Download Catalog
+                  </Button>
+                }
+              />
             </div>
 
             {/* Enhanced Metrics */}
