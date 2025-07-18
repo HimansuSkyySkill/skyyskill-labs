@@ -122,70 +122,91 @@ const Index = () => {
       </section>
 
       {/* Why Us Section */}
-      <section id="about" className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
-              The SkyySkill Advantage
+      <section id="about" className="py-32 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-aqua/5 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-24">
+            <Badge className="bg-gradient-to-r from-primary/20 to-aqua/20 text-primary border-primary/30 mb-8 px-6 py-3 text-base font-semibold">
+              ✨ The SkyySkill Advantage
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Why Leading Institutions Choose 
-              <span className="block text-aqua mt-2">SkyySkill Labs</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
+              Why Leading Institutions 
+              <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-4">Choose SkyySkill Labs</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">We are a perfect blend of research, skill development, and training - delivering cutting-edge educational solutions that prepare students for the future.
-          </p>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              We are a perfect blend of research, skill development, and training - delivering cutting-edge educational solutions that prepare students for the future.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
             {[{
-            icon: <Cog className="w-7 h-7" />,
+            icon: <Cog className="w-8 h-8" />,
             title: "In-house Manufacturing & R&D",
             description: "Complete control over quality, customization, and innovation. Our state-of-the-art facilities ensure precision engineering.",
-            highlight: "100% Made in India"
+            highlight: "100% Made in India",
+            color: "primary"
           }, {
-            icon: <Award className="w-7 h-7" />,
+            icon: <Award className="w-8 h-8" />,
             title: "Sector Skill Council Approved",
             description: "All lab models are certified and aligned with national skill development standards and industry requirements.",
-            highlight: "Government Certified"
+            highlight: "Government Certified",
+            color: "aqua"
           }, {
-            icon: <Building2 className="w-7 h-7" />,
+            icon: <Building2 className="w-8 h-8" />,
             title: "Premier Institution Network",
             description: "Trusted by IITs, NITs, Government ITIs, and leading private institutions across India.",
-            highlight: "50+ IITs & NITs"
+            highlight: "50+ IITs & NITs",
+            color: "green"
           }, {
-            icon: <BookOpen className="w-7 h-7" />,
+            icon: <BookOpen className="w-8 h-8" />,
             title: "Curriculum-Aligned Solutions",
             description: "Perfect integration with academic programs, from basic concepts to advanced research applications.",
-            highlight: "Future-Ready Skills"
+            highlight: "Future-Ready Skills",
+            color: "orange"
           }, {
-            icon: <Cpu className="w-7 h-7" />,
+            icon: <Cpu className="w-8 h-8" />,
             title: "AI & Digital Twin Enabled",
             description: "Next-generation technology integration with simulation, virtual reality, and AI-powered learning modules.",
-            highlight: "Industry 4.0 Ready"
+            highlight: "Industry 4.0 Ready",
+            color: "primary"
           }, {
-            icon: <Settings className="w-7 h-7" />,
+            icon: <Settings className="w-8 h-8" />,
             title: "Flexible Lab Configurations",
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
-            highlight: "Scalable Solutions"
-          }].map((item, index) => <Card key={index} className="group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 border border-border/50 bg-background/50 backdrop-blur-sm overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-aqua/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardHeader className="pb-4 relative z-10">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center text-white shadow-lg">
+            highlight: "Scalable Solutions",
+            color: "aqua"
+          }].map((item, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border-2 border-border/30 bg-background/80 backdrop-blur-md overflow-hidden relative h-full">
+                {/* Dynamic gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}/10 via-transparent to-${item.color}/5 opacity-0 group-hover:opacity-100 transition-all duration-700`}></div>
+                
+                {/* Floating highlight badge */}
+                <div className="absolute -top-3 -right-3 z-20">
+                  <Badge className={`bg-${item.color} text-white border-${item.color} px-4 py-2 text-sm font-bold shadow-lg transform -rotate-12 group-hover:rotate-0 transition-transform duration-500`}>
+                    {item.highlight}
+                  </Badge>
+                </div>
+
+                <CardHeader className="pb-6 relative z-10 pt-8">
+                  <div className="flex items-center justify-center mb-6">
+                    <div className={`w-20 h-20 bg-gradient-to-br from-${item.color} to-${item.color}/80 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-500`}>
                       {item.icon}
                     </div>
-                    <Badge variant="secondary" className="text-xs bg-aqua/10 text-aqua border-aqua/20">
-                      {item.highlight}
-                    </Badge>
                   </div>
-                  <CardTitle className="text-lg text-primary group-hover:text-aqua transition-colors duration-300">
+                  <CardTitle className={`text-xl font-bold text-center text-primary group-hover:text-${item.color} transition-colors duration-500 mb-4`}>
                     {item.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="relative z-10">
-                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+
+                <CardContent className="relative z-10 text-center px-6 pb-8">
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-500">
                     {item.description}
                   </CardDescription>
+                  
+                  {/* Bottom accent line */}
+                  <div className={`mt-6 h-1 w-20 bg-gradient-to-r from-${item.color} to-${item.color}/50 mx-auto rounded-full group-hover:w-full transition-all duration-700`}></div>
                 </CardContent>
               </Card>)}
           </div>
