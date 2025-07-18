@@ -115,6 +115,14 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'marquee': {
+					'0%': {
+						transform: 'translateX(0%)'
+					},
+					'100%': {
+						transform: 'translateX(-50%)'
+					}
 				}
 			},
 			animation: {
@@ -122,7 +130,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'marquee': 'marquee 30s linear infinite'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

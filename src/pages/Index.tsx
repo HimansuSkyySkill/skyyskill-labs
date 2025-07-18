@@ -446,7 +446,7 @@ const Index = () => {
       </section>
 
       {/* Clients Section */}
-      <section id="clients" className="py-20 bg-secondary/50">
+      <section id="clients" className="py-20 bg-secondary/50 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
@@ -454,12 +454,21 @@ const Index = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center opacity-60">
-            {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={index} className="text-center">
-                <div className="h-16 flex items-center justify-center">
-                  <span className="font-semibold text-muted-foreground">{client}</span>
+          {/* Auto-sliding logos */}
+          <div className="relative">
+            <div className="flex animate-marquee space-x-16 items-center">
+              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => 
+                <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
                 </div>
-              </div>)}
+              )}
+              {/* Duplicate for seamless loop */}
+              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => 
+                <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
