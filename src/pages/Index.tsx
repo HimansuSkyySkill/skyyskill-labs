@@ -395,14 +395,24 @@ const Index = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <Button className={`bg-${lab.color} hover:bg-${lab.color}/90 text-white`} size="lg">
-                          Request Demo
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                        <Button variant="outline" size="lg">
-                          Download Specs
-                          <Download className="w-4 h-4 ml-2" />
-                        </Button>
+                        <LeadCaptureForm 
+                          type="demo" 
+                          trigger={
+                            <Button className={`bg-${lab.color} hover:bg-${lab.color}/90 text-white`} size="lg">
+                              Request Demo
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
+                          } 
+                        />
+                        <LeadCaptureForm 
+                          type="specs" 
+                          trigger={
+                            <Button variant="outline" size="lg">
+                              Download Specs
+                              <Download className="w-4 h-4 ml-2" />
+                            </Button>
+                          } 
+                        />
                       </div>
                     </div>
 

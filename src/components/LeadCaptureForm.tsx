@@ -11,7 +11,7 @@ import { Download, FileText, X } from "lucide-react";
 
 interface LeadCaptureFormProps {
   trigger: React.ReactNode;
-  type: "brochure" | "quotation";
+  type: "brochure" | "quotation" | "demo" | "specs";
 }
 
 export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
@@ -46,6 +46,10 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
         title: "Success!",
         description: type === "brochure" 
           ? "Brochure download link has been sent to your email."
+          : type === "demo"
+          ? "Demo request submitted. Our team will contact you soon to schedule."
+          : type === "specs"
+          ? "Specifications document has been sent to your email."
           : "Your quotation request has been submitted. We'll contact you soon.",
       });
 
@@ -87,11 +91,21 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {type === "brochure" ? <Download className="w-5 h-5" /> : <FileText className="w-5 h-5" />}
-            {type === "brochure" ? "Download Lab Brochure" : "Request Quotation"}
+            {type === "brochure" 
+              ? "Download Lab Brochure" 
+              : type === "demo"
+              ? "Request Lab Demo"
+              : type === "specs"
+              ? "Download Specifications"
+              : "Request Quotation"}
           </DialogTitle>
           <DialogDescription>
             {type === "brochure" 
               ? "Get our comprehensive lab solutions brochure sent directly to your email."
+              : type === "demo"
+              ? "Schedule a live demonstration of our lab equipment and solutions."
+              : type === "specs"
+              ? "Get detailed technical specifications for our lab products."
               : "Get a customized quotation for your lab requirements."
             }
           </DialogDescription>
@@ -202,7 +216,11 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
               Cancel
             </Button>
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Processing..." : (type === "brochure" ? "Download Brochure" : "Request Quotation")}
+              {isSubmitting ? "Processing..." : 
+                type === "brochure" ? "Download Brochure" :
+                type === "demo" ? "Request Demo" :
+                type === "specs" ? "Download Specs" :
+                "Request Quotation"}
             </Button>
           </div>
         </form>
