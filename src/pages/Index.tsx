@@ -238,31 +238,37 @@ const Index = () => {
           </div>
 
           <Tabs defaultValue="ev" className="w-full">
-            <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
-                <TabsTrigger value="ev" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
-                  <Car className="w-5 h-5" />
-                  <span className="text-xs font-medium">EV Lab</span>
+            <div className="flex justify-center mb-16">
+              <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 bg-gradient-to-r from-background/90 to-secondary/50 backdrop-blur-md border-2 border-border/30 p-2 h-auto rounded-2xl shadow-lg">
+                <TabsTrigger value="ev" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-primary/10">
+                  <Car className="w-8 h-8" />
+                  <span className="text-sm font-semibold">EV Lab</span>
+                  <span className="text-xs opacity-80 hidden lg:block">Electric Vehicle</span>
                 </TabsTrigger>
-                <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
-                  <Sun className="w-5 h-5" />
-                  <span className="text-xs font-medium">Solar Lab</span>
+                <TabsTrigger value="solar" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-aqua data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-aqua/10">
+                  <Sun className="w-8 h-8" />
+                  <span className="text-sm font-semibold">Solar Lab</span>
+                  <span className="text-xs opacity-80 hidden lg:block">Renewable Energy</span>
                 </TabsTrigger>
-                <TabsTrigger value="drone" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
-                  <Plane className="w-5 h-5" />
-                  <span className="text-xs font-medium">Drone Lab</span>
+                <TabsTrigger value="drone" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-green data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-green/10">
+                  <Plane className="w-8 h-8" />
+                  <span className="text-sm font-semibold">Drone Lab</span>
+                  <span className="text-xs opacity-80 hidden lg:block">UAV Technology</span>
                 </TabsTrigger>
-                <TabsTrigger value="additive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-orange data-[state=active]:text-white">
-                  <Printer className="w-5 h-5" />
-                  <span className="text-xs font-medium">3D Printing</span>
+                <TabsTrigger value="additive" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-orange data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-orange/10">
+                  <Printer className="w-8 h-8" />
+                  <span className="text-sm font-semibold">3D Printing</span>
+                  <span className="text-xs opacity-80 hidden lg:block">Additive Mfg</span>
                 </TabsTrigger>
-                <TabsTrigger value="cnc" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
-                  <Settings className="w-5 h-5" />
-                  <span className="text-xs font-medium">CNC Sim</span>
+                <TabsTrigger value="cnc" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-primary/10">
+                  <Settings className="w-8 h-8" />
+                  <span className="text-sm font-semibold">CNC Sim</span>
+                  <span className="text-xs opacity-80 hidden lg:block">Virtual Machining</span>
                 </TabsTrigger>
-                <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
-                  <Wrench className="w-5 h-5" />
-                  <span className="text-xs font-medium">Automotive</span>
+                <TabsTrigger value="automotive" className="flex flex-col items-center gap-3 px-6 py-5 rounded-xl transition-all duration-300 data-[state=active]:bg-aqua data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 hover:bg-aqua/10">
+                  <Wrench className="w-8 h-8" />
+                  <span className="text-sm font-semibold">Automotive</span>
+                  <span className="text-xs opacity-80 hidden lg:block">Vehicle Tech</span>
                 </TabsTrigger>
               </TabsList>
             </div>
