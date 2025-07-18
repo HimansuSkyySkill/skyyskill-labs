@@ -129,7 +129,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-24">
-            <Badge className="bg-gradient-to-r from-primary/20 to-aqua/20 text-primary border-primary/30 mb-8 px-6 py-3 text-base font-semibold">
+            <Badge className="bg-gradient-to-r from-primary/20 to-aqua/20 text-primary border-primary/30 mb-8 px-6 py-3 text-base font-semibold bg-[#368fa6]">
               ✨ The SkyySkill Advantage
             </Badge>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
