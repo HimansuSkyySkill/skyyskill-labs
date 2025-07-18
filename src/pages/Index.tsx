@@ -141,7 +141,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {[{
             icon: <Cog className="w-8 h-8" />,
             title: "In-house Manufacturing & R&D",
@@ -178,35 +178,25 @@ const Index = () => {
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
             highlight: "Scalable Solutions",
             color: "aqua"
-          }].map((item, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border-2 border-border/30 bg-background/80 backdrop-blur-md overflow-hidden relative h-full">
-                {/* Dynamic gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}/10 via-transparent to-${item.color}/5 opacity-0 group-hover:opacity-100 transition-all duration-700`}></div>
-                
-                {/* Floating highlight badge */}
-                <div className="absolute -top-3 -right-3 z-20">
-                  <Badge className={`bg-${item.color} text-white border-${item.color} px-4 py-2 text-sm font-bold shadow-lg transform -rotate-12 group-hover:rotate-0 transition-transform duration-500`}>
-                    {item.highlight}
-                  </Badge>
-                </div>
-
-                <CardHeader className="pb-6 relative z-10 pt-8">
-                  <div className="flex items-center justify-center mb-6">
-                    <div className={`w-20 h-20 bg-gradient-to-br from-${item.color} to-${item.color}/80 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-500`}>
+          }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border bg-background">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>
                       {item.icon}
                     </div>
+                    <Badge className={`bg-${item.color}/10 text-${item.color} border-${item.color}/20`}>
+                      {item.highlight}
+                    </Badge>
                   </div>
-                  <CardTitle className={`text-xl font-bold text-center text-primary group-hover:text-${item.color} transition-colors duration-500 mb-4`}>
+                  <CardTitle className="text-xl font-bold text-primary">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
 
-                <CardContent className="relative z-10 text-center px-6 pb-8">
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground">
                     {item.description}
                   </CardDescription>
-                  
-                  {/* Bottom accent line */}
-                  <div className={`mt-6 h-1 w-20 bg-gradient-to-r from-${item.color} to-${item.color}/50 mx-auto rounded-full group-hover:w-full transition-all duration-700`}></div>
                 </CardContent>
               </Card>)}
           </div>
