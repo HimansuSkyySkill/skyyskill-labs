@@ -39,9 +39,11 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/aaf5a3d2-92bc-430c-8d2f-534eb35d7737.png" alt="SkyySkill Labs" className="w-14 h-14" />
-            <span className="font-bold text-xl text-primary">SkyySkill Labs</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/lovable-uploads/aca49690-bc6f-4f8c-882a-d4b14cc2968b.png" alt="SkyySkill Labs" className="h-12" />
+            <div className="hidden lg:block">
+              <div className="text-xs text-muted-foreground font-medium">Empowering Education with Next-Gen Lab Solutions</div>
+            </div>
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
