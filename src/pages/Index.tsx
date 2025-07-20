@@ -38,9 +38,9 @@ const Index = () => {
   return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" alt="SkyySkill Labs" className="h-16 md:h-20" />
+            <img src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" alt="SkyySkill Labs" className="h-10 md:h-12" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
@@ -56,7 +56,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/90 to-aqua/80"></div>
