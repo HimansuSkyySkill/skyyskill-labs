@@ -75,7 +75,7 @@ const Index = () => {
             
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">Empowering Education with Next-Gen Lab Solutions
             </p>
-            <p className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto">Comprehensive OEM solutions for EV, Solar, Drone, and Advanced Manufacturing labs. Trusted by IITs, NITs, and leading institutions across India.
+            <p className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto">Trusted by IITs, NITs, and 500+ institutions across India.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
