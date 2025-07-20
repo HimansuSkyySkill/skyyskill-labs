@@ -41,9 +41,6 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/lovable-uploads/aca49690-bc6f-4f8c-882a-d4b14cc2968b.png" alt="SkyySkill Labs" className="h-16 md:h-20" />
-            <div className="hidden sm:block">
-              <div className="text-sm text-muted-foreground font-medium">Empowering Education with Next-Gen Lab Solutions</div>
-            </div>
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
