@@ -140,7 +140,7 @@ const Index = () => {
               <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-4">Choose SkyySkill Labs</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              We are a perfect blend of research, skill development, and training - delivering cutting-edge educational solutions that prepare students for the future.
+              Research-driven. Industry-aligned. Future-ready.
             </p>
           </div>
 
