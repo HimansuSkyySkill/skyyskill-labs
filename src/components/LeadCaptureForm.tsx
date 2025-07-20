@@ -96,7 +96,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
             <div className="relative z-10 p-8 flex flex-col justify-center text-white">
               <div className="mb-6">
                 <img 
-                  src="/lovable-uploads/aca49690-bc6f-4f8c-882a-d4b14cc2968b.png" 
+                  src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" 
                   alt="SkyySkill Labs" 
                   className="h-12 mb-4" 
                 />

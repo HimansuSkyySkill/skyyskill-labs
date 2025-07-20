@@ -40,7 +40,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/lovable-uploads/aca49690-bc6f-4f8c-882a-d4b14cc2968b.png" alt="SkyySkill Labs" className="h-16 md:h-20" />
+            <img src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" alt="SkyySkill Labs" className="h-16 md:h-20" />
           </Link>
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
