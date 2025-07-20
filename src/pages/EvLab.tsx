@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { Link } from "react-router-dom";
 import { 
   Zap, 
   Battery, 
@@ -20,7 +21,8 @@ import {
   Microscope,
   BookOpen,
   Target,
-  Trophy
+  Trophy,
+  Home
 } from "lucide-react";
 
 const EvLab = () => {
@@ -128,8 +130,26 @@ const EvLab = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/lovable-uploads/aca49690-bc6f-4f8c-882a-d4b14cc2968b.png" alt="SkyySkill Labs" className="h-16 md:h-20" />
+            <div className="hidden sm:block">
+              <div className="text-sm text-muted-foreground font-medium">Empowering Education with Next-Gen Lab Solutions</div>
+            </div>
+          </Link>
+          <Link to="/">
+            <Button variant="outline" size="sm">
+              <Home className="mr-2 w-4 h-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2">
