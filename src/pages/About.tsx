@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
@@ -121,25 +122,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/lovable-uploads/aaf5a3d2-92bc-430c-8d2f-534eb35d7737.png" alt="SkyySkill Labs" className="w-14 h-14" />
-            <span className="font-bold text-xl text-primary">SkyySkill Labs</span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
-            <Link to="/about" className="text-primary font-medium">About</Link>
-            <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
-            <LeadCaptureForm type="brochure" trigger={
-              <Button variant="cta" size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                Brochure
-              </Button>
-            } />
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

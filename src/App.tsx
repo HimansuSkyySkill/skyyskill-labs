@@ -26,9 +26,11 @@ const App = () => (
           <Route path="/reseller" element={<Reseller />} />
           <Route path="/ev-lab" element={<EvLab />} />
           <Route path="/under-construction" element={<UnderConstruction />} />
+          <Route path="/solar-lab" element={<UnderConstruction title="Solar Lab - Coming Soon" />} />
           <Route path="/drone-lab" element={<UnderConstruction title="Drone Lab - Coming Soon" />} />
           <Route path="/automotive-lab" element={<UnderConstruction title="Automotive Lab - Coming Soon" />} />
           <Route path="/3d-printing-lab" element={<UnderConstruction title="3D Printing Lab - Coming Soon" />} />
+          <Route path="/cnc-lab" element={<UnderConstruction title="CNC Simulation Lab - Coming Soon" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
