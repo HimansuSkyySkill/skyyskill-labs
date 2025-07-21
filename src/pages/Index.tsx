@@ -9,6 +9,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 const Index = () => {
@@ -1079,72 +1080,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-navy text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <img src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" alt="SkyySkill Labs" className="h-12" />
-              </div>
-              <p className="text-white/80 mb-4">
-                Empowering India's future with cutting-edge skill development solutions.
-              </p>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-white hover:text-aqua">
-                  <Globe className="w-5 h-5" />
-                </Button>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Solutions</h4>
-              <div className="space-y-2 text-white/80">
-                <div>EV Skill Labs</div>
-                <div>Solar Energy Labs</div>
-                <div>Drone Technology</div>
-                <div>Additive Manufacturing</div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Company</h4>
-              <div className="space-y-2 text-white/80">
-                <div>About Us</div>
-                <div>Our Clients</div>
-                <div>Careers</div>
-                <div>Contact</div>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Our Facilities</h4>
-              <div className="space-y-2 text-white/80">
-                <div className="flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-aqua" />
-                  <span>Head Office: Hyderabad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Cog className="w-4 h-4 text-green" />
-                  <span>Manufacturing: Bhubaneswar</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-orange" />
-                  <span>R&D Facility: Chennai</span>
-                </div>
-                <div className="mt-3 pt-2 border-t border-white/20">
-                  <div className="text-sm">proposal@evskilllab.com</div>
-                  <div className="text-sm">ashmita.dutta@skyyskill.com</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 SkyySkill Labs. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

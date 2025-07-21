@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import NewsEventsSection from "@/components/NewsEventsSection";
 import { Link } from "react-router-dom";
 import { 
@@ -28,7 +29,10 @@ import {
   Mail,
   Calendar,
   Star,
-  Play
+  Play,
+  ExternalLink,
+  Linkedin,
+  Instagram
 } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 
@@ -433,7 +437,60 @@ const About = () => {
         <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-green/20 rounded-full blur-xl animate-float" style={{animationDelay: '1s'}}></div>
       </section>
 
+      {/* Parent Company Section */}
+      <section className="py-16 bg-gradient-to-r from-primary/5 via-aqua/5 to-green/5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="bg-orange/10 text-orange border-orange/20 mb-6 px-6 py-3 text-lg font-bold">
+              🎓 Parent Company
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              Looking for Training or Courses?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Explore comprehensive skill development programs at our parent company SkyySkill Academy
+            </p>
+            
+            <Button 
+              onClick={() => window.open('https://www.skyyskill.com', '_blank')}
+              variant="hero" 
+              size="lg" 
+              className="text-lg px-10 py-6 h-auto mb-12"
+            >
+              <ExternalLink className="w-6 h-6 mr-3" />
+              Visit our Parent Company Website
+            </Button>
+
+            {/* Social Media Links */}
+            <div className="flex flex-col items-center">
+              <h3 className="text-xl font-semibold text-primary mb-6">Follow Us</h3>
+              <div className="flex gap-6">
+                <Button
+                  onClick={() => window.open('https://www.linkedin.com/company/ev-skill-lab/?viewAsMember=true', '_blank')}
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 h-auto"
+                >
+                  <Linkedin className="w-6 h-6 mr-3" />
+                  LinkedIn
+                </Button>
+                <Button
+                  onClick={() => window.open('https://www.instagram.com/evskilllab/', '_blank')}
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 h-auto"
+                >
+                  <Instagram className="w-6 h-6 mr-3" />
+                  Instagram
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <NewsEventsSection />
+      <Footer />
     </div>
   );
 };
