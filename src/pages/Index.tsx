@@ -46,6 +46,7 @@ const Index = () => {
             <Link to="/ev-lab" className="text-muted-foreground hover:text-primary transition-colors">Labs</Link>
             <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
             <a href="#clients" className="text-muted-foreground hover:text-primary transition-colors">Clients</a>
+            <a href="https://skyyskill.com/career" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Careers</a>
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
             <LeadCaptureForm type="brochure" trigger={<Button variant="cta" size="sm">
                   <Download className="w-4 h-4 mr-2" />
