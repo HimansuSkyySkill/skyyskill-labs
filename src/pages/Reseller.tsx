@@ -53,14 +53,16 @@ const Reseller = () => {
     try {
       // Save reseller application to Supabase
       const { error } = await supabase
-        .from('test_users')
+        .from('reseller_leads')
         .insert([
           {
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            location: `${formData.city} -> ${formData.targetCity}`,
-            "Additional Requirements": ["Reseller Application", formData.companyDetails, formData.additionalMessage]
+            city: formData.city,
+            target_city: formData.targetCity,
+            company_details: formData.companyDetails,
+            additional_message: formData.additionalMessage
           }
         ]);
 

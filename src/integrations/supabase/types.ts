@@ -14,30 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
-      test_users: {
+      reseller_leads: {
         Row: {
+          additional_message: string | null
+          city: string
+          company_details: string
           created_at: string
           email: string
           id: string
-          location: string | null
+          name: string
+          phone: string
+          status: string | null
+          target_city: string
+          updated_at: string
+        }
+        Insert: {
+          additional_message?: string | null
+          city: string
+          company_details: string
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          phone: string
+          status?: string | null
+          target_city: string
+          updated_at?: string
+        }
+        Update: {
+          additional_message?: string | null
+          city?: string
+          company_details?: string
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+          status?: string | null
+          target_city?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      test_users: {
+        Row: {
+          "Additional Requirements": string[] | null
+          "College Name": string | null
+          created_at: string
+          email: string
+          id: string
           name: string
           phone: string | null
           updated_at: string
         }
         Insert: {
+          "Additional Requirements"?: string[] | null
+          "College Name"?: string | null
           created_at?: string
           email: string
           id?: string
-          location?: string | null
           name: string
           phone?: string | null
           updated_at?: string
         }
         Update: {
+          "Additional Requirements"?: string[] | null
+          "College Name"?: string | null
           created_at?: string
           email?: string
           id?: string
-          location?: string | null
           name?: string
           phone?: string | null
           updated_at?: string
