@@ -100,19 +100,19 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 8800889353", "+91 80 4567 8901"],
+      details: ["+91 9237378472", "+91-92373 82498", "+91-9348291070"],
       color: "primary"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@skyyskill.com", "sales@skyyskill.com"],
+      details: ["proposal@evskilllab.com", "ashmita.dutta@skyyskill.com"],
       color: "accent"
     },
     {
-      icon: <Globe className="w-6 h-6" />,
-      title: "Website",
-      details: ["www.skyyskill.com"],
+      icon: <MapPin className="w-6 h-6" />,
+      title: "Head Office",
+      details: ["Dr. Atmaram Estates, 2nd Floor, NH 65, Beside TMC, Hyder Nagar, Kukatpally, Hyderabad, Telangana 500072"],
       color: "primary"
     },
     {
@@ -267,50 +267,74 @@ const Contact = () => {
               </form>
             </div>
 
-            {/* Map and Address */}
+            {/* Office Locations */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">Visit Our Headquarters</h2>
+              <h2 className="text-3xl font-bold mb-6">Our Office Locations</h2>
               
-              {/* Address Card */}
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5" />
-                    SkyySkill Labs HQ
-                  </CardTitle>
+              {/* Hyderabad Office */}
+              <Card className="mb-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <Building2 className="w-6 h-6 text-white" />
+                    </div>
+                    <Badge className="bg-primary/10 text-primary border-primary/20">
+                      Headquarters
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl font-bold text-primary">Hyderabad Office</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-2">
-                    Electronic City Phase 1, Hosur Road<br />
-                    Bangalore, Karnataka 560100<br />
-                    India
-                  </p>
-                  <Badge className="bg-primary/10 text-primary border-primary/20">
-                    Main Office & Manufacturing Unit
-                  </Badge>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Address</div>
+                      <div className="text-muted-foreground">Dr. Atmaram Estates, 2nd Floor, NH 65, Beside TMC, Hyder Nagar, Kukatpally, Hyderabad, Telangana 500072</div>
+                    </div>
+                  </div>
+                  <Button 
+                    onClick={() => window.open('https://maps.app.goo.gl/H2aYGspRFg1MAJDUA', '_blank')}
+                    className="w-full bg-primary hover:bg-primary/90"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    View on Google Maps
+                  </Button>
                 </CardContent>
               </Card>
 
-              {/* Google Map */}
-              <Card>
-                <CardContent className="p-0">
-                  <div className="w-full h-64 bg-muted rounded-lg overflow-hidden">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.985!2d77.663715!3d12.9146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzUyLjYiTiA3N8KwMzknNDkuNCJF!5e0!3m2!1sen!2sin!4v1635782400000"
-                      width="100%" 
-                      height="256" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg"
-                    />
+              {/* Bhubaneswar Office */}
+              <Card className="mb-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 bg-aqua rounded-xl flex items-center justify-center">
+                      <Building2 className="w-6 h-6 text-white" />
+                    </div>
+                    <Badge className="bg-aqua/10 text-aqua border-aqua/20">
+                      Regional Office
+                    </Badge>
                   </div>
+                  <CardTitle className="text-xl font-bold text-primary">Bhubaneswar Office</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Address</div>
+                      <div className="text-muted-foreground">Room Number 302, Campus 11, KIIT University, KIIT TBI, Patia, Bhubaneswar, Odisha 751024</div>
+                    </div>
+                  </div>
+                  <Button 
+                    onClick={() => window.open('https://share.google/KFL2mIuiZ0z3Znp4q', '_blank')}
+                    className="w-full bg-aqua hover:bg-aqua/90"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    View on Google Maps
+                  </Button>
                 </CardContent>
               </Card>
 
               {/* Additional Info */}
-              <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/10">
+              <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
                   <Building2 className="w-4 h-4" />
                   Facility Highlights
