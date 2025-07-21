@@ -107,7 +107,11 @@ const Blogs = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <img 
+                src="/lovable-uploads/02f4a1a9-e31c-48f8-8a7d-c7292df61431.png" 
+                alt="Search" 
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 opacity-60" 
+              />
               <Input
                 placeholder="Search articles..."
                 value={searchTerm}
