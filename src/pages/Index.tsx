@@ -242,14 +242,25 @@ const Index = () => {
               India's most comprehensive EV skill development ecosystem with cutting-edge technology 
               and industry-aligned training programs.
             </p>
-            <Button 
-              onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')}
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-lg px-10 py-6 h-auto"
-            >
-              <Car className="w-6 h-6 mr-3" />
-              Explore Our EV Lab
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')}
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-lg px-8 py-4 h-auto"
+              >
+                <Car className="w-6 h-6 mr-3" />
+                Explore our various labs
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
+                Request Demo
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
+                Download Brochure
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
+                Know More
+              </Button>
+            </div>
           </div>
 
           {/* EV Lab Details */}
@@ -320,13 +331,11 @@ const Index = () => {
               
               {/* Image/Visual Side */}
               <div className="relative bg-gradient-to-br from-primary/20 to-aqua/20 p-8 lg:p-12 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <Car className="w-16 h-16 text-primary" />
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                      <Car className="w-16 h-16 text-primary" />
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-primary mb-2">Industry Ready</h4>
-                  <p className="text-muted-foreground">Complete hands-on training with real-world applications</p>
-                </div>
                 
                 {/* Floating elements for visual appeal */}
                 <div className="absolute top-4 right-4 w-16 h-16 bg-aqua/20 rounded-full animate-float"></div>
@@ -345,7 +354,7 @@ const Index = () => {
               🔬 Technology Labs
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Other <span className="text-aqua">Laboratory Solutions</span>
+              Other Lab/ <span className="text-aqua">CoE Solutions</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Comprehensive lab solutions across emerging technology domains for future-ready skill development.
