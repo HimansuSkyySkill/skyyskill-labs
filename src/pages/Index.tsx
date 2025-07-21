@@ -663,25 +663,25 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-white">
-                  <MapPin className="w-6 h-6 text-aqua" />
+                <div className="flex items-start gap-4 text-white">
+                  <MapPin className="w-6 h-6 text-aqua mt-1" />
                   <div>
-                    <div className="font-semibold">Headquarters</div>
-                    <div className="text-white/80">Hyderabad, Telangana</div>
+                    <div className="font-semibold">Head Office</div>
+                    <div className="text-white/80">Dr. Atmaram Estates, 2nd Floor, NH 65, Beside TMC, Hyder Nagar, Kukatpally, Hyderabad, Telangana 500072</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-white">
-                  <Phone className="w-6 h-6 text-aqua" />
+                <div className="flex items-start gap-4 text-white">
+                  <Phone className="w-6 h-6 text-aqua mt-1" />
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-white/80">+91 9237378472</div>
+                    <div className="text-white/80">+91 9237378472, +91-92373 82498, +91-9348291070</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-white">
-                  <Mail className="w-6 h-6 text-aqua" />
+                <div className="flex items-start gap-4 text-white">
+                  <Mail className="w-6 h-6 text-aqua mt-1" />
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-white/80">contact@skyyskill.com</div>
+                    <div className="text-white/80">proposal@evskilllab.com<br />ashmita.dutta@skyyskill.com</div>
                   </div>
                 </div>
               </div>
@@ -749,21 +749,21 @@ const Index = () => {
                     <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Address</div>
-                      <div className="text-muted-foreground">Hyderabad, Telangana, India</div>
+                      <div className="text-muted-foreground">Dr. Atmaram Estates, 2nd Floor, NH 65, Beside TMC, Hyder Nagar, Kukatpally, Hyderabad, Telangana 500072</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-aqua flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Phone</div>
-                      <div className="text-muted-foreground">+91 9237378472</div>
+                      <div className="text-muted-foreground">+91 9237378472, +91-92373 82498, +91-9348291070</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-aqua flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Email</div>
-                      <div className="text-muted-foreground">contact@skyyskill.com</div>
+                      <div className="text-muted-foreground">proposal@evskilllab.com<br />ashmita.dutta@skyyskill.com</div>
                     </div>
                   </div>
                 </div>
@@ -796,21 +796,21 @@ const Index = () => {
                     <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Address</div>
-                      <div className="text-muted-foreground">Bhubaneswar, Odisha, India</div>
+                      <div className="text-muted-foreground">Room Number 302, Campus 11, KIIT University, KIIT TBI, Patia, Bhubaneswar, Odisha 751024</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-aqua flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Phone</div>
-                      <div className="text-muted-foreground">+91 9237378472</div>
+                      <div className="text-muted-foreground">+91 9237378472, +91-92373 82498, +91-9348291070</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-aqua flex-shrink-0" />
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Email</div>
-                      <div className="text-muted-foreground">contact@skyyskill.com</div>
+                      <div className="text-muted-foreground">proposal@evskilllab.com<br />ashmita.dutta@skyyskill.com</div>
                     </div>
                   </div>
                 </div>
@@ -887,11 +887,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <span className="font-bold text-xl text-white">SkyySkill Labs</span>
+              <div className="flex items-center space-x-3 mb-4">
+                <img src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" alt="SkyySkill Labs" className="h-12" />
               </div>
               <p className="text-white/80 mb-4">
                 Empowering India's future with cutting-edge skill development solutions.
@@ -924,11 +921,24 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
+              <h4 className="font-semibold text-lg mb-4">Our Facilities</h4>
               <div className="space-y-2 text-white/80">
-                <div>Bengaluru, Karnataka</div>
-                <div>+91 9876543210</div>
-                <div>contact@skyyskill.com</div>
+                <div className="flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-aqua" />
+                  <span>Head Office: Hyderabad</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cog className="w-4 h-4 text-green" />
+                  <span>Manufacturing: Bhubaneswar</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-orange" />
+                  <span>R&D Facility: Chennai</span>
+                </div>
+                <div className="mt-3 pt-2 border-t border-white/20">
+                  <div className="text-sm">proposal@evskilllab.com</div>
+                  <div className="text-sm">ashmita.dutta@skyyskill.com</div>
+                </div>
               </div>
             </div>
           </div>
