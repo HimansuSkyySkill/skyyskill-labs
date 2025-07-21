@@ -118,7 +118,7 @@ const Index = () => {
       }}></div>
       </section>
 
-      <SlidingUSPSection />
+      
 
       {/* Electric Vehicle CoE Section */}
       <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
@@ -134,23 +134,26 @@ const Index = () => {
               India's most comprehensive EV skill development ecosystem with cutting-edge technology 
               and industry-aligned training programs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-center max-w-4xl mx-auto">
               <Button 
                 onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')}
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-lg px-8 py-4 h-auto"
+                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 h-auto group"
               >
-                <Car className="w-6 h-6 mr-3" />
-                Explore our various labs
+                <Car className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium">Explore our various labs</span>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Request Demo
+              <Button variant="outline" size="lg" className="border-2 border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 px-6 py-4 h-auto group">
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium">Request Demo</span>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Download Brochure
+              <Button variant="outline" size="lg" className="border-2 border-aqua/30 text-aqua hover:bg-aqua hover:text-white transition-all duration-300 px-6 py-4 h-auto group">
+                <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium">Download Brochure</span>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Know More
+              <Button variant="outline" size="lg" className="border-2 border-green/30 text-green hover:bg-green hover:text-white transition-all duration-300 px-6 py-4 h-auto group">
+                <Award className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium">Know More</span>
               </Button>
             </div>
           </div>
@@ -237,6 +240,8 @@ const Index = () => {
           </Card>
         </div>
       </section>
+
+      <SlidingUSPSection />
 
       {/* Other Labs Section */}
       <section id="other-labs" className="py-24 bg-background">
@@ -466,16 +471,48 @@ const Index = () => {
             </h2>
           </div>
 
-          {/* Auto-sliding logos */}
+          {/* Institutional Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+            {[
+              { name: "IIT Delhi", logo: "/src/assets/iit-delhi-logo.jpg", type: "IIT" },
+              { name: "NIT Trichy", logo: "/src/assets/nit-trichy-logo.png", type: "NIT" },
+              { name: "IISc Bangalore", logo: "/src/assets/iisc-logo.jpg", type: "IISc" },
+              { name: "IIT Dharwad", logo: null, type: "IIT" },
+              { name: "NIT Raipur", logo: null, type: "NIT" },
+              { name: "MNIT Bhopal", logo: null, type: "MNIT" }
+            ].map((institution, index) => (
+              <div key={index} className="flex flex-col items-center p-6 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div className="w-16 h-16 mb-4 flex items-center justify-center bg-gradient-to-br from-primary/10 to-aqua/10 rounded-full group-hover:scale-110 transition-transform duration-300">
+                  {institution.logo ? (
+                    <img src={institution.logo} alt={institution.name} className="w-12 h-12 object-contain rounded-full" />
+                  ) : (
+                    <Building2 className="w-8 h-8 text-primary" />
+                  )}
+                </div>
+                <span className="font-semibold text-sm text-center text-foreground group-hover:text-primary transition-colors">
+                  {institution.name}
+                </span>
+                <Badge variant="outline" className="mt-2 text-xs">
+                  {institution.type}
+                </Badge>
+              </div>
+            ))}
+          </div>
+
+          {/* Industry Partners */}
           <div className="relative">
-            <div className="flex animate-marquee space-x-16 items-center">
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>)}
+            <div className="flex animate-marquee space-x-12 items-center">
+              {["Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T", "Maruti Suzuki"].map((client, index) => (
+                <div key={index} className="flex-shrink-0 w-40 h-16 flex items-center justify-center bg-background/60 backdrop-blur-sm rounded-lg border border-border/30 shadow-sm hover:shadow-md transition-all duration-300">
+                  <span className="font-medium text-sm text-foreground whitespace-nowrap">{client}</span>
+                </div>
+              ))}
               {/* Duplicate for seamless loop */}
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>)}
+              {["Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T", "Maruti Suzuki"].map((client, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0 w-40 h-16 flex items-center justify-center bg-background/60 backdrop-blur-sm rounded-lg border border-border/30 shadow-sm hover:shadow-md transition-all duration-300">
+                  <span className="font-medium text-sm text-foreground whitespace-nowrap">{client}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -155,52 +155,52 @@ const SlidingUSPSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-secondary/10 to-background relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-background via-secondary/10 to-background relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-aqua/5 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/3 rounded-full blur-2xl animate-float"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-aqua/3 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <Badge className="bg-gradient-to-r from-primary/90 to-aqua/80 text-white border-0 mb-6 px-6 py-3 text-lg font-bold shadow-lg">
+        <div className="text-center mb-12">
+          <Badge className="bg-gradient-to-r from-primary/80 to-aqua/70 text-white border-0 mb-6 px-6 py-3 text-base font-semibold shadow-md">
             ✨ Why Choose SkyySkill Labs
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Unique Selling <span className="text-aqua">Propositions</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Discover what makes us India's leading lab solution provider
           </p>
         </div>
 
         {/* Main Sliding USP */}
-        <div className="max-w-6xl mx-auto mb-12">
+        <div className="max-w-5xl mx-auto mb-10">
           <div className="relative">
-            <Card className={`${usps[currentSlide].color} border-0 shadow-2xl transform transition-all duration-700 ease-in-out hover:scale-105`}>
-              <CardContent className="p-8 md:p-12">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <Card className={`${usps[currentSlide].color} border-0 shadow-lg transform transition-all duration-700 ease-in-out hover:scale-102`}>
+              <CardContent className="p-6 md:p-8">
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
                   <div className="text-center lg:text-left">
-                    <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-                      <div className={`w-20 h-20 rounded-2xl flex items-center justify-center ${usps[currentSlide].iconColor} bg-white/50 backdrop-blur-sm shadow-lg`}>
-                        {usps[currentSlide].icon}
+                    <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                      <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${usps[currentSlide].iconColor} bg-white/40 backdrop-blur-sm shadow-md`}>
+                        {React.cloneElement(usps[currentSlide].icon, { className: "w-8 h-8" })}
                       </div>
-                      <Badge className="bg-white/20 text-primary border-white/30 backdrop-blur-sm">
+                      <Badge className="bg-white/20 text-primary border-white/30 backdrop-blur-sm text-sm">
                         {usps[currentSlide].subtitle}
                       </Badge>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-primary mb-3">
                       {usps[currentSlide].title}
                     </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {usps[currentSlide].description}
                     </p>
                   </div>
                   
                   <div className="relative flex items-center justify-center">
-                    <div className={`w-64 h-64 rounded-full ${usps[currentSlide].color} ${usps[currentSlide].iconColor} flex items-center justify-center relative`}>
+                    <div className={`w-48 h-48 rounded-full ${usps[currentSlide].color} ${usps[currentSlide].iconColor} flex items-center justify-center relative`}>
                       {usps[currentSlide].vector}
-                      <div className={`w-32 h-32 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center ${usps[currentSlide].iconColor}`}>
-                        {usps[currentSlide].icon}
+                      <div className={`w-24 h-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center ${usps[currentSlide].iconColor}`}>
+                        {React.cloneElement(usps[currentSlide].icon, { className: "w-12 h-12" })}
                       </div>
                     </div>
                   </div>
@@ -225,13 +225,13 @@ const SlidingUSPSection = () => {
         </div>
 
         {/* Slide Indicators */}
-        <div className="flex justify-center gap-3 mb-8">
+        <div className="flex justify-center gap-2 mb-6">
           {usps.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-primary scale-125' : 'bg-primary/30 hover:bg-primary/60'
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-primary scale-110' : 'bg-primary/20 hover:bg-primary/50'
               }`}
             />
           ))}
