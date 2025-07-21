@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   MapPin, 
   Phone, 
@@ -13,22 +15,35 @@ import {
   Clock, 
   Send,
   Building2,
-  HeadphonesIcon
+  HeadphonesIcon,
+  Globe
 } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    institution: "",
-    query: ""
+    phone: "+91 ",
+    company: "",
+    inquiryType: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    if (name === 'phone') {
+      // Ensure it starts with +91 and only contains numbers, spaces, and +
+      if (value === '' || (value.startsWith('+91') && /^[\+\d\s]+$/.test(value))) {
+        setFormData(prev => ({ ...prev, [name]: value }));
+      }
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -37,8 +52,22 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Save inquiry data to Supabase
+      const { error } = await supabase
+        .from('test_users')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.company,
+            "Additional Requirements": [formData.inquiryType, formData.message]
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
       
       toast({
         title: "Inquiry Submitted!",
@@ -49,11 +78,13 @@ const Contact = () => {
       setFormData({
         name: "",
         email: "",
-        phone: "",
-        institution: "",
-        query: ""
+        phone: "+91 ",
+        company: "",
+        inquiryType: "",
+        message: ""
       });
     } catch (error) {
+      console.error('Error saving inquiry:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
@@ -68,7 +99,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+91 98765 43210", "+91 80 4567 8901"],
+      details: ["+91 8800889353", "+91 80 4567 8901"],
       color: "primary"
     },
     {
@@ -78,15 +109,15 @@ const Contact = () => {
       color: "accent"
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Support Hours",
-      details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 2:00 PM"],
+      icon: <Globe className="w-6 h-6" />,
+      title: "Website",
+      details: ["www.skyyskill.com"],
       color: "primary"
     },
     {
-      icon: <HeadphonesIcon className="w-6 h-6" />,
-      title: "Technical Support",
-      details: ["24/7 Online Support", "Remote Assistance Available"],
+      icon: <Clock className="w-6 h-6" />,
+      title: "Support Hours",
+      details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 2:00 PM"],
       color: "accent"
     }
   ];
@@ -181,15 +212,15 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 8800889353"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="institution">Institution / Company *</Label>
+                    <Label htmlFor="company">Company / Institute Name *</Label>
                     <Input
-                      id="institution"
-                      name="institution"
-                      value={formData.institution}
+                      id="company"
+                      name="company"
+                      value={formData.company}
                       onChange={handleInputChange}
                       required
                       placeholder="College/University/Company"
@@ -198,11 +229,27 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="query">Your Query *</Label>
+                  <Label htmlFor="inquiryType">Type of Inquiry *</Label>
+                  <Select value={formData.inquiryType} onValueChange={(value) => handleSelectChange('inquiryType', value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select inquiry type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="product-inquiry">Product Inquiry</SelectItem>
+                      <SelectItem value="quotation-inquiry">Quotation Inquiry</SelectItem>
+                      <SelectItem value="become-reseller">Want to Become a Reseller</SelectItem>
+                      <SelectItem value="collaborate">Want to Collaborate</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Your Message *</Label>
                   <Textarea
-                    id="query"
-                    name="query"
-                    value={formData.query}
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleInputChange}
                     required
                     placeholder="Tell us about your requirements, questions, or how we can help you..."
@@ -231,7 +278,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-2">
-                    123 Innovation Hub, Electronic City Phase 1<br />
+                    Electronic City Phase 1, Hosur Road<br />
                     Bangalore, Karnataka 560100<br />
                     India
                   </p>
@@ -241,17 +288,20 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              {/* Google Map Placeholder */}
+              {/* Google Map */}
               <Card>
                 <CardContent className="p-0">
-                  <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
-                      <p className="text-muted-foreground">
-                        Interactive Google Map<br />
-                        <span className="text-sm">Coming Soon</span>
-                      </p>
-                    </div>
+                  <div className="w-full h-64 bg-muted rounded-lg overflow-hidden">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.985!2d77.663715!3d12.9146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzUyLjYiTiA3N8KwMzknNDkuNCJF!5e0!3m2!1sen!2sin!4v1635782400000"
+                      width="100%" 
+                      height="256" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg"
+                    />
                   </div>
                 </CardContent>
               </Card>

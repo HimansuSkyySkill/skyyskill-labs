@@ -89,6 +89,12 @@ const Index = () => {
                     <Download className="w-6 h-6 mr-3" />
                     Download Catalog
                   </Button>} />
+              <Link to="/reseller">
+                <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-green/10 border-green/30 text-green hover:bg-green hover:text-white">
+                  <Handshake className="w-6 h-6 mr-3" />
+                  Become a Reseller
+                </Button>
+              </Link>
             </div>
 
             {/* Enhanced Metrics */}
