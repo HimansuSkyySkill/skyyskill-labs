@@ -1,3 +1,4 @@
+import FloatingButtons from "./FloatingButtons";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
@@ -31,7 +32,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+    <>
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3">
           <img 
@@ -91,8 +93,10 @@ const Navigation = () => {
             } 
           />
         </div>
-      </div>
-    </nav>
+        </div>
+      </nav>
+      <FloatingButtons />
+    </>
   );
 };
 
