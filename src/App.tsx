@@ -8,6 +8,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reseller from "./pages/Reseller";
 import EvLab from "./pages/EvLab";
+import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
+import BlogAdmin from "./pages/BlogAdmin";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/3d-printing-lab" element={<UnderConstruction title="3D Printing Lab - Coming Soon" />} />
           <Route path="/cnc-lab" element={<UnderConstruction title="CNC Simulation Lab - Coming Soon" />} />
           <Route path="/ai-lab" element={<UnderConstruction title="AI Labs - Coming Soon" />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/admin/blogs" element={<BlogAdmin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

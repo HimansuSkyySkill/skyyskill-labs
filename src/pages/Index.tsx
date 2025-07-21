@@ -842,9 +842,15 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Insights & <span className="text-aqua">Innovation</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground mb-8">
               Stay updated with the latest in skill development and technology
             </p>
+            <Link to="/blogs">
+              <Button variant="outline" size="lg">
+                <BookOpen className="w-5 h-5 mr-2" />
+                View All Blogs
+              </Button>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -852,17 +858,20 @@ const Index = () => {
             title: "The Future of EV Skill Development in India",
             excerpt: "How electric vehicle technology is reshaping automotive education and creating new career opportunities...",
             date: "January 15, 2024",
-            category: "EV Technology"
+            category: "EV Technology",
+            slug: "future-of-ev-skill-development-india"
           }, {
             title: "AI-Powered Learning: Transforming Technical Education",
             excerpt: "Exploring how artificial intelligence and digital twins are revolutionizing hands-on learning experiences...",
             date: "January 10, 2024",
-            category: "Innovation"
+            category: "Innovation",
+            slug: "ai-powered-learning-transforming-technical-education"
           }, {
             title: "Building Centers of Excellence: A Blueprint for Success",
             excerpt: "Key strategies for educational institutions to establish world-class skill development centers...",
             date: "January 5, 2024",
-            category: "Education"
+            category: "Education",
+            slug: "building-centers-of-excellence-blueprint-success"
           }].map((article, index) => <Card key={index} className="border-0 bg-gradient-card shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
@@ -880,10 +889,12 @@ const Index = () => {
                   <CardDescription className="text-base mb-4 line-clamp-3">
                     {article.excerpt}
                   </CardDescription>
-                  <Button variant="ghost" className="p-0 h-auto text-aqua hover:text-aqua/80">
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <Link to={`/blog/${article.slug}`}>
+                    <Button variant="ghost" className="p-0 h-auto text-aqua hover:text-aqua/80">
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>)}
           </div>
