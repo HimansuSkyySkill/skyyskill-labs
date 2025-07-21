@@ -228,28 +228,133 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Product Labs Section */}
-      <section id="labs" className="py-24 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
+      {/* Electric Vehicle CoE Section */}
+      <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
+              🏆 Center of Excellence
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Electric Vehicle <span className="text-aqua">Center of Excellence</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+              India's most comprehensive EV skill development ecosystem with cutting-edge technology 
+              and industry-aligned training programs.
+            </p>
+            <Button 
+              onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')}
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-lg px-10 py-6 h-auto"
+            >
+              <Car className="w-6 h-6 mr-3" />
+              Explore Our EV Lab
+            </Button>
+          </div>
+
+          {/* EV Lab Details */}
+          <Card className="border-0 shadow-2xl bg-gradient-to-br from-background via-background to-secondary/20 overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Content Side */}
+              <div className="p-8 lg:p-12">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-primary text-white shadow-lg">
+                    <Car className="w-6 h-6" />
+                  </div>
+                  <Badge className="bg-primary/10 text-primary border-primary/20">
+                    ASDC Approved
+                  </Badge>
+                </div>
+                
+                <h3 className="text-3xl font-bold text-primary mb-4">Electric Vehicle Technology Lab</h3>
+                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                  Comprehensive EV ecosystem training covering battery technology, motor systems, charging infrastructure, and vehicle diagnostics for the next generation of automotive engineers.
+                </p>
+                
+                <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green" />
+                      Core Modules
+                    </h4>
+                    <div className="space-y-3">
+                      {["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology"].map((feature, index) => 
+                        <div key={index} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm text-muted-foreground">{feature}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green" />
+                      Advanced Features
+                    </h4>
+                    <div className="space-y-3">
+                      {["EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"].map((feature, index) => 
+                        <div key={index} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-orange rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm text-muted-foreground">{feature}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="text-center p-4 bg-primary/5 rounded-xl">
+                    <div className="text-2xl font-bold text-primary">200+</div>
+                    <div className="text-xs text-muted-foreground">Institutions</div>
+                  </div>
+                  <div className="text-center p-4 bg-aqua/5 rounded-xl">
+                    <div className="text-2xl font-bold text-aqua">15K+</div>
+                    <div className="text-xs text-muted-foreground">Students</div>
+                  </div>
+                  <div className="text-center p-4 bg-green/5 rounded-xl">
+                    <div className="text-2xl font-bold text-green">99%</div>
+                    <div className="text-xs text-muted-foreground">Success Rate</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Image/Visual Side */}
+              <div className="relative bg-gradient-to-br from-primary/20 to-aqua/20 p-8 lg:p-12 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <Car className="w-16 h-16 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold text-primary mb-2">Industry Ready</h4>
+                  <p className="text-muted-foreground">Complete hands-on training with real-world applications</p>
+                </div>
+                
+                {/* Floating elements for visual appeal */}
+                <div className="absolute top-4 right-4 w-16 h-16 bg-aqua/20 rounded-full animate-float"></div>
+                <div className="absolute bottom-4 left-4 w-12 h-12 bg-green/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Other Labs Section */}
+      <section id="other-labs" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
-          </Badge>
+              🔬 Technology Labs
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Industry-Leading <span className="text-aqua">Lab Equipment</span>
+              Other <span className="text-aqua">Laboratory Solutions</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              State-of-the-art laboratory solutions designed for next-generation skill development 
-              across emerging technology domains.
+              Comprehensive lab solutions across emerging technology domains for future-ready skill development.
             </p>
           </div>
 
-          <Tabs defaultValue="ev" className="w-full">
+          <Tabs defaultValue="solar" className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-7 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
-                <TabsTrigger value="ev" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
-                  <Car className="w-8 h-8" />
-                  <span className="text-xs font-medium">EV Lab</span>
-                </TabsTrigger>
+              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
                 <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
                   <Sun className="w-8 h-8" />
                   <span className="text-xs font-medium">Solar Lab</span>
@@ -278,17 +383,6 @@ const Index = () => {
             </div>
 
             {[{
-            id: "ev",
-            title: "Electric Vehicle Technology Lab",
-            description: "Comprehensive EV ecosystem training covering battery technology, motor systems, charging infrastructure, and vehicle diagnostics for the next generation of automotive engineers.",
-            features: ["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology", "EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"],
-            color: "primary",
-            stats: {
-              institutions: "200+",
-              students: "15K+",
-              certifications: "ASDC Approved"
-            }
-          }, {
             id: "solar",
             title: "Solar & Renewable Energy Lab",
             description: "Complete renewable energy solutions covering photovoltaic systems, wind energy, energy storage, and smart grid integration for sustainable energy professionals.",
@@ -361,7 +455,6 @@ const Index = () => {
                     <div className="p-8 lg:p-12">
                       <div className="flex items-center gap-3 mb-6">
                         <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-${lab.color} text-white shadow-lg`}>
-                          {lab.id === "ev" && <Car className="w-6 h-6" />}
                           {lab.id === "solar" && <Sun className="w-6 h-6" />}
                           {lab.id === "drone" && <Plane className="w-6 h-6" />}
                           {lab.id === "additive" && <Printer className="w-6 h-6" />}
@@ -527,6 +620,82 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>)}
+          </div>
+        </div>
+      </section>
+
+
+      {/* News & Events Section */}
+      <section className="py-20 bg-gradient-to-br from-green/5 via-background to-aqua/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-gradient-to-r from-green/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
+              <Calendar className="w-5 h-5 mr-2" />
+              News & Events
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Latest <span className="text-aqua">News & Events</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Stay updated with our latest developments, events, and industry insights.
+            </p>
+            <Button 
+              onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')}
+              size="lg" 
+              className="bg-green hover:bg-green/90 text-lg px-10 py-6 h-auto"
+            >
+              <Calendar className="w-5 h-5 mr-3" />
+              View All News & Events
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[{
+              title: "National Skill Development Summit 2024",
+              date: "March 15, 2024",
+              type: "Event",
+              description: "Join us at the National Skill Development Summit where we'll showcase our latest EV lab innovations and training methodologies.",
+              image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=250&fit=crop"
+            }, {
+              title: "Partnership with Leading Automotive Companies",
+              date: "February 28, 2024", 
+              type: "News",
+              description: "SkyySkill Labs announces strategic partnerships with major automotive manufacturers to enhance EV skill development programs.",
+              image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop"
+            }, {
+              title: "New AI-Powered Lab Solutions Launch",
+              date: "February 10, 2024",
+              type: "Product Launch",
+              description: "Introducing our revolutionary AI-integrated laboratory equipment designed for next-generation technical education.",
+              image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop"
+            }].map((item, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Badge variant={item.type === 'Event' ? 'default' : item.type === 'News' ? 'secondary' : 'outline'} className="text-xs">
+                      {item.type}
+                    </Badge>
+                    <div className="flex items-center text-xs text-muted-foreground">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {item.date}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

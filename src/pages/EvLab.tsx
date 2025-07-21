@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import Navigation from "@/components/Navigation";
+import NewsEventsSection from "@/components/NewsEventsSection";
 import { Link } from "react-router-dom";
 import { 
   Zap, 
@@ -487,6 +488,8 @@ const EvLab = () => {
           </div>
         </div>
       </section>
+
+      <NewsEventsSection />
     </div>
   );
 };

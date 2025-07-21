@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import Navigation from "@/components/Navigation";
+import NewsEventsSection from "@/components/NewsEventsSection";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
@@ -431,6 +432,8 @@ const About = () => {
         <div className="absolute top-1/4 left-10 w-20 h-20 bg-aqua/20 rounded-full blur-xl animate-float"></div>
         <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-green/20 rounded-full blur-xl animate-float" style={{animationDelay: '1s'}}></div>
       </section>
+
+      <NewsEventsSection />
     </div>
   );
 };

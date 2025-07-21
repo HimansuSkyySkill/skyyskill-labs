@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import NewsEventsSection from "@/components/NewsEventsSection";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -350,6 +351,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      <NewsEventsSection />
     </div>
   );
 };
