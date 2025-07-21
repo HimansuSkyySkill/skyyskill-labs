@@ -20,7 +20,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phone: "+91 ",
     institution: "",
     labType: "",
     requirement: ""
@@ -87,7 +87,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
       setFormData({
         name: "",
         email: "",
-        phone: "",
+        phone: "+91 ",
         institution: "",
         labType: "",
         requirement: ""
@@ -222,9 +222,16 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
                     id="phone"
                     name="phone"
                     value={formData.phone}
-                    onChange={handleInputChange}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      // Ensure it starts with +91 and only contains numbers, spaces, and +
+                      if (value === '' || (value.startsWith('+91') && /^[\+\d\s]+$/.test(value))) {
+                        handleInputChange(e);
+                      }
+                    }}
                     required
                     placeholder="+91 98765 43210"
+                    defaultValue="+91 "
                     className="h-11"
                   />
                 </div>
@@ -249,11 +256,13 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
                     <SelectValue placeholder="Select lab type you're interested in" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="basic">Basic EV Lab</SelectItem>
-                    <SelectItem value="intermediate">Intermediate EV Lab</SelectItem>
-                    <SelectItem value="advanced">Advanced EV Lab</SelectItem>
-                    <SelectItem value="addon">Add-on Modules</SelectItem>
-                    <SelectItem value="custom">Custom Requirements</SelectItem>
+                    <SelectItem value="ev-lab">EV Lab/ CoE</SelectItem>
+                    <SelectItem value="solar-lab">Solar Lab</SelectItem>
+                    <SelectItem value="drone-lab">Drone Lab</SelectItem>
+                    <SelectItem value="ai-lab">AI Lab</SelectItem>
+                    <SelectItem value="automotive-lab">Automotive Lab</SelectItem>
+                    <SelectItem value="additive-manufacturing">Additive Manufacturing Lab</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
