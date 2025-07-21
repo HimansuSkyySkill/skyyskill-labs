@@ -10,6 +10,7 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SlidingUSPSection from "@/components/SlidingUSPSection";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 const Index = () => {
@@ -117,117 +118,7 @@ const Index = () => {
       }}></div>
       </section>
 
-      {/* Why Us Section */}
-      <section id="about" className="py-32 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-aqua/5 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-24">
-            <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-              ✨ The SkyySkill Advantage
-            </Badge>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
-              Why Leading Institutions 
-              <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-4">Choose SkyySkill Labs</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Research-driven. Industry-aligned. Future-ready.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {[{
-            icon: <Cog className="w-8 h-8" />,
-            title: "In-house Manufacturing & R&D",
-            description: "Complete control over quality, customization, and innovation. Our state-of-the-art facilities ensure precision engineering.",
-            highlight: "100% Made in India",
-            color: "primary"
-          }, {
-            icon: <Award className="w-8 h-8" />,
-            title: "Sector Skill Council Approved",
-            description: "All lab models are certified and aligned with national skill development standards and industry requirements.",
-            highlight: "Government Certified",
-            color: "aqua"
-          }, {
-            icon: <Building2 className="w-8 h-8" />,
-            title: "Premier Institution Network",
-            description: "Trusted by IITs, NITs, Government ITIs, and leading private institutions across India.",
-            highlight: "50+ IITs & NITs",
-            color: "green"
-          }, {
-            icon: <BookOpen className="w-8 h-8" />,
-            title: "Curriculum-Aligned Solutions",
-            description: "Perfect integration with academic programs, from basic concepts to advanced research applications.",
-            highlight: "Future-Ready Skills",
-            color: "orange"
-          }, {
-            icon: <Cpu className="w-8 h-8" />,
-            title: "AI & Digital Twin Enabled",
-            description: "Next-generation technology integration with simulation, virtual reality, and AI-powered learning modules.",
-            highlight: "Industry 4.0 Ready",
-            color: "primary"
-          }, {
-            icon: <Settings className="w-8 h-8" />,
-            title: "Flexible Lab Configurations",
-            description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
-            highlight: "Scalable Solutions",
-            color: "aqua"
-          }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border bg-background">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>
-                      {item.icon}
-                    </div>
-                    <Badge className={`bg-${item.color}/10 text-${item.color} border-${item.color}/20`}>
-                      {item.highlight}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-primary">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                    {item.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>)}
-          </div>
-
-          {/* Stats Section */}
-          <div className="bg-gradient-to-r from-navy/10 via-aqua/5 to-green/10 rounded-3xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                Proven Track Record
-              </h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our commitment to excellence is reflected in our achievements and client satisfaction.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-navy mb-2">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">99%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Support Available</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange mb-2">ISO</div>
-                <div className="text-sm text-muted-foreground">Certified Quality</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SlidingUSPSection />
 
       {/* Electric Vehicle CoE Section */}
       <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
