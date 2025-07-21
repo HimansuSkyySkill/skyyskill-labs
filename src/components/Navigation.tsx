@@ -18,7 +18,8 @@ import {
   Settings, 
   Wrench,
   Home,
-  Phone
+  Phone,
+  Brain
 } from "lucide-react";
 
 const Navigation = () => {
@@ -29,6 +30,7 @@ const Navigation = () => {
     { name: "3D Printing Lab", path: "/3d-printing-lab", icon: Printer },
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
+    { name: "AI Labs", path: "/ai-lab", icon: Brain },
   ];
 
   return (

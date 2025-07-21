@@ -9,7 +9,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake } from "lucide-react";
+import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -245,7 +245,7 @@ const Index = () => {
 
           <Tabs defaultValue="ev" className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-7 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
                 <TabsTrigger value="ev" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
                   <Car className="w-8 h-8" />
                   <span className="text-xs font-medium">EV Lab</span>
@@ -269,6 +269,10 @@ const Index = () => {
                 <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
                   <Wrench className="w-8 h-8" />
                   <span className="text-xs font-medium">Automotive</span>
+                </TabsTrigger>
+                <TabsTrigger value="ai" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
+                  <Brain className="w-8 h-8" />
+                  <span className="text-xs font-medium">AI Labs</span>
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -339,6 +343,17 @@ const Index = () => {
               students: "18K+",
               certifications: "ARAI Recognized"
             }
+          }, {
+            id: "ai",
+            title: "Artificial Intelligence & Machine Learning Lab",
+            description: "Next-generation AI and ML laboratory featuring deep learning frameworks, computer vision, natural language processing, and robotics for emerging technology education.",
+            features: ["Machine Learning Algorithms", "Computer Vision Systems", "Natural Language Processing", "AI-Powered Robotics", "Deep Learning Frameworks", "Industry AI Applications"],
+            color: "green",
+            stats: {
+              institutions: "80+",
+              students: "6K+",
+              certifications: "Industry Aligned"
+            }
           }].map(lab => <TabsContent key={lab.id} value={lab.id} className="mt-0">
                 <Card className="border-0 shadow-2xl bg-gradient-to-br from-background via-background to-secondary/20 overflow-hidden">
                   <div className="grid lg:grid-cols-2 gap-0">
@@ -352,6 +367,7 @@ const Index = () => {
                           {lab.id === "additive" && <Printer className="w-6 h-6" />}
                           {lab.id === "cnc" && <Settings className="w-6 h-6" />}
                           {lab.id === "automotive" && <Wrench className="w-6 h-6" />}
+                          {lab.id === "ai" && <Brain className="w-6 h-6" />}
                         </div>
                         <Badge className={`bg-${lab.color}/10 text-${lab.color} border-${lab.color}/20`}>
                           Next-Gen Technology
