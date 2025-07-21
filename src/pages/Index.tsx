@@ -713,6 +713,120 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Office Locations Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-gradient-to-r from-primary/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
+              <MapPin className="w-5 h-5 mr-2" />
+              Our Locations
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Visit Our <span className="text-aqua">Office Locations</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Connect with us at our state-of-the-art facilities across India
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Hyderabad Office */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge className="bg-primary/10 text-primary border-primary/20">
+                    Headquarters
+                  </Badge>
+                </div>
+                <CardTitle className="text-2xl font-bold text-primary">Hyderabad Office</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Address</div>
+                      <div className="text-muted-foreground">Hyderabad, Telangana, India</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-aqua flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Phone</div>
+                      <div className="text-muted-foreground">+91 9237378472</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-aqua flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Email</div>
+                      <div className="text-muted-foreground">contact@skyyskill.com</div>
+                    </div>
+                  </div>
+                </div>
+                <Button 
+                  onClick={() => window.open('https://maps.app.goo.gl/H2aYGspRFg1MAJDUA', '_blank')}
+                  className="w-full bg-primary hover:bg-primary/90"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  View on Google Maps
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Bhubaneswar Office */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 bg-aqua rounded-xl flex items-center justify-center">
+                    <Building2 className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge className="bg-aqua/10 text-aqua border-aqua/20">
+                    Regional Office
+                  </Badge>
+                </div>
+                <CardTitle className="text-2xl font-bold text-primary">Bhubaneswar Office</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-aqua mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Address</div>
+                      <div className="text-muted-foreground">Bhubaneswar, Odisha, India</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-aqua flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Phone</div>
+                      <div className="text-muted-foreground">+91 9237378472</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-aqua flex-shrink-0" />
+                    <div>
+                      <div className="font-semibold text-foreground">Email</div>
+                      <div className="text-muted-foreground">contact@skyyskill.com</div>
+                    </div>
+                  </div>
+                </div>
+                <Button 
+                  onClick={() => window.open('https://share.google/KFL2mIuiZ0z3Znp4q', '_blank')}
+                  className="w-full bg-aqua hover:bg-aqua/90"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  View on Google Maps
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Section */}
       <section className="py-20 bg-secondary/50">
         <div className="container mx-auto px-4">
