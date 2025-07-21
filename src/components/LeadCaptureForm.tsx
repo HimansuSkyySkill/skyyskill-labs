@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
-import { Download, FileText, X, Building2, Users, Award, Zap } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { Download, FileText, Building2, Users, Award, Zap } from "lucide-react";
 
 interface LeadCaptureFormProps {
   trigger: React.ReactNode;
@@ -22,10 +22,8 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
     email: "",
     phone: "",
     institution: "",
-    designation: "",
-    department: "",
-    requirement: "",
-    sendUpdates: false
+    labType: "",
+    requirement: ""
   });
   const { toast } = useToast();
 
@@ -34,18 +32,43 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const downloadBrochure = () => {
+    // Create a mock PDF download
+    const link = document.createElement('a');
+    link.href = 'data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPD4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovQ29udGVudHMgNCAwIFIKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0xlbmd0aCA0NAo+PgpzdHJlYW0KQlQKNzIgNzIwIFRkCihTa3l5U2tpbGwgTGFicyBCcm9jaHVyZSkgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgNQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDkgMDAwMDAgbiAKMDAwMDAwMDA1OCAwMDAwMCBuIAowMDAwMDAwMTE1IDAwMDAwIG4gCjAwMDAwMDAyMDcgMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSA1Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgozMDEKJSVFT0Y=';
+    link.download = 'SkyySkill-Labs-Brochure.pdf';
+    link.click();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Save lead data to Supabase
+      const { error } = await supabase
+        .from('test_users')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.institution,
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
       
       toast({
         title: "Success!",
         description: type === "brochure" 
-          ? "Brochure download link has been sent to your email."
+          ? "Your information has been saved. Downloading brochure now..."
           : type === "demo"
           ? "Demo request submitted. Our team will contact you soon to schedule."
           : type === "specs"
@@ -53,25 +76,26 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
           : "Your quotation request has been submitted. We'll contact you soon.",
       });
 
+      // Download brochure if requested
+      if (type === "brochure") {
+        setTimeout(() => {
+          downloadBrochure();
+        }, 1000);
+      }
+
       // Reset form and close dialog
       setFormData({
         name: "",
         email: "",
         phone: "",
         institution: "",
-        designation: "",
-        department: "",
-        requirement: "",
-        sendUpdates: false
+        labType: "",
+        requirement: ""
       });
       setOpen(false);
 
-      // Simulate brochure download
-      if (type === "brochure") {
-        // In a real app, this would trigger the actual PDF download
-        console.log("Triggering brochure download...");
-      }
     } catch (error) {
+      console.error('Error saving lead:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
@@ -162,7 +186,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
               </DialogDescription>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium">Full Name *</Label>
@@ -205,20 +229,6 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="designation" className="text-sm font-medium">Designation</Label>
-                  <Input
-                    id="designation"
-                    name="designation"
-                    value={formData.designation}
-                    onChange={handleInputChange}
-                    placeholder="Professor, Lab Manager, etc."
-                    className="h-11"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
                   <Label htmlFor="institution" className="text-sm font-medium">Institution / Company *</Label>
                   <Input
                     id="institution"
@@ -230,44 +240,35 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
                     className="h-11"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="department" className="text-sm font-medium">Department</Label>
-                  <Input
-                    id="department"
-                    name="department"
-                    value={formData.department}
-                    onChange={handleInputChange}
-                    placeholder="Engineering, Science, etc."
-                    className="h-11"
-                  />
-                </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="requirement" className="text-sm font-medium">Requirement / Notes</Label>
+                <Label htmlFor="labType" className="text-sm font-medium">Lab Type of Interest</Label>
+                <Select value={formData.labType} onValueChange={(value) => handleSelectChange('labType', value)}>
+                  <SelectTrigger className="h-11">
+                    <SelectValue placeholder="Select lab type you're interested in" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="basic">Basic EV Lab</SelectItem>
+                    <SelectItem value="intermediate">Intermediate EV Lab</SelectItem>
+                    <SelectItem value="advanced">Advanced EV Lab</SelectItem>
+                    <SelectItem value="addon">Add-on Modules</SelectItem>
+                    <SelectItem value="custom">Custom Requirements</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="requirement" className="text-sm font-medium">Additional Requirements</Label>
                 <Textarea
                   id="requirement"
                   name="requirement"
                   value={formData.requirement}
                   onChange={handleInputChange}
-                  placeholder="Tell us about your specific lab requirements..."
+                  placeholder="Tell us about your specific requirements..."
                   rows={3}
                   className="resize-none"
                 />
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Checkbox
-                  id="sendUpdates"
-                  checked={formData.sendUpdates}
-                  onCheckedChange={(checked) => 
-                    setFormData(prev => ({ ...prev, sendUpdates: checked as boolean }))
-                  }
-                  className="mt-1"
-                />
-                <Label htmlFor="sendUpdates" className="text-sm leading-5 cursor-pointer">
-                  Send me updates about new lab products and solutions
-                </Label>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-end gap-3 pt-6">
