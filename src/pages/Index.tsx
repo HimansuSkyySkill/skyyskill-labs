@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import Autoplay from "embla-carousel-autoplay";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
@@ -332,97 +334,214 @@ const Index = () => {
               
               {/* Lab Images Carousel */}
               <div className="relative bg-gradient-to-br from-primary/10 to-aqua/10 p-4 lg:p-6">
-                <Carousel className="w-full max-w-md mx-auto">
+                <Carousel 
+                  className="w-full max-w-md mx-auto"
+                  plugins={[
+                    Autoplay({
+                      delay: 2000,
+                    }),
+                  ]}
+                >
                   <CarouselContent>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" 
-                          alt="EV Lab Equipment Display" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" 
+                              alt="EV Lab Equipment Display" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" 
+                            alt="EV Lab Equipment Display" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" 
-                          alt="EV Lab Training Systems" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" 
+                              alt="EV Lab Training Systems" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" 
+                            alt="EV Lab Training Systems" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" 
-                          alt="EV Components Lab" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" 
+                              alt="EV Components Lab" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" 
+                            alt="EV Components Lab" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" 
-                          alt="EV Testing Lab Overview" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" 
+                              alt="EV Testing Lab Overview" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" 
+                            alt="EV Testing Lab Overview" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" 
-                          alt="Battery Technology Lab" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" 
+                              alt="Battery Technology Lab" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" 
+                            alt="Battery Technology Lab" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" 
-                          alt="EV Skills Training Center" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" 
+                              alt="EV Skills Training Center" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" 
+                            alt="EV Skills Training Center" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" 
-                          alt="Advanced EV Lab Setup" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" 
+                              alt="Advanced EV Lab Setup" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" 
+                            alt="Advanced EV Lab Setup" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" 
-                          alt="EV Testing Equipment" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" 
+                              alt="EV Testing Equipment" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" 
+                            alt="EV Testing Equipment" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" 
-                          alt="Battery Analysis System" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" 
+                              alt="Battery Analysis System" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" 
+                            alt="Battery Analysis System" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="aspect-video relative rounded-lg overflow-hidden">
-                        <img 
-                          src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" 
-                          alt="Electrical Training Kit" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                            <img 
+                              src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" 
+                              alt="Electrical Training Kit" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl w-full">
+                          <img 
+                            src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" 
+                            alt="Electrical Training Kit" 
+                            className="w-full h-auto object-contain rounded-lg"
+                          />
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                   </CarouselContent>
                   <CarouselPrevious className="left-2" />
