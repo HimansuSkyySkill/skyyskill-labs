@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +7,22 @@ import Footer from "@/components/Footer";
 import { Brain, MessageCircle, Users, Star, Zap, Play, ArrowRight } from "lucide-react";
 
 const AITrainer = () => {
+  const [showMinimized, setShowMinimized] = useState(false);
+  const [chatWindowRef, setChatWindowRef] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (chatWindowRef) {
+        const rect = chatWindowRef.getBoundingClientRect();
+        const isWindowVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        setShowMinimized(!isWindowVisible && window.scrollY > rect.top + window.scrollY);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [chatWindowRef]);
+
   useEffect(() => {
     // Load HeyGen script when component mounts
     const script = document.createElement('script');
@@ -120,64 +136,64 @@ const AITrainer = () => {
         </div>
       </section>
 
-      {/* AI Trainer Interaction Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-secondary/5 to-background">
+      {/* AI Chat Window Section */}
+      <section 
+        ref={(el) => setChatWindowRef(el)}
+        className="py-20 bg-gradient-to-br from-background via-secondary/5 to-background"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Interact with <span className="text-aqua">EV Guru</span>
+              Chat with <span className="text-aqua">SkyySkill's EV AI Guru</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Click the AI avatar below to start your personalized learning journey. 
-              Ask questions, get instant explanations, and explore EV technology concepts interactively.
+              Start your conversation with our AI-powered EV expert. Ask questions, get instant explanations, and explore Electric Vehicle technology interactively.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Card className="border-0 shadow-2xl bg-gradient-to-br from-background via-background to-secondary/20 overflow-hidden">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl font-bold text-primary flex items-center justify-center gap-3">
-                  <Brain className="w-8 h-8 text-aqua" />
-                  Interactive EV Guru
-                </CardTitle>
-                <CardDescription className="text-lg">
-                  Your personal AI trainer for Electric Vehicle technology
-                </CardDescription>
+              <CardHeader className="text-center pb-6 bg-gradient-to-r from-primary/10 via-aqua/10 to-green/10">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-aqua to-primary rounded-xl flex items-center justify-center">
+                    <Brain className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <CardTitle className="text-2xl font-bold text-primary">
+                      SkyySkill's EV AI Guru
+                    </CardTitle>
+                    <CardDescription className="text-lg">
+                      Your Expert AI Trainer for Electric Vehicle Technology
+                    </CardDescription>
+                  </div>
+                </div>
               </CardHeader>
-              <CardContent className="p-8">
-                <div className="bg-gradient-to-br from-primary/5 via-background to-aqua/5 rounded-2xl p-8 text-center">
-                  <div className="mb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-aqua to-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Brain className="w-12 h-12 text-white" />
+              <CardContent className="p-0">
+                <div className="h-[600px] bg-gradient-to-br from-primary/5 via-background to-aqua/5 flex items-center justify-center relative">
+                  {/* Embedded Chat Interface Placeholder */}
+                  <div className="w-full h-full flex flex-col items-center justify-center">
+                    <div className="text-center mb-8">
+                      <div className="w-32 h-32 bg-gradient-to-br from-aqua to-primary rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                        <MessageCircle className="w-16 h-16 text-white" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-primary mb-4">Ready to Chat!</h3>
+                      <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
+                        Click anywhere in this window to start your conversation with SkyySkill's EV AI Guru. 
+                        Ask about battery technology, charging systems, motor efficiency, and more!
+                      </p>
+                      <Button size="lg" className="bg-gradient-to-r from-aqua to-primary text-white border-0 px-8 py-4">
+                        <Play className="w-6 h-6 mr-3" />
+                        Start Conversation
+                      </Button>
                     </div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">EV Guru is Ready!</h3>
-                    <p className="text-muted-foreground mb-6">
-                      Click the floating avatar (bottom-left corner) to start your interactive learning session.
-                      Ask about battery technology, motor systems, charging infrastructure, and more!
-                    </p>
                   </div>
                   
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-aqua/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <MessageCircle className="w-6 h-6 text-aqua" />
-                      </div>
-                      <h4 className="font-semibold text-primary mb-2">Ask Questions</h4>
-                      <p className="text-sm text-muted-foreground">Get instant answers to your EV technology queries</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-green/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Zap className="w-6 h-6 text-green" />
-                      </div>
-                      <h4 className="font-semibold text-primary mb-2">Interactive Learning</h4>
-                      <p className="text-sm text-muted-foreground">Engage in dynamic conversations about complex topics</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-orange/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Users className="w-6 h-6 text-orange" />
-                      </div>
-                      <h4 className="font-semibold text-primary mb-2">Personalized</h4>
-                      <p className="text-sm text-muted-foreground">Tailored learning experience based on your level</p>
+                  {/* Bottom branding */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-background/80 backdrop-blur-sm rounded-full px-6 py-2 border border-border">
+                      <p className="text-sm text-muted-foreground font-medium">
+                        Powered by <span className="text-primary font-bold">SkyySkill Labs</span> • EV AI Guru
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -186,6 +202,47 @@ const AITrainer = () => {
           </div>
         </div>
       </section>
+
+      {/* Minimized Chat Window */}
+      {showMinimized && (
+        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+          <Card className="w-80 h-96 shadow-2xl border-2 border-primary/20 bg-background">
+            <CardHeader className="pb-3 bg-gradient-to-r from-primary/10 via-aqua/10 to-green/10">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-aqua to-primary rounded-lg flex items-center justify-center">
+                    <Brain className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-sm font-bold text-primary">EV AI Guru</CardTitle>
+                    <CardDescription className="text-xs">SkyySkill Labs</CardDescription>
+                  </div>
+                </div>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => setShowMinimized(false)}
+                  className="h-8 w-8 p-0"
+                >
+                  ×
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent className="p-4 h-[280px] flex items-center justify-center bg-gradient-to-br from-primary/5 to-aqua/5">
+              <div className="text-center">
+                <MessageCircle className="w-12 h-12 text-primary mx-auto mb-3 animate-pulse" />
+                <p className="text-sm text-muted-foreground mb-4">Continue your conversation with EV AI Guru</p>
+                <Button size="sm" className="bg-gradient-to-r from-aqua to-primary text-white border-0">
+                  Resume Chat
+                </Button>
+              </div>
+            </CardContent>
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+              <p className="text-xs text-muted-foreground">SkyySkill's EV AI Guru</p>
+            </div>
+          </Card>
+        </div>
+      )}
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-secondary/20 via-background to-secondary/10">
