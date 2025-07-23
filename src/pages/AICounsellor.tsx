@@ -34,9 +34,9 @@ const AICounsellor = () => {
   }, []);
 
   useEffect(() => {
-    // Initialize HeyGen embed script
+    // Initialize HeyGen embed script with new avatar
     const script = document.createElement('script');
-    script.text = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9CbGFja19TdWl0X3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzL2RhNWNiYTZi%0D%0AYzdiMzRjNWVhMTM5Zjc3ZGE5OGZkYzA0XzU1MzcwL3ByZXZpZXdfdGFsa18xLndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiMzA0OTg3ZGU3ZmNjNDlj%0D%0ANDk1MGU4MTE0MTUzZDFjMzAiLCJ1c2VybmFtZSI6IjdmMDk5YjdlMDllNzQyNmI5ZThhNmU3NzA4%0D%0AZmI3MmM0In0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`#heygen-streaming-embed {z-index: 9999;position: fixed;left: 40px;bottom: 40px;width: 200px;height: 200px;border-radius: 50%;border: 2px solid #fff;box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);transition: all linear 0.1s;overflow: hidden;opacity: 0;visibility: hidden;}#heygen-streaming-embed.show {opacity: 1;visibility: visible;}#heygen-streaming-embed.expand {\\\${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}border: 0;border-radius: 8px;}#heygen-streaming-container {width: 100%;height: 100%;}#heygen-streaming-container iframe {width: 100%;height: 100%;border: 0;}\\\`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
+    script.text = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DaGFpcl9TaXR0aW5nX3B1Ymxp%0D%0AYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzL2IxZmY1%0D%0AZWRiZjk2MjQyZTZhYzk0NjkyMjdkZjQwOTI0XzU1MzYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJu%0D%0AZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjMwNDk4N2RlN2Zj%0D%0AYzQ5YzQ5NTBlODExNDE1M2QxYzMwIiwidXNlcm5hbWUiOiI3ZjA5OWI3ZTA5ZTc0MjZiOWU4YTZl%0D%0ANzcwOGZiNzJjNCJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`#heygen-streaming-embed {z-index: 9999;position: fixed;left: 40px;bottom: 40px;width: 200px;height: 200px;border-radius: 50%;border: 2px solid #fff;box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);transition: all linear 0.1s;overflow: hidden;opacity: 0;visibility: hidden;}#heygen-streaming-embed.show {opacity: 1;visibility: visible;}#heygen-streaming-embed.expand {\\\${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}border: 0;border-radius: 8px;}#heygen-streaming-container {width: 100%;height: 100%;}#heygen-streaming-container iframe {width: 100%;height: 100%;border: 0;}\\\`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
     document.head.appendChild(script);
 
     return () => {
@@ -257,6 +257,87 @@ const AICounsellor = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* AI Counsellor Preview Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/20">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-primary to-aqua bg-clip-text text-transparent">
+                  Meet Your AI Counsellor
+                </span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Experience personalized career guidance with our AI-powered counsellor
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* AI Model Preview */}
+              <div className="relative">
+                <div className="aspect-square max-w-md mx-auto relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-aqua/20 rounded-full animate-pulse" />
+                  <div className="absolute inset-4 bg-gradient-to-br from-card to-background rounded-full flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=400&q=80" 
+                      alt="AI Counsellor" 
+                      className="w-full h-full object-cover scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+                  </div>
+                  
+                  {/* Floating indicators */}
+                  <div className="absolute top-4 right-4 w-4 h-4 bg-green rounded-full animate-pulse" />
+                  <div className="absolute bottom-4 left-4 px-3 py-1 bg-card/80 backdrop-blur-sm rounded-full text-xs text-foreground">
+                    AI Online
+                  </div>
+                </div>
+              </div>
+
+              {/* Features List */}
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-aqua to-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Personalized Career Path</h3>
+                    <p className="text-muted-foreground">Get customized recommendations based on your skills, interests, and career goals.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary to-orange rounded-full flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Course Matching</h3>
+                    <p className="text-muted-foreground">Find the perfect programs from our extensive catalog of industry-certified courses.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange to-aqua rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+                    <p className="text-muted-foreground">Available round the clock to answer your questions and guide your learning journey.</p>
+                  </div>
+                </div>
+
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-primary to-aqua text-white px-8 hover:scale-105 transition-all duration-300"
+                  onClick={handleChatStart}
+                >
+                  <Play className="w-5 h-5 mr-2" />
+                  Start Conversation Now
+                </Button>
+              </div>
             </div>
           </div>
         </section>
