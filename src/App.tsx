@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reseller from "./pages/Reseller";
 import EvLab from "./pages/EvLab";
+import AITrainer from "./pages/AITrainer";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/BlogDetail";
 import BlogAdmin from "./pages/BlogAdmin";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/reseller" element={<Reseller />} />
           <Route path="/ev-lab" element={<EvLab />} />
+          <Route path="/ai-trainer" element={<AITrainer />} />
           <Route path="/under-construction" element={<UnderConstruction />} />
           <Route path="/solar-lab" element={<UnderConstruction title="Solar Lab - Coming Soon" />} />
           <Route path="/drone-lab" element={<UnderConstruction title="Drone Lab - Coming Soon" />} />

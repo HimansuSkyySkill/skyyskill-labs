@@ -837,6 +837,37 @@ const Index = () => {
                 </CardContent>
               </Card>)}
           </div>
+
+          {/* AI Trainer Banner */}
+          <div className="mt-16">
+            <Card className="border-0 shadow-2xl bg-gradient-to-r from-primary/10 via-aqua/5 to-green/10 overflow-hidden">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <Badge className="bg-gradient-to-r from-aqua/90 to-primary/80 text-white border-0 mb-6 px-6 py-3 text-lg font-bold shadow-lg">
+                    <Brain className="w-5 h-5 mr-2" />
+                    New Feature
+                  </Badge>
+                  <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                    Meet Your Personal <span className="text-aqua">AI Trainer</span>
+                  </h3>
+                  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+                    Experience interactive learning with our EV Guru. Get instant answers, 
+                    personalized guidance, and hands-on training anytime, anywhere.
+                  </p>
+                  <Link to="/ai-trainer">
+                    <Button 
+                      size="lg" 
+                      className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-10 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    >
+                      <Brain className="w-6 h-6 mr-3" />
+                      Try AI Trainer Now
+                      <ArrowRight className="w-5 h-5 ml-3" />
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
