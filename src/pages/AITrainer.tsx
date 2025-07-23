@@ -13,9 +13,16 @@ const AITrainer = () => {
 
   const handleChatStart = () => {
     setIsChatActive(true);
-    // Trigger HeyGen chat interface
-    const message = { type: 'streaming-embed', action: 'show' };
-    window.postMessage(message, '*');
+    // Trigger HeyGen streaming embed to show
+    const heygenEmbed = document.getElementById('heygen-streaming-embed');
+    if (heygenEmbed) {
+      heygenEmbed.classList.add('show');
+      // Trigger the expand action via postMessage
+      window.postMessage({
+        type: 'streaming-embed',
+        action: 'show'
+      }, '*');
+    }
   };
 
   useEffect(() => {
