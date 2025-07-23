@@ -263,46 +263,6 @@ const AITrainer = () => {
         </div>
       </section>
 
-      {/* Minimized Chat Window */}
-      {showMinimized && (
-        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
-          <Card className="w-80 h-96 shadow-2xl border-2 border-primary/20 bg-background">
-            <CardHeader className="pb-3 bg-gradient-to-r from-primary/10 via-aqua/10 to-green/10">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-aqua to-primary rounded-lg flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-sm font-bold text-primary">EV AI Guru</CardTitle>
-                    <CardDescription className="text-xs">SkyySkill Labs</CardDescription>
-                  </div>
-                </div>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={() => setShowMinimized(false)}
-                  className="h-8 w-8 p-0"
-                >
-                  ×
-                </Button>
-              </div>
-            </CardHeader>
-            <CardContent className="p-4 h-[280px] flex items-center justify-center bg-gradient-to-br from-primary/5 to-aqua/5">
-              <div className="text-center">
-                <MessageCircle className="w-12 h-12 text-primary mx-auto mb-3 animate-pulse" />
-                <p className="text-sm text-muted-foreground mb-4">Continue your conversation with EV AI Guru</p>
-                <Button size="sm" className="bg-gradient-to-r from-aqua to-primary text-white border-0">
-                  Resume Chat
-                </Button>
-              </div>
-            </CardContent>
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
-              <p className="text-xs text-muted-foreground">SkyySkill's EV AI Guru</p>
-            </div>
-          </Card>
-        </div>
-      )}
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-secondary/20 via-background to-secondary/10">
