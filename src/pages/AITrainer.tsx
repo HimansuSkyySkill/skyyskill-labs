@@ -295,6 +295,7 @@ const AITrainer = () => {
                       <Button 
                         size="lg" 
                         className="bg-gradient-to-r from-aqua to-primary text-white border-0 px-8"
+                        onClick={handleChatStart}
                       >
                         <Play className="w-5 h-5 mr-2" />
                         Start Conversation
