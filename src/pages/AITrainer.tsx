@@ -10,6 +10,7 @@ const AITrainer = () => {
   const [showMinimized, setShowMinimized] = useState(false);
   const [chatWindowRef, setChatWindowRef] = useState<HTMLElement | null>(null);
   const [isChatActive, setIsChatActive] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const handleChatStart = () => {
     setIsChatActive(true);
@@ -37,6 +38,16 @@ const AITrainer = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [chatWindowRef]);
+
+  // Cursor tracking for light effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   useEffect(() => {
     // Load HeyGen script when component mounts
@@ -92,23 +103,67 @@ const AITrainer = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Cursor following light */}
+      <div 
+        className="fixed pointer-events-none z-50 w-96 h-96 rounded-full opacity-30 mix-blend-screen transition-all duration-300 ease-out"
+        style={{
+          left: cursorPosition.x - 192,
+          top: cursorPosition.y - 192,
+          background: 'radial-gradient(circle, hsl(var(--aqua) / 0.6) 0%, hsl(var(--primary) / 0.4) 30%, transparent 70%)',
+          filter: 'blur(40px)',
+        }}
+      />
+      
+      {/* Floating particles */}
+      <div className="fixed inset-0 pointer-events-none z-10">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-aqua/20 rounded-full animate-float opacity-60"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${3 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+      
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 bg-gradient-to-br from-primary/20 via-background to-aqua/10 overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-aqua/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-aqua/10 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        
+        {/* Animated grid background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="h-full w-full" style={{
+            backgroundImage: 'linear-gradient(hsl(var(--aqua)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--aqua)) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+            animation: 'grid-move 20s linear infinite'
+          }}></div>
+        </div>
+        
+        {/* Lightning bolt elements */}
+        <div className="absolute top-20 left-10 w-8 h-8 text-aqua/30 animate-spin-slow">
+          <Zap className="w-full h-full" />
+        </div>
+        <div className="absolute bottom-32 right-20 w-6 h-6 text-primary/40 animate-float">
+          <Brain className="w-full h-full" />
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-aqua/90 to-primary/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
-              <Brain className="w-6 h-6 mr-2" />
+            <Badge className="bg-gradient-to-r from-aqua/90 to-primary/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg animate-pulse-glow">
+              <Brain className="w-6 h-6 mr-2 animate-spin-slow" />
               Interactive AI Trainer
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight animate-fade-in">
               Meet Your Personal
-              <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-2">
+              <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-2 animate-gradient-x">
                 EV Guru
               </span>
             </h1>
@@ -117,12 +172,12 @@ const AITrainer = () => {
               instant answers, and interactive lessons on Electric Vehicle technology.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" variant="hero" className="text-lg px-10 py-6 h-auto">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-delay">
+              <Button size="lg" variant="hero" className="text-lg px-10 py-6 h-auto hover:scale-105 transition-all duration-300 animate-pulse-glow">
                 <Play className="w-6 h-6 mr-3" />
                 Start Learning Now
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto">
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto hover:scale-105 transition-all duration-300">
                 <MessageCircle className="w-6 h-6 mr-3" />
                 Learn More
               </Button>
@@ -131,20 +186,20 @@ const AITrainer = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border">
-              <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">24/7</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border hover:bg-white/20 transition-all duration-300 animate-scale-in">
+              <div className="text-4xl md:text-5xl font-bold text-aqua mb-3 animate-pulse-glow">24/7</div>
               <div className="text-muted-foreground text-sm font-medium">Available</div>
             </div>
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border">
-              <div className="text-4xl md:text-5xl font-bold text-green mb-3">50+</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border hover:bg-white/20 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.1s'}}>
+              <div className="text-4xl md:text-5xl font-bold text-green mb-3 animate-pulse-glow">50+</div>
               <div className="text-muted-foreground text-sm font-medium">Topics Covered</div>
             </div>
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border">
-              <div className="text-4xl md:text-5xl font-bold text-orange mb-3">1000+</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border hover:bg-white/20 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.2s'}}>
+              <div className="text-4xl md:text-5xl font-bold text-orange mb-3 animate-pulse-glow">1000+</div>
               <div className="text-muted-foreground text-sm font-medium">Students Trained</div>
             </div>
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-3">98%</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-border hover:bg-white/20 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.3s'}}>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-3 animate-pulse-glow">98%</div>
               <div className="text-muted-foreground text-sm font-medium">Satisfaction Rate</div>
             </div>
           </div>
@@ -322,14 +377,14 @@ const AITrainer = () => {
                 color: "aqua"
               }
             ].map((feature, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border bg-background">
+              <Card key={index} className="group hover:shadow-lg hover:shadow-aqua/20 hover:scale-105 transition-all duration-300 border border-border bg-background animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-16 h-16 bg-${feature.color} rounded-xl flex items-center justify-center text-white`}>
+                    <div className={`w-16 h-16 bg-${feature.color} rounded-xl flex items-center justify-center text-white group-hover:animate-pulse-glow transition-all duration-300`}>
                       {feature.icon}
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-primary">
+                  <CardTitle className="text-xl font-bold text-primary group-hover:text-aqua transition-colors duration-300">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
