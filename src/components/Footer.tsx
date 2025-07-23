@@ -142,6 +142,12 @@ const Footer = () => {
                     Become Reseller
                   </Link>
                 </li>
+                <li>
+                  <Link to="/ai-counsellor" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                    <ArrowRight className="w-3 h-3" />
+                    AI Counsellor
+                  </Link>
+                </li>
               </ul>
             </div>
 
