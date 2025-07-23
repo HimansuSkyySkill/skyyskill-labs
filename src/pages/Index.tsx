@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +24,29 @@ const Index = () => {
     department: "",
     requirement: ""
   });
+
+  // Cursor tracking effect for AI section
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const cursorLight = document.getElementById('cursor-light');
+      if (cursorLight) {
+        const rect = cursorLight.parentElement?.getBoundingClientRect();
+        if (rect) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          cursorLight.style.left = `${x}px`;
+          cursorLight.style.top = `${y}px`;
+          cursorLight.style.transform = 'translate(-50%, -50%)';
+        }
+      }
+    };
+
+    const aiSection = document.getElementById('ai-trainer-section');
+    if (aiSection) {
+      aiSection.addEventListener('mousemove', handleMouseMove);
+      return () => aiSection.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, []);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -840,24 +863,84 @@ const Index = () => {
 
           {/* AI Trainer Banner */}
           <div className="mt-16">
-            <Card className="border-0 shadow-2xl bg-gradient-to-r from-primary/10 via-aqua/5 to-green/10 overflow-hidden">
-              <CardContent className="p-8">
-                <div className="text-center">
-                  <Badge className="bg-gradient-to-r from-aqua/90 to-primary/80 text-white border-0 mb-6 px-6 py-3 text-lg font-bold shadow-lg">
-                    <Brain className="w-5 h-5 mr-2" />
-                    New Feature
+            <Card id="ai-trainer-section" className="border-0 shadow-2xl bg-gradient-to-r from-primary/10 via-aqua/5 to-green/10 overflow-hidden">
+              <CardContent className="p-8 relative overflow-hidden">
+                {/* Animated Background Grid */}
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-aqua/30 to-green/20"></div>
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `
+                      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '20px 20px',
+                    animation: 'grid-move 8s linear infinite'
+                  }}></div>
+                </div>
+
+                {/* Cursor Following Light Effect */}
+                <div 
+                  id="cursor-light"
+                  className="absolute w-96 h-96 bg-gradient-radial from-aqua/30 via-primary/20 to-transparent rounded-full blur-xl pointer-events-none transition-all duration-300 ease-out"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                ></div>
+
+                {/* Floating AI Particles */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-2 h-2 bg-aqua/60 rounded-full animate-float"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        animationDelay: `${i * 0.5}s`,
+                        animationDuration: `${3 + Math.random() * 2}s`
+                      }}
+                    ></div>
+                  ))}
+                </div>
+
+                {/* Main Content */}
+                <div className="relative z-10 text-center">
+                  <Badge className="bg-gradient-to-r from-aqua/90 to-primary/80 text-white border-0 mb-6 px-6 py-3 text-lg font-bold shadow-lg animate-pulse-glow">
+                    <Brain className="w-5 h-5 mr-2 animate-spin-slow" />
+                    AI-Powered Training
                   </Badge>
-                  <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                    Meet Your Personal <span className="text-aqua">AI Trainer</span>
+                  
+                  <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in">
+                    Meet Your Personal <span className="text-transparent bg-clip-text bg-gradient-to-r from-aqua via-green to-primary animate-gradient-x">AI Trainer</span>
                   </h3>
-                  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    Experience interactive learning with our EV Guru. Get instant answers, 
-                    personalized guidance, and hands-on training anytime, anywhere.
+                  
+                  <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto animate-fade-in-delay">
+                    Experience next-generation interactive learning with our EV Guru. 
+                    Get instant AI-powered answers, personalized guidance, and immersive training.
                   </p>
+                  
+                  {/* AI Stats */}
+                  <div className="grid grid-cols-3 gap-4 mb-8 max-w-lg mx-auto">
+                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-aqua/20 hover:border-aqua/40 transition-all animate-scale-in">
+                      <div className="text-2xl font-bold text-aqua">24/7</div>
+                      <div className="text-xs text-muted-foreground">AI Available</div>
+                    </div>
+                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-green/20 hover:border-green/40 transition-all animate-scale-in" style={{animationDelay: '0.1s'}}>
+                      <div className="text-2xl font-bold text-green">∞</div>
+                      <div className="text-xs text-muted-foreground">Learning Paths</div>
+                    </div>
+                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-primary/20 hover:border-primary/40 transition-all animate-scale-in" style={{animationDelay: '0.2s'}}>
+                      <div className="text-2xl font-bold text-primary">AI</div>
+                      <div className="text-xs text-muted-foreground">Powered</div>
+                    </div>
+                  </div>
+
                   <Link to="/ai-trainer">
                     <Button 
                       size="lg" 
-                      className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-10 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      className="relative overflow-hidden bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-10 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
                     >
                       <Brain className="w-6 h-6 mr-3" />
                       Try AI Trainer Now
