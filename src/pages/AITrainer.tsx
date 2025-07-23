@@ -171,22 +171,73 @@ const AITrainer = () => {
               <CardContent className="p-0">
                 <div className="h-[600px] bg-gradient-to-br from-primary/5 via-background to-aqua/5 flex items-center justify-center relative">
                   {/* Embedded Chat Interface Placeholder */}
-                  <div className="w-full h-full flex flex-col items-center justify-center">
-                    <div className="text-center mb-8">
-                      <div className="w-32 h-32 bg-gradient-to-br from-aqua to-primary rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-                        <MessageCircle className="w-16 h-16 text-white" />
+                <div className="w-full h-full flex flex-col">
+                  {/* AI Trainer Video Window */}
+                  <div className="flex-1 bg-gradient-to-br from-slate-100 to-slate-200 rounded-t-2xl relative overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/32906f14-bfdc-42d0-a8db-4d4afc12c00a.png"
+                      alt="SkyySkill AI EV Guru"
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay with controls */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end">
+                      <div className="p-6">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 mb-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <select className="bg-transparent border-none text-sm font-medium focus:outline-none">
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                              </select>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Brain className="w-5 h-5 text-primary" />
+                              <span className="text-sm font-semibold text-primary">SkyySkill AI EV Guru</span>
+                            </div>
+                            <Button 
+                              className="bg-gradient-to-r from-primary to-aqua text-white px-6 py-2 rounded-full hover:shadow-lg transition-all"
+                              size="sm"
+                            >
+                              Chat now
+                            </Button>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-3xl font-bold text-primary mb-4">Ready to Chat!</h3>
-                      <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-                        Click anywhere in this window to start your conversation with SkyySkill's EV AI Guru. 
-                        Ask about battery technology, charging systems, motor efficiency, and more!
-                      </p>
-                      <Button size="lg" className="bg-gradient-to-r from-aqua to-primary text-white border-0 px-8 py-4">
-                        <Play className="w-6 h-6 mr-3" />
+                    </div>
+                    
+                    {/* Status indicator */}
+                    <div className="absolute top-4 left-4">
+                      <div className="bg-green/20 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green rounded-full animate-pulse"></div>
+                        <span className="text-xs font-medium text-green">Online</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Chat Controls */}
+                  <div className="bg-background border-t border-border p-4 rounded-b-2xl">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-aqua to-primary rounded-full flex items-center justify-center">
+                          <MessageCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-primary">Ready to Learn?</h4>
+                          <p className="text-sm text-muted-foreground">Ask me anything about Electric Vehicles</p>
+                        </div>
+                      </div>
+                      <Button 
+                        size="lg" 
+                        className="bg-gradient-to-r from-aqua to-primary text-white border-0 px-8"
+                      >
+                        <Play className="w-5 h-5 mr-2" />
                         Start Conversation
                       </Button>
                     </div>
                   </div>
+                </div>
                   
                   {/* Bottom branding */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
