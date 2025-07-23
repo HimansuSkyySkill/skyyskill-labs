@@ -9,6 +9,14 @@ import { Brain, MessageCircle, Users, Star, Zap, Play, ArrowRight } from "lucide
 const AITrainer = () => {
   const [showMinimized, setShowMinimized] = useState(false);
   const [chatWindowRef, setChatWindowRef] = useState<HTMLElement | null>(null);
+  const [isChatActive, setIsChatActive] = useState(false);
+
+  const handleChatStart = () => {
+    setIsChatActive(true);
+    // Trigger HeyGen chat interface
+    const message = { type: 'streaming-embed', action: 'show' };
+    window.postMessage(message, '*');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -199,6 +207,7 @@ const AITrainer = () => {
                             <Button 
                               className="bg-gradient-to-r from-primary to-aqua text-white px-6 py-2 rounded-full hover:shadow-lg transition-all"
                               size="sm"
+                              onClick={handleChatStart}
                             >
                               Chat now
                             </Button>
