@@ -266,13 +266,6 @@ const AITrainer = () => {
                               <Brain className="w-5 h-5 text-primary" />
                               <span className="text-sm font-semibold text-primary">SkyySkill AI EV Guru</span>
                             </div>
-                            <Button 
-                              className="bg-gradient-to-r from-primary to-aqua text-white px-6 py-2 rounded-full hover:shadow-lg transition-all"
-                              size="sm"
-                              onClick={handleChatStart}
-                            >
-                              Chat now
-                            </Button>
                           </div>
                         </div>
                       </div>
