@@ -1,10 +1,13 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import Navigation from "@/components/Navigation";
 import NewsEventsSection from "@/components/NewsEventsSection";
+import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { 
   Zap, 
@@ -24,10 +27,35 @@ import {
   BookOpen,
   Target,
   Trophy,
-  Home
+  Home,
+  Play,
+  Car,
+  Cpu,
+  Cog,
+  Globe
 } from "lucide-react";
 
 const EvLab = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  // Cursor tracking effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const handleVideoClick = () => {
+    setSelectedVideo("thOcbYE-Vqk");
+  };
+
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
+  };
   const labTypes = {
     basic: {
       title: "Basic CoE",
@@ -131,36 +159,79 @@ const EvLab = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-primary/5 to-aqua/10" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-transparent" />
+        </div>
+      </div>
+
+      {/* Cursor Following Light */}
+      <div 
+        className="fixed w-96 h-96 rounded-full pointer-events-none z-10 opacity-30"
+        style={{
+          left: mousePosition.x - 192,
+          top: mousePosition.y - 192,
+          background: 'radial-gradient(circle, hsl(var(--aqua)) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          transition: 'all 0.1s ease-out'
+        }}
+      />
+
+      {/* Floating Particles */}
+      {[...Array(15)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-2 h-2 bg-primary/20 rounded-full animate-pulse"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 3}s`,
+            animationDuration: `${2 + Math.random() * 2}s`
+          }}
+        />
+      ))}
+
       {/* Navigation */}
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      {/* Enhanced Hero Section */}
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 z-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2">
-              EV Skill Lab – Centre of Excellence
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              India's Most Advanced EV Skill Lab Ecosystem
+          <div className="text-center mb-12 animate-fade-in">
+            <div className="inline-flex items-center px-6 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8">
+              <Zap className="w-4 h-4 mr-2 text-primary animate-pulse" />
+              <span className="text-sm font-medium bg-gradient-to-r from-primary to-aqua bg-clip-text text-transparent">
+                EV Skill Lab – Centre of Excellence
+              </span>
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-primary via-aqua to-green bg-clip-text text-transparent animate-pulse">
+                India's Most Advanced
+              </span>
+              <br />
+              <span className="text-foreground">EV Skill Lab Ecosystem</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto">
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
               From basic hands-on training to research-grade EV test rigs—SkyySkill Labs offers complete, 
               customizable EV Centres of Excellence.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Target className="mr-2 w-4 h-4" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <Button size="lg" className="bg-gradient-to-r from-aqua to-primary text-white border-0 px-8 hover:scale-105 transition-all duration-300">
+                <Target className="mr-2 w-5 h-5" />
                 Explore Lab Models
               </Button>
               
               <LeadCaptureForm
                 type="brochure"
                 trigger={
-                  <Button variant="outline" size="lg">
-                    <Download className="mr-2 w-4 h-4" />
+                  <Button variant="outline" size="lg" className="px-8 hover:scale-105 transition-all duration-300">
+                    <Download className="mr-2 w-5 h-5" />
                     Download Brochure
                   </Button>
                 }
@@ -169,29 +240,154 @@ const EvLab = () => {
               <LeadCaptureForm
                 type="quotation"
                 trigger={
-                  <Button variant="outline" size="lg">
-                    <Calculator className="mr-2 w-4 h-4" />
+                  <Button variant="outline" size="lg" className="px-8 hover:scale-105 transition-all duration-300">
+                    <Calculator className="mr-2 w-5 h-5" />
                     Request Quotation
                   </Button>
                 }
               />
             </div>
-          </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                  {stat.icon}
-                </div>
-                <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-primary to-aqua rounded-full flex items-center justify-center text-white animate-pulse">
+                      {stat.icon}
+                    </div>
+                    <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Why EV CoE Section with Video */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-aqua/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-green/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+              🎯 Why EV CoE is Essential
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why EV CoE is <span className="bg-gradient-to-r from-primary to-aqua bg-clip-text text-transparent">Required at Your College</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Discover the strategic importance of establishing an Electric Vehicle Centre of Excellence
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Video Section */}
+            <div className="relative">
+              <Card className="border-0 shadow-2xl bg-card/50 backdrop-blur-sm overflow-hidden hover:shadow-glow transition-all duration-300 hover:scale-105 group">
+                <CardContent className="p-0">
+                  <div 
+                    className="aspect-video cursor-pointer relative group"
+                    onClick={handleVideoClick}
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/thOcbYE-Vqk/maxresdefault.jpg"
+                      alt="Why EV CoE is Required at Your College"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-all duration-300">
+                      <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <Play className="w-10 h-10 text-white ml-1" />
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
+                      Click to Play
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Benefits List */}
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-aqua to-primary rounded-full flex items-center justify-center flex-shrink-0">
+                  <Car className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Industry Readiness</h3>
+                  <p className="text-muted-foreground">Prepare students for the rapidly growing EV industry with hands-on experience on real-world equipment.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary to-green rounded-full flex items-center justify-center flex-shrink-0">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Certification & Recognition</h3>
+                  <p className="text-muted-foreground">ASDC approved programs ensure your institution meets national skill development standards.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-green to-orange rounded-full flex items-center justify-center flex-shrink-0">
+                  <Cpu className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Future Technology Integration</h3>
+                  <p className="text-muted-foreground">Stay ahead with AI, IoT, and digital twin technologies integrated into lab setups.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange to-aqua rounded-full flex items-center justify-center flex-shrink-0">
+                  <Globe className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Global Standards</h3>
+                  <p className="text-muted-foreground">World-class lab setups that meet international educational and industry benchmarks.</p>
+                </div>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-aqua text-white px-8 mt-8 hover:scale-105 transition-all duration-300"
+                onClick={handleVideoClick}
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Watch Full Video
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Modal */}
+      <Dialog open={!!selectedVideo} onOpenChange={handleCloseVideo}>
+        <DialogContent className="max-w-4xl w-full p-0 border-0 bg-transparent">
+          <div className="relative bg-black rounded-lg overflow-hidden">
+            {selectedVideo && (
+              <div className="aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+                  title="Why EV CoE is Required at Your College"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Explore Lab Models */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -490,6 +686,7 @@ const EvLab = () => {
       </section>
 
       <NewsEventsSection />
+      <Footer />
     </div>
   );
 };
