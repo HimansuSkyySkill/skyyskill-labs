@@ -795,6 +795,219 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Carousel Section */}
+      <section className="py-20 bg-gradient-to-br from-background via-secondary/20 to-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+              🎥 View Our Labs in Action
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              View Our Various <span className="text-aqua">Labs / Products</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Explore our state-of-the-art facilities and innovative training solutions in action
+            </p>
+          </div>
+
+          {/* Video Carousel */}
+          <div className="max-w-6xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/IPcGAYwm2XM"
+                          title="Our CoE at Birla Vishwakarma Mahavidyalaya"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        Our CoE at Birla Vishwakarma Mahavidyalaya
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/rc_MreN-n_0"
+                          title="See our manufacturing facility"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        See our manufacturing facility
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/oo06Dp-2t5E"
+                          title="BMS Can bus protocol training & Research module"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        BMS Can bus protocol training & Research module
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/dn0Rrno-5jY"
+                          title="Lab at NIT Raipur"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        Lab at NIT Raipur
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/dNVI0MIYNrY"
+                          title="Charging System training"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        Charging System training
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/SVkZTWtsrj4"
+                          title="MIDC based variable load Motor controller testing bench"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        MIDC based variable load Motor controller testing bench
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/Ur00tKpaCxY"
+                          title="Li-Ion characteristic training bench"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        Li-Ion characteristic training bench
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-xl bg-background">
+                    <CardContent className="p-6">
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/IR6KCQojENU"
+                          title="Sample lab at Govt Polytechnic"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      </div>
+                      <h3 className="text-lg font-semibold text-center text-primary">
+                        Sample lab at Govt Polytechnic
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
       {/* Clients Section */}
       <section id="clients" className="py-20 bg-secondary/50 overflow-hidden">
         <div className="container mx-auto px-4">
