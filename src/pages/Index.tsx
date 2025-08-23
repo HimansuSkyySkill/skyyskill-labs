@@ -21,89 +21,60 @@ const VideoCarousel = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const carouselRef = useRef<any>(null);
-
-  const videos = [
-    {
-      id: "IPcGAYwm2XM",
-      title: "Our CoE at Birla Vishwakarma Mahavidyalaya",
-      thumbnail: `https://img.youtube.com/vi/IPcGAYwm2XM/maxresdefault.jpg`
-    },
-    {
-      id: "rc_MreN-n_0",
-      title: "See our manufacturing facility",
-      thumbnail: `https://img.youtube.com/vi/rc_MreN-n_0/maxresdefault.jpg`
-    },
-    {
-      id: "oo06Dp-2t5E",
-      title: "BMS Can bus protocol training & Research module",
-      thumbnail: `https://img.youtube.com/vi/oo06Dp-2t5E/maxresdefault.jpg`
-    },
-    {
-      id: "dn0Rrno-5jY",
-      title: "Lab at NIT Raipur",
-      thumbnail: `https://img.youtube.com/vi/dn0Rrno-5jY/maxresdefault.jpg`
-    },
-    {
-      id: "dNVI0MIYNrY",
-      title: "Charging System training",
-      thumbnail: `https://img.youtube.com/vi/dNVI0MIYNrY/maxresdefault.jpg`
-    },
-    {
-      id: "SVkZTWtsrj4",
-      title: "MIDC based variable load Motor controller testing bench",
-      thumbnail: `https://img.youtube.com/vi/SVkZTWtsrj4/maxresdefault.jpg`
-    },
-    {
-      id: "Ur00tKpaCxY",
-      title: "Li-Ion characteristic training bench",
-      thumbnail: `https://img.youtube.com/vi/Ur00tKpaCxY/maxresdefault.jpg`
-    },
-    {
-      id: "IR6KCQojENU",
-      title: "Sample lab at Govt Polytechnic",
-      thumbnail: `https://img.youtube.com/vi/IR6KCQojENU/maxresdefault.jpg`
-    }
-  ];
-
+  const videos = [{
+    id: "IPcGAYwm2XM",
+    title: "Our CoE at Birla Vishwakarma Mahavidyalaya",
+    thumbnail: `https://img.youtube.com/vi/IPcGAYwm2XM/maxresdefault.jpg`
+  }, {
+    id: "rc_MreN-n_0",
+    title: "See our manufacturing facility",
+    thumbnail: `https://img.youtube.com/vi/rc_MreN-n_0/maxresdefault.jpg`
+  }, {
+    id: "oo06Dp-2t5E",
+    title: "BMS Can bus protocol training & Research module",
+    thumbnail: `https://img.youtube.com/vi/oo06Dp-2t5E/maxresdefault.jpg`
+  }, {
+    id: "dn0Rrno-5jY",
+    title: "Lab at NIT Raipur",
+    thumbnail: `https://img.youtube.com/vi/dn0Rrno-5jY/maxresdefault.jpg`
+  }, {
+    id: "dNVI0MIYNrY",
+    title: "Charging System training",
+    thumbnail: `https://img.youtube.com/vi/dNVI0MIYNrY/maxresdefault.jpg`
+  }, {
+    id: "SVkZTWtsrj4",
+    title: "MIDC based variable load Motor controller testing bench",
+    thumbnail: `https://img.youtube.com/vi/SVkZTWtsrj4/maxresdefault.jpg`
+  }, {
+    id: "Ur00tKpaCxY",
+    title: "Li-Ion characteristic training bench",
+    thumbnail: `https://img.youtube.com/vi/Ur00tKpaCxY/maxresdefault.jpg`
+  }, {
+    id: "IR6KCQojENU",
+    title: "Sample lab at Govt Polytechnic",
+    thumbnail: `https://img.youtube.com/vi/IR6KCQojENU/maxresdefault.jpg`
+  }];
   const handleVideoClick = (videoId: string) => {
     setSelectedVideo(videoId);
     setIsAutoPlaying(false);
   };
-
   const handleCloseVideo = () => {
     setSelectedVideo(null);
     setIsAutoPlaying(true);
   };
-
-  return (
-    <div className="max-w-6xl mx-auto">
-      <Carousel
-        ref={carouselRef}
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        plugins={isAutoPlaying ? [
-          Autoplay({
-            delay: 5000,
-          }),
-        ] : []}
-        className="w-full"
-      >
+  return <div className="max-w-6xl mx-auto">
+      <Carousel ref={carouselRef} opts={{
+      align: "start",
+      loop: true
+    }} plugins={isAutoPlaying ? [Autoplay({
+      delay: 5000
+    })] : []} className="w-full">
         <CarouselContent>
-          {videos.map((video, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+          {videos.map((video, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <Card className="border-0 shadow-xl bg-background/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
                 <CardContent className="p-6">
-                  <div 
-                    className="aspect-video mb-4 rounded-lg overflow-hidden cursor-pointer relative group-hover:shadow-lg transition-all duration-300"
-                    onClick={() => handleVideoClick(video.id)}
-                  >
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                  <div className="aspect-video mb-4 rounded-lg overflow-hidden cursor-pointer relative group-hover:shadow-lg transition-all duration-300" onClick={() => handleVideoClick(video.id)}>
+                    <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-all duration-300">
                       <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Play className="w-8 h-8 text-white ml-1" />
@@ -118,8 +89,7 @@ const VideoCarousel = () => {
                   </h3>
                 </CardContent>
               </Card>
-            </CarouselItem>
-          ))}
+            </CarouselItem>)}
         </CarouselContent>
         <CarouselPrevious className="hidden md:flex" />
         <CarouselNext className="hidden md:flex" />
@@ -129,25 +99,13 @@ const VideoCarousel = () => {
       <Dialog open={!!selectedVideo} onOpenChange={handleCloseVideo}>
         <DialogContent className="max-w-4xl w-full p-0 border-0 bg-transparent">
           <div className="relative bg-black rounded-lg overflow-hidden">
-            {selectedVideo && (
-              <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                  title="Video Player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            )}
+            {selectedVideo && <div className="aspect-video">
+                <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`} title="Video Player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full"></iframe>
+              </div>}
           </div>
         </DialogContent>
       </Dialog>
-    </div>
-  );
+    </div>;
 };
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -175,7 +133,6 @@ const Index = () => {
         }
       }
     };
-
     const aiSection = document.getElementById('ai-trainer-section');
     if (aiSection) {
       aiSection.addEventListener('mousemove', handleMouseMove);
@@ -197,8 +154,7 @@ const Index = () => {
     console.log("Form submitted:", formData);
     // Handle form submission here
   };
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <Navigation />
 
@@ -404,11 +360,7 @@ const Index = () => {
               and industry-aligned training programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')}
-                size="lg" 
-                className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
+              <Button onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')} size="lg" className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Car className="w-6 h-6 mr-3" />
                 Explore our various labs
               </Button>
@@ -450,12 +402,10 @@ const Index = () => {
                       Core Modules
                     </h4>
                     <div className="space-y-3">
-                      {["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology"].map((feature, index) => 
-                        <div key={index} className="flex items-start gap-3">
+                      {["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology"].map((feature, index) => <div key={index} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>
-                      )}
+                        </div>)}
                     </div>
                   </div>
                   <div>
@@ -464,12 +414,10 @@ const Index = () => {
                       Advanced Features
                     </h4>
                     <div className="space-y-3">
-                      {["EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"].map((feature, index) => 
-                        <div key={index} className="flex items-start gap-3">
+                      {["EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"].map((feature, index) => <div key={index} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-orange rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>
-                      )}
+                        </div>)}
                     </div>
                   </div>
                 </div>
@@ -492,32 +440,19 @@ const Index = () => {
               
               {/* Lab Images Carousel */}
               <div className="relative bg-gradient-to-br from-primary/10 to-aqua/10 p-4 lg:p-6">
-                <Carousel 
-                  className="w-full max-w-md mx-auto"
-                  plugins={[
-                    Autoplay({
-                      delay: 2000,
-                    }),
-                  ]}
-                >
+                <Carousel className="w-full max-w-md mx-auto" plugins={[Autoplay({
+                delay: 2000
+              })]}>
                   <CarouselContent>
                     <CarouselItem>
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" 
-                              alt="EV Lab Equipment Display" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" alt="EV Lab Equipment Display" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" 
-                            alt="EV Lab Equipment Display" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" alt="EV Lab Equipment Display" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -525,19 +460,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" 
-                              alt="EV Lab Training Systems" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" alt="EV Lab Training Systems" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" 
-                            alt="EV Lab Training Systems" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" alt="EV Lab Training Systems" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -545,19 +472,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" 
-                              alt="EV Components Lab" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" alt="EV Components Lab" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" 
-                            alt="EV Components Lab" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" alt="EV Components Lab" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -565,19 +484,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" 
-                              alt="EV Testing Lab Overview" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" alt="EV Testing Lab Overview" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" 
-                            alt="EV Testing Lab Overview" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" alt="EV Testing Lab Overview" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -585,19 +496,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" 
-                              alt="Battery Technology Lab" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" 
-                            alt="Battery Technology Lab" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -605,19 +508,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" 
-                              alt="EV Skills Training Center" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" 
-                            alt="EV Skills Training Center" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -625,19 +520,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" 
-                              alt="Advanced EV Lab Setup" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" 
-                            alt="Advanced EV Lab Setup" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -645,19 +532,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" 
-                              alt="EV Testing Equipment" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" 
-                            alt="EV Testing Equipment" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -665,19 +544,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" 
-                              alt="Battery Analysis System" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" 
-                            alt="Battery Analysis System" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -685,19 +556,11 @@ const Index = () => {
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img 
-                              src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" 
-                              alt="Electrical Training Kit" 
-                              className="w-full h-full object-cover"
-                            />
+                            <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-full object-cover" />
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
-                          <img 
-                            src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" 
-                            alt="Electrical Training Kit" 
-                            className="w-full h-auto object-contain rounded-lg"
-                          />
+                          <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
@@ -935,21 +798,22 @@ const Index = () => {
         {/* Enhanced Background Design */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-primary/5 to-aqua/10"></div>
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(2px)'
-            }}
-          ></div>
+          <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(2px)'
+        }}></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-background/90"></div>
           
           {/* Floating geometric elements */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-aqua/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-green/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-orange/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-green/10 rounded-full blur-xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-orange/10 rounded-full blur-xl animate-pulse" style={{
+          animationDelay: '2s'
+        }}></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1044,40 +908,30 @@ const Index = () => {
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-aqua/30 to-green/20"></div>
                   <div className="absolute inset-0" style={{
-                    backgroundImage: `
+                  backgroundImage: `
                       linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
                       linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
                     `,
-                    backgroundSize: '20px 20px',
-                    animation: 'grid-move 8s linear infinite'
-                  }}></div>
+                  backgroundSize: '20px 20px',
+                  animation: 'grid-move 8s linear infinite'
+                }}></div>
                 </div>
 
                 {/* Cursor Following Light Effect */}
-                <div 
-                  id="cursor-light"
-                  className="absolute w-96 h-96 bg-gradient-radial from-aqua/30 via-primary/20 to-transparent rounded-full blur-xl pointer-events-none transition-all duration-300 ease-out"
-                  style={{
-                    left: '50%',
-                    top: '50%',
-                    transform: 'translate(-50%, -50%)',
-                  }}
-                ></div>
+                <div id="cursor-light" className="absolute w-96 h-96 bg-gradient-radial from-aqua/30 via-primary/20 to-transparent rounded-full blur-xl pointer-events-none transition-all duration-300 ease-out" style={{
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)'
+              }}></div>
 
                 {/* Floating AI Particles */}
                 <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-2 h-2 bg-aqua/60 rounded-full animate-float"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        animationDelay: `${i * 0.5}s`,
-                        animationDuration: `${3 + Math.random() * 2}s`
-                      }}
-                    ></div>
-                  ))}
+                  {[...Array(8)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-aqua/60 rounded-full animate-float" style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}></div>)}
                 </div>
 
                 {/* Main Content */}
@@ -1102,21 +956,22 @@ const Index = () => {
                       <div className="text-2xl font-bold text-aqua">24/7</div>
                       <div className="text-xs text-muted-foreground">AI Available</div>
                     </div>
-                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-green/20 hover:border-green/40 transition-all animate-scale-in" style={{animationDelay: '0.1s'}}>
+                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-green/20 hover:border-green/40 transition-all animate-scale-in" style={{
+                    animationDelay: '0.1s'
+                  }}>
                       <div className="text-2xl font-bold text-green">∞</div>
                       <div className="text-xs text-muted-foreground">Learning Paths</div>
                     </div>
-                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-primary/20 hover:border-primary/40 transition-all animate-scale-in" style={{animationDelay: '0.2s'}}>
+                    <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-primary/20 hover:border-primary/40 transition-all animate-scale-in" style={{
+                    animationDelay: '0.2s'
+                  }}>
                       <div className="text-2xl font-bold text-primary">AI</div>
                       <div className="text-xs text-muted-foreground">Powered</div>
                     </div>
                   </div>
 
                   <Link to="/ai-trainer">
-                    <Button 
-                      size="lg" 
-                      className="relative overflow-hidden bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-10 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
-                    >
+                    <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-10 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
                       <Brain className="w-6 h-6 mr-3" />
                       Try AI Trainer Now
                       <ArrowRight className="w-5 h-5 ml-3" />
@@ -1144,11 +999,7 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Stay updated with our latest developments, events, and industry insights.
             </p>
-            <Button 
-              onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')}
-              size="lg" 
-              className="bg-green hover:bg-green/90 text-lg px-10 py-6 h-auto"
-            >
+            <Button onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')} size="lg" className="bg-green hover:bg-green/90 text-lg px-10 py-6 h-auto">
               <Calendar className="w-5 h-5 mr-3" />
               View All News & Events
             </Button>
@@ -1156,31 +1007,26 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[{
-              title: "National Skill Development Summit 2024",
-              date: "March 15, 2024",
-              type: "Event",
-              description: "Join us at the National Skill Development Summit where we'll showcase our latest EV lab innovations and training methodologies.",
-              image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=250&fit=crop"
-            }, {
-              title: "Partnership with Leading Automotive Companies",
-              date: "February 28, 2024", 
-              type: "News",
-              description: "SkyySkill Labs announces strategic partnerships with major automotive manufacturers to enhance EV skill development programs.",
-              image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop"
-            }, {
-              title: "New AI-Powered Lab Solutions Launch",
-              date: "February 10, 2024",
-              type: "Product Launch",
-              description: "Introducing our revolutionary AI-integrated laboratory equipment designed for next-generation technical education.",
-              image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop"
-            }].map((item, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+            title: "National Skill Development Summit 2024",
+            date: "March 15, 2024",
+            type: "Event",
+            description: "Join us at the National Skill Development Summit where we'll showcase our latest EV lab innovations and training methodologies.",
+            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=250&fit=crop"
+          }, {
+            title: "Partnership with Leading Automotive Companies",
+            date: "February 28, 2024",
+            type: "News",
+            description: "SkyySkill Labs announces strategic partnerships with major automotive manufacturers to enhance EV skill development programs.",
+            image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop"
+          }, {
+            title: "New AI-Powered Lab Solutions Launch",
+            date: "February 10, 2024",
+            type: "Product Launch",
+            description: "Introducing our revolutionary AI-integrated laboratory equipment designed for next-generation technical education.",
+            image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop"
+          }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -1199,8 +1045,7 @@ const Index = () => {
                     {item.description}
                   </p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -1248,12 +1093,12 @@ const Index = () => {
             }].map((item, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                     <div className="relative overflow-hidden">
-                      <img src={item.image} alt={item.title} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      
                     </div>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      
+                      
                     </CardContent>
                   </Card>
                 </CarouselItem>)}
@@ -1451,10 +1296,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <Button 
-                  onClick={() => window.open('https://maps.app.goo.gl/H2aYGspRFg1MAJDUA', '_blank')}
-                  className="w-full bg-primary hover:bg-primary/90"
-                >
+                <Button onClick={() => window.open('https://maps.app.goo.gl/H2aYGspRFg1MAJDUA', '_blank')} className="w-full bg-primary hover:bg-primary/90">
                   <MapPin className="w-4 h-4 mr-2" />
                   View on Google Maps
                 </Button>
@@ -1498,10 +1340,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <Button 
-                  onClick={() => window.open('https://share.google/KFL2mIuiZ0z3Znp4q', '_blank')}
-                  className="w-full bg-aqua hover:bg-aqua/90"
-                >
+                <Button onClick={() => window.open('https://share.google/KFL2mIuiZ0z3Znp4q', '_blank')} className="w-full bg-aqua hover:bg-aqua/90">
                   <MapPin className="w-4 h-4 mr-2" />
                   View on Google Maps
                 </Button>
@@ -1578,7 +1417,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
 export default Index;
