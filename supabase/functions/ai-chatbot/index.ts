@@ -286,6 +286,10 @@ serve(async (req) => {
     const systemPrompt = generateSystemPrompt(newState);
     console.log('System prompt:', systemPrompt);
 
+    if (!openAIApiKey) {
+      throw new Error('OpenAI API key not configured');
+    }
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -303,16 +307,24 @@ serve(async (req) => {
       }),
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('OpenAI API Error:', response.status, errorText);
+      throw new Error(`OpenAI API Error: ${response.status} - ${errorText}`);
+    }
+
     const aiData = await response.json();
-    console.log('OpenAI API Response:', aiData);
+    console.log('OpenAI API Response:', JSON.stringify(aiData, null, 2));
     
     if (!aiData.choices || aiData.choices.length === 0) {
+      console.error('No choices in OpenAI response:', aiData);
       throw new Error('No response choices from OpenAI API');
     }
     
-    const aiResponse = aiData.choices[0].message.content;
+    const aiResponse = aiData.choices[0].message?.content;
     
     if (!aiResponse) {
+      console.error('Empty or missing content in OpenAI response:', aiData.choices[0]);
       throw new Error('Empty response from OpenAI API');
     }
 
