@@ -24,41 +24,64 @@ export const PhotoGallery = () => {
     setLightboxIndex(prevIndex);
     setSelectedImage(galleryImages[prevIndex]);
   };
-  return <section className="py-20 bg-background">
+  return <section className="py-12 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          
-          
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our <span className="text-aqua">Lab Solutions</span> in Action
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Take a visual tour of our state-of-the-art laboratory equipment and training solutions.
+          </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        {/* Gallery Grid */}
+        <div className="max-w-7xl mx-auto">
           <Carousel 
             className="w-full"
             plugins={[
               Autoplay({
-                delay: 3000,
+                delay: 4000,
                 stopOnInteraction: true,
                 stopOnMouseEnter: true
               })
             ]}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-1">
               {Array.from({
               length: Math.ceil(galleryImages.length / 6)
-            }).map((_, slideIndex) => <CarouselItem key={slideIndex}>
-                  <div className="grid grid-cols-3 gap-2">
+            }).map((_, slideIndex) => <CarouselItem key={slideIndex} className="pl-1">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2">
                     {galleryImages.slice(slideIndex * 6, slideIndex * 6 + 6).map((image, imageIndex) => {
                   const globalIndex = slideIndex * 6 + imageIndex;
-                  return <div key={globalIndex} className="aspect-[3/2] overflow-hidden rounded-md cursor-pointer transition-transform hover:scale-105" onClick={() => openLightbox(image, globalIndex)}>
-                          <img src={image} alt={`Lab gallery image ${globalIndex + 1}`} className="w-full h-full object-cover" />
+                  return <div 
+                    key={globalIndex} 
+                    className="relative group aspect-[4/3] overflow-hidden rounded-lg cursor-pointer transition-all duration-300 hover:shadow-lg" 
+                    onClick={() => openLightbox(image, globalIndex)}
+                  >
+                          <img 
+                            src={image} 
+                            alt={`Lab equipment ${globalIndex + 1}`} 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 border-2 border-transparent group-hover:border-aqua/50 rounded-lg transition-colors duration-300" />
                         </div>;
                 })}
                   </div>
                 </CarouselItem>)}
             </CarouselContent>
-            <CarouselPrevious className="-left-12" />
-            <CarouselNext className="-right-12" />
+            <CarouselPrevious className="-left-8 md:-left-12 bg-white/90 hover:bg-white border shadow-lg" />
+            <CarouselNext className="-right-8 md:-right-12 bg-white/90 hover:bg-white border shadow-lg" />
           </Carousel>
+        </div>
+
+        {/* Navigation Indicators */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {Array.from({ length: Math.ceil(galleryImages.length / 6) }).map((_, index) => (
+            <div key={index} className="w-2 h-2 rounded-full bg-muted-foreground/30" />
+          ))}
         </div>
 
         {/* Lightbox Dialog */}

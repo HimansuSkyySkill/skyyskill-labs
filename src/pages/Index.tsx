@@ -1052,60 +1052,7 @@ const Index = () => {
       </section>
 
       {/* Product Gallery Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-secondary/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-primary/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
-              <Camera className="w-5 h-5 mr-2" />
-              Product Gallery
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Our <span className="text-aqua">Lab Solutions</span> in Action
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Take a visual tour of our state-of-the-art laboratory equipment and training solutions.
-            </p>
-          </div>
-
-          <PhotoGallery />
-
-          <Carousel className="w-full max-w-6xl mx-auto">
-            <CarouselContent>
-              {[{
-              image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-              title: "Advanced EV Lab Setup",
-              description: "Complete electric vehicle training station with battery management systems"
-            }, {
-              image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-              title: "Circuit Analysis Equipment",
-              description: "High-precision electronic testing and measurement instruments"
-            }, {
-              image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
-              title: "Programming & Simulation",
-              description: "Interactive software training modules for technical skills"
-            }, {
-              image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop",
-              title: "Digital Learning Platform",
-              description: "AI-powered learning management system for enhanced education"
-            }, {
-              image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=600&fit=crop",
-              title: "Portable Training Kits",
-              description: "Compact and comprehensive skill development solutions"
-            }].map((item, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                    <div className="relative overflow-hidden">
-                      
-                      
-                    </div>
-                    
-                  </Card>
-                </CarouselItem>)}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-        </div>
-      </section>
+      <PhotoGallery />
 
 
       {/* Contact/Lead Capture */}
