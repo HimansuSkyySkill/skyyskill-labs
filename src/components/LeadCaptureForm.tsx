@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Download, FileText, Building2, Users, Award, Zap } from "lucide-react";
+import { Download, FileText, Building2, Users, Award, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface LeadCaptureFormProps {
   trigger: React.ReactNode;
@@ -17,6 +17,7 @@ interface LeadCaptureFormProps {
 export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +27,26 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
     requirement: ""
   });
   const { toast } = useToast();
+
+  // Product and CoE images for carousel
+  const carouselImages = [
+    "/lovable-uploads/b48fcac1-d0ad-4aec-adbc-401fa917550b.png",
+    "/lovable-uploads/dc658b78-c0dd-4dd1-8f39-534852081ad1.png",
+    "/lovable-uploads/244efa9e-eee2-4439-bf56-4bae9864c2da.png",
+    "/lovable-uploads/b155b82c-93c9-4fd8-ab42-e76e0a4773d0.png",
+    "/lovable-uploads/d4193b1d-d53b-4176-b40c-89d37945c89a.png",
+    "/lovable-uploads/ec2b7cbe-034d-44cb-8df6-bad5b5b519dd.png"
+  ];
+
+  // Auto-scroll carousel
+  useEffect(() => {
+    if (open && type === "quotation") {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [open, type, carouselImages.length]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
