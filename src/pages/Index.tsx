@@ -157,15 +157,6 @@ const Index = () => {
     // Handle form submission here
   };
   return <div className="min-h-screen bg-background">
-      {/* AI Data Flow Elements - 3 Brand Colors */}
-      <div className="fixed inset-0 pointer-events-none z-10">
-        <div className="absolute top-1/4 left-10 w-2 h-2 bg-navy rounded-full animate-data-flow opacity-60"></div>
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-aqua rounded-full animate-data-flow opacity-60" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-green rounded-full animate-data-flow opacity-60" style={{animationDelay: '3s'}}></div>
-        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-navy rounded-full animate-data-flow opacity-60" style={{animationDelay: '4.5s'}}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-aqua rounded-full animate-data-flow opacity-60" style={{animationDelay: '6s'}}></div>
-        <div className="absolute top-1/2 right-1/6 w-2 h-2 bg-green rounded-full animate-data-flow opacity-60" style={{animationDelay: '7.5s'}}></div>
-      </div>
       {/* Navigation */}
       <Navigation />
 
@@ -175,10 +166,10 @@ const Index = () => {
           <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-hero"></div>
           
-          {/* AI Floating Elements - 3 Brand Colors */}
-          <div className="absolute top-1/4 left-10 w-20 h-20 bg-navy/20 rounded-full blur-xl animate-ai-breathe"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-aqua/20 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-2/3 right-1/4 w-24 h-24 bg-green/20 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
+          {/* AI Floating Elements - Reduced Glow */}
+          <div className="absolute top-1/4 left-10 w-20 h-20 bg-navy/10 rounded-full blur-xl animate-ai-breathe"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-aqua/10 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-2/3 right-1/4 w-24 h-24 bg-green/10 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -195,7 +186,7 @@ const Index = () => {
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
               From ITI to IIT, SkyySkill delivers Industry 4.0-aligned, AI-integrated, patented EV Labs
             </p>
-            <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto text-glow">
+            <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto">
               Empowering institutions with cutting-edge infrastructure and innovation capacity.
             </p>
             
