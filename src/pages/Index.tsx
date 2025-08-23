@@ -1049,12 +1049,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Faculty Feedback Section */}
-      <FacultyFeedback />
-
       {/* Product Gallery Section */}
       <PhotoGallery />
 
+
+      {/* Faculty Feedback Section */}
+      <FacultyFeedback />
 
       {/* Contact/Lead Capture */}
       <section id="contact" className="py-16 bg-gradient-hero">

@@ -60,9 +60,9 @@ const FacultyFeedback = () => {
           </Badge>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-            What Faculty Say About Our
+            Meet your AI Trainer-
             <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-2">
-              Centers of Excellence
+              Skyy Guru
             </span>
           </h2>
           
