@@ -11,9 +11,9 @@ const FacultyFeedback = () => {
     {
       id: "c1_TSK9ztRE",
       title: "Faculty Experience - EV Lab Implementation",
-      thumbnail: `https://img.youtube.com/vi/c1_TSK9ztRE/maxresdefault.jpg`,
-      faculty: "Engineering Faculty",
-      institution: "Leading Technical Institute"
+      thumbnail: "/lovable-uploads/1d59208d-8dbb-490c-87e8-0788cad26a88.png",
+      faculty: "Prof. Kusum Tarani",
+      institution: "Bharati Vidyapeeth's College of Engineering, Delhi"
     },
     {
       id: "mOgkZ3j7ZFI", 
