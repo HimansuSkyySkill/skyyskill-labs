@@ -88,13 +88,46 @@ const AIChatbot: React.FC<ChatbotProps> = ({ onClose, isOpen }) => {
         });
       }
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
+      
+      // Handle specific error types
+      let errorTitle = "Oops! Something went wrong";
+      let errorDescription = "Please try again or contact us directly.";
+      
+      if (error?.message) {
+        if (error.message.includes('quota') || error.message.includes('429')) {
+          errorTitle = "Service Temporarily Unavailable";
+          errorDescription = "Our AI service is temporarily busy. Please try the WhatsApp chat below or contact us directly.";
+        } else if (error.message.includes('OpenAI')) {
+          errorTitle = "AI Service Issue";
+          errorDescription = "Our AI service is experiencing issues. Please use WhatsApp chat or contact us directly.";
+        } else if (error.message.includes('network') || error.message.includes('fetch')) {
+          errorTitle = "Connection Issue";
+          errorDescription = "Please check your internet connection and try again.";
+        }
+      }
+      
       toast({
-        title: "Oops! Something went wrong",
-        description: "Please try again or contact us directly.",
+        title: errorTitle,
+        description: errorDescription,
         variant: "destructive",
       });
+      
+      // If there's a quota error, show a fallback message in the chat
+      if (error?.message?.includes('quota') || error?.message?.includes('429')) {
+        const fallbackMessage: Message = {
+          role: 'assistant',
+          content: "I'm currently experiencing high demand. Please use our WhatsApp chat button below to connect with our team directly, or contact us at your convenience. We'll be happy to help!",
+          timestamp: new Date().toISOString()
+        };
+        
+        if (isInitial) {
+          setMessages([fallbackMessage]);
+        } else {
+          setMessages(prev => [...prev, fallbackMessage]);
+        }
+      }
     } finally {
       setIsLoading(false);
     }
