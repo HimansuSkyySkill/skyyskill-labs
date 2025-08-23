@@ -360,7 +360,7 @@ const Index = () => {
               and industry-aligned training programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button onClick={() => window.open('https://lovable.dev/projects/220a884a-d0ea-4802-9181-bbeb12bf1efe', '_blank')} size="lg" className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <Button onClick={() => window.open('https://www.evskilllab.com', '_blank')} size="lg" className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Car className="w-6 h-6 mr-3" />
                 Explore our various labs
               </Button>
