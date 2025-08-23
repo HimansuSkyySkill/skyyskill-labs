@@ -304,7 +304,17 @@ serve(async (req) => {
     });
 
     const aiData = await response.json();
+    console.log('OpenAI API Response:', aiData);
+    
+    if (!aiData.choices || aiData.choices.length === 0) {
+      throw new Error('No response choices from OpenAI API');
+    }
+    
     const aiResponse = aiData.choices[0].message.content;
+    
+    if (!aiResponse) {
+      throw new Error('Empty response from OpenAI API');
+    }
 
     // Update conversation in database
     const conversationData = existingLead?.conversation_data || [];

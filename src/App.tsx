@@ -16,6 +16,7 @@ import BlogAdmin from "./pages/BlogAdmin";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 import ChatbotTrigger from "./components/ChatbotTrigger";
+import WhatsAppChat from "./components/WhatsAppChat";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppChat />
         <ChatbotTrigger />
       </BrowserRouter>
     </TooltipProvider>

@@ -50,14 +50,14 @@ const ChatbotTrigger: React.FC = () => {
   return (
     <>
       {showTrigger && !showChatbot && (
-        <div className="fixed bottom-6 right-6 z-40">
+        <div className="fixed bottom-6 right-6 z-30">
           {!hasSeenPopup ? (
             // First time popup with animation
             <div className="relative">
               <div className="absolute -top-24 -left-32 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg max-w-xs animate-bounce">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-sm font-medium mb-1">👋 Hello there!</p>
+                    <p className="text-sm font-medium mb-1">🤖 Hello there!</p>
                     <p className="text-xs opacity-90">
                       Need help finding the perfect lab solution? Chat with our AI assistant!
                     </p>
@@ -76,18 +76,18 @@ const ChatbotTrigger: React.FC = () => {
               
               <Button
                 onClick={openChatbot}
-                className="rounded-full h-14 w-14 shadow-2xl hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
+                className="rounded-full h-12 w-12 shadow-2xl hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
               >
-                <MessageCircle className="h-6 w-6" />
+                <MessageCircle className="h-5 w-5" />
               </Button>
             </div>
           ) : (
             // Regular floating button
             <Button
               onClick={openChatbot}
-              className="rounded-full h-14 w-14 shadow-2xl hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
+              className="rounded-full h-12 w-12 shadow-2xl hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
             >
-              <MessageCircle className="h-6 w-6" />
+              <MessageCircle className="h-5 w-5" />
             </Button>
           )}
         </div>
