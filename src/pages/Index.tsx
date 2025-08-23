@@ -359,6 +359,23 @@ const Index = () => {
               India's most comprehensive EV skill development ecosystem with cutting-edge technology 
               and industry-aligned training programs.
             </p>
+            {/* Metrics Section */}
+            <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+              <div className="text-center p-4 bg-primary/5 rounded-xl">
+                <div className="text-2xl font-bold text-primary">200+</div>
+                <div className="text-xs text-muted-foreground">Institutions</div>
+              </div>
+              <div className="text-center p-4 bg-aqua/5 rounded-xl">
+                <div className="text-2xl font-bold text-aqua">15K+</div>
+                <div className="text-xs text-muted-foreground">Students</div>
+              </div>
+              <div className="text-center p-4 bg-green/5 rounded-xl">
+                <div className="text-2xl font-bold text-green">99%</div>
+                <div className="text-xs text-muted-foreground">Success Rate</div>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={() => window.open('https://www.evskilllab.com', '_blank')} size="lg" className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <Car className="w-6 h-6 mr-3" />
@@ -432,20 +449,6 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  <div className="text-center p-4 bg-primary/5 rounded-xl">
-                    <div className="text-2xl font-bold text-primary">200+</div>
-                    <div className="text-xs text-muted-foreground">Institutions</div>
-                  </div>
-                  <div className="text-center p-4 bg-aqua/5 rounded-xl">
-                    <div className="text-2xl font-bold text-aqua">15K+</div>
-                    <div className="text-xs text-muted-foreground">Students</div>
-                  </div>
-                  <div className="text-center p-4 bg-green/5 rounded-xl">
-                    <div className="text-2xl font-bold text-green">99%</div>
-                    <div className="text-xs text-muted-foreground">Success Rate</div>
-                  </div>
-                </div>
               </div>
               
               {/* Lab Images Carousel */}
