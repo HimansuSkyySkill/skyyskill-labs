@@ -16,6 +16,7 @@ import NewsEventsSection from "@/components/NewsEventsSection";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import FacultyFeedback from "@/components/FacultyFeedback";
 
 // Video Carousel Component
 const VideoCarousel = () => {
@@ -1047,6 +1048,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Faculty Feedback Section */}
+      <FacultyFeedback />
 
       {/* Product Gallery Section */}
       <PhotoGallery />
