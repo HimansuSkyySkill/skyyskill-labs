@@ -39,7 +39,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3">
           <img 
-            src="/lovable-uploads/43ea47b3-d839-4e69-9efe-a88a36777bbe.png" 
+            src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
             alt="SkyySkill Labs" 
             className="h-10 md:h-12" 
           />
