@@ -12,6 +12,7 @@ import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import NewsEventsSection from "@/components/NewsEventsSection";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
 import { PhotoGallery } from "@/components/PhotoGallery";
@@ -1106,73 +1107,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Achievements & Partnerships Section */}
-      <section className="py-16 bg-gradient-to-br from-secondary/20 via-background to-secondary/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="bg-gradient-to-r from-green/90 to-orange/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
-              <Trophy className="w-5 h-5 mr-2" />
-              Achievements & Partnerships
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Milestones & <span className="text-green">Collaborations</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Celebrating our journey of excellence and strategic partnerships that drive innovation in skill development.
-            </p>
-          </div>
-
-          <Carousel className="w-full max-w-6xl mx-auto">
-            <CarouselContent>
-              {[{
-              image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop",
-              title: "Digital Innovation Showcase",
-              description: "Successfully demonstrated our AI-powered lab solutions at the National Education Technology Summit, receiving recognition from leading educational institutions.",
-              badge: "Innovation Award"
-            }, {
-              image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
-              title: "IIT Collaboration Summit",
-              description: "Strategic partnership meeting with IIT consortium to develop next-generation engineering curricula aligned with Industry 4.0 requirements.",
-              badge: "Partnership"
-            }, {
-              image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
-              title: "State-of-the-Art Facility",
-              description: "Inauguration of our new 50,000 sq ft manufacturing and R&D facility, expanding our capacity to serve 1000+ institutions annually.",
-              badge: "Milestone"
-            }, {
-              image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?w=800&h=600&fit=crop",
-              title: "Corporate Excellence Recognition",
-              description: "Awarded 'Best OEM Partner' by leading automotive companies for our contribution to electric vehicle skill development ecosystem.",
-              badge: "Excellence"
-            }, {
-              image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&h=600&fit=crop",
-              title: "Government Partnership",
-              description: "Signed MoU with Ministry of Skill Development to establish Centers of Excellence across 200+ government institutions nationwide.",
-              badge: "Government MoU"
-            }].map((item, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full">
-                    <div className="relative overflow-hidden">
-                      <img src={item.image} alt={item.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-gradient-to-r from-primary to-aqua text-white border-0 shadow-lg">
-                          <Handshake className="w-4 h-4 mr-1" />
-                          {item.badge}
-                        </Badge>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <CardContent className="p-6 flex-1">
-                      <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>)}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-        </div>
-      </section>
 
       {/* Contact/Lead Capture */}
       <section id="contact" className="py-16 bg-gradient-hero">
