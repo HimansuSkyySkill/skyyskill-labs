@@ -234,13 +234,13 @@ const Index = () => {
       </section>
 
       {/* Why Us Section */}
-      <section id="about" className="py-32 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
+      <section id="about" className="py-16 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-aqua/5 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-24">
+          <div className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
               ✨ The SkyySkill Advantage
             </Badge>
@@ -253,7 +253,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[{
             icon: <Cog className="w-8 h-8" />,
             title: "In-house Manufacturing & R&D",
@@ -346,9 +346,9 @@ const Index = () => {
       </section>
 
       {/* Electric Vehicle CoE Section */}
-      <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section id="ev-coe" className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
               🏆 Center of Excellence
             </Badge>
@@ -575,9 +575,9 @@ const Index = () => {
       </section>
 
       {/* Other Labs Section */}
-      <section id="other-labs" className="py-24 bg-background">
+      <section id="other-labs" className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
               🔬 Technology Labs
             </Badge>
@@ -794,7 +794,7 @@ const Index = () => {
       </section>
 
       {/* Video Carousel Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         {/* Enhanced Background Design */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-navy/10 via-primary/5 to-aqua/10"></div>
@@ -817,7 +817,7 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
               🎥 View Our Labs in Action
             </Badge>
@@ -835,9 +835,9 @@ const Index = () => {
       </section>
 
       {/* Clients Section */}
-      <section id="clients" className="py-20 bg-secondary/50 overflow-hidden">
+      <section id="clients" className="py-12 bg-secondary/50 overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Trusted by India's <span className="text-aqua">Leading Institutions</span>
             </h2>
@@ -859,9 +859,9 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               What Our <span className="text-aqua">Partners Say</span>
             </h2>
@@ -901,7 +901,7 @@ const Index = () => {
           </div>
 
           {/* AI Trainer Banner */}
-          <div className="mt-16">
+          <div className="mt-12">
             <Card id="ai-trainer-section" className="border-0 shadow-2xl bg-gradient-to-r from-primary/10 via-aqua/5 to-green/10 overflow-hidden">
               <CardContent className="p-8 relative overflow-hidden">
                 {/* Animated Background Grid */}
@@ -986,9 +986,9 @@ const Index = () => {
 
 
       {/* News & Events Section */}
-      <section className="py-20 bg-gradient-to-br from-green/5 via-background to-aqua/5">
+      <section className="py-16 bg-gradient-to-br from-green/5 via-background to-aqua/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-green/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
               <Calendar className="w-5 h-5 mr-2" />
               News & Events
@@ -1110,9 +1110,9 @@ const Index = () => {
       </section>
 
       {/* Achievements & Partnerships Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary/20 via-background to-secondary/10">
+      <section className="py-16 bg-gradient-to-br from-secondary/20 via-background to-secondary/10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-green/90 to-orange/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
               <Trophy className="w-5 h-5 mr-2" />
               Achievements & Partnerships
@@ -1178,10 +1178,10 @@ const Index = () => {
       </section>
 
       {/* Contact/Lead Capture */}
-      <section id="contact" className="py-20 bg-gradient-hero">
+      <section id="contact" className="py-16 bg-gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Get in Touch
               </h2>
@@ -1243,9 +1243,9 @@ const Index = () => {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="bg-gradient-to-r from-primary/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
               <MapPin className="w-5 h-5 mr-2" />
               Our Locations
@@ -1351,9 +1351,9 @@ const Index = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 bg-secondary/50">
+      <section className="py-16 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Insights & <span className="text-aqua">Innovation</span>
             </h2>
