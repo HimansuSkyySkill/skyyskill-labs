@@ -440,11 +440,15 @@ const Index = () => {
               
               {/* Lab Images Carousel */}
               <div className="relative bg-gradient-to-br from-primary/10 to-aqua/10 p-4 lg:p-6">
-                <Carousel className="w-full max-w-md mx-auto" plugins={[Autoplay({
-                delay: 2000
+                <Carousel className="w-full max-w-4xl mx-auto" opts={{
+                  align: "start",
+                  loop: true,
+                  slidesToScroll: 2
+                }} plugins={[Autoplay({
+                delay: 4000
               })]}>
-                  <CarouselContent>
-                    <CarouselItem>
+                  <CarouselContent className="-ml-2 md:-ml-4">
+                    <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -456,7 +460,7 @@ const Index = () => {
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
-                    <CarouselItem>
+                    <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -468,7 +472,7 @@ const Index = () => {
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
-                    <CarouselItem>
+                    <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -480,7 +484,7 @@ const Index = () => {
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
-                    <CarouselItem>
+                    <CarouselItem className="pl-2 md:pl-4 md:basis-1/2">
                       <Dialog>
                         <DialogTrigger asChild>
                           <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -489,78 +493,6 @@ const Index = () => {
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full">
                           <img src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" alt="EV Testing Lab Overview" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-auto object-contain rounded-lg" />
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                    <CarouselItem>
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                            <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-full object-cover" />
-                          </div>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full">
-                          <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-auto object-contain rounded-lg" />
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
