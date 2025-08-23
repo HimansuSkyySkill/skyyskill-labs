@@ -134,52 +134,144 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-hidden p-0">
         <div className="flex h-full">
-          {/* Left Side - Hero Image & Benefits */}
+          {/* Left Side - Carousel & Benefits for Quotation, Hero Image for others */}
           <div className="hidden md:flex w-1/2 bg-gradient-to-br from-primary via-primary/90 to-primary/80 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=800&fit=crop&crop=center')] bg-cover bg-center opacity-20" />
-            
-            <div className="relative z-10 p-8 flex flex-col justify-center text-white">
-              <div className="mb-6">
-                <img 
-                  src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
-                  alt="SkyySkill Labs" 
-                  className="h-12 mb-4" 
-                />
-                <h3 className="text-2xl font-bold mb-2">
-                  Transform Your Institution
-                </h3>
-                <p className="text-white/90 mb-6">
-                  Join 150+ institutions who trust SkyySkill Labs for next-gen lab solutions
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <Building2 className="w-4 h-4" />
+            {type === "quotation" ? (
+              // Carousel for quotation popup
+              <>
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="relative w-full h-full">
+                  {/* Carousel Images */}
+                  <div className="absolute inset-0">
+                    <img 
+                      src={carouselImages[currentImageIndex]} 
+                      alt={`Lab Equipment ${currentImageIndex + 1}`}
+                      className="w-full h-full object-cover transition-opacity duration-500"
+                    />
                   </div>
-                  <span className="text-sm">ASDC Approved Lab Equipment</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4" />
+                  
+                  {/* Carousel Controls */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    {carouselImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
                   </div>
-                  <span className="text-sm">10,000+ Students Trained</span>
+                  
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-white" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
+                  >
+                    <ChevronRight className="w-4 h-4 text-white" />
+                  </button>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <Award className="w-4 h-4" />
+                
+                {/* Content Overlay for Quotation */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="relative z-10 p-8 flex flex-col justify-end text-white">
+                  <div className="mb-6">
+                    <img 
+                      src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
+                      alt="SkyySkill Labs" 
+                      className="h-12 mb-4" 
+                    />
+                    <h3 className="text-2xl font-bold mb-2">
+                      High-End Research Labs
+                    </h3>
+                    <p className="text-white/90 mb-6">
+                      We serve ITI to IITs - Trusted by 500+ institutions across India
+                    </p>
                   </div>
-                  <span className="text-sm">IIT/NIT Partner Network</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <Zap className="w-4 h-4" />
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Building2 className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">ASDC Approved Labs</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Award className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">AICTE, NCVET Compliant Labs</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Users className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">30,000+ Students Trained Annually</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Zap className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">Complete Setup & Training Support</span>
+                    </div>
                   </div>
-                  <span className="text-sm">Complete Setup & Training</span>
                 </div>
-              </div>
-            </div>
+              </>
+            ) : (
+              // Original content for other popup types
+              <>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=800&fit=crop&crop=center')] bg-cover bg-center opacity-20" />
+                
+                <div className="relative z-10 p-8 flex flex-col justify-center text-white">
+                  <div className="mb-6">
+                    <img 
+                      src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
+                      alt="SkyySkill Labs" 
+                      className="h-12 mb-4" 
+                    />
+                    <h3 className="text-2xl font-bold mb-2">
+                      Transform Your Institution
+                    </h3>
+                    <p className="text-white/90 mb-6">
+                      Join 500+ institutions who trust SkyySkill Labs for next-gen lab solutions
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Building2 className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">ASDC Approved Labs</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Users className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">30,000+ Students Trained</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Award className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">IIT/NIT Partner Network</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <Zap className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm">Complete Setup & Training</span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Right Side - Form */}
