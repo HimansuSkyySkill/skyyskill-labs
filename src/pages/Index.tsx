@@ -183,29 +183,26 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Link to="/ev-lab">
-                <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
-                  <Play className="w-6 h-6 mr-3" />
-                  Explore Our Labs
-                </Button>
-              </Link>
+              <LeadCaptureForm 
+                type="quotation" 
+                trigger={
+                  <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
+                    <Play className="w-6 h-6 mr-3" />
+                    Get a Quotation
+                  </Button>
+                } 
+              />
               <LeadCaptureForm type="brochure" trigger={<Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
                     <Download className="w-6 h-6 mr-3" />
-                    Download Catalog
+                    Download Brochure
                   </Button>} />
-              <Link to="/reseller">
-                <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-green/10 border-green/30 text-green hover:bg-green hover:text-white">
-                  <Handshake className="w-6 h-6 mr-3" />
-                  Become a Reseller
-                </Button>
-              </Link>
             </div>
 
             {/* Enhanced Metrics */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">500+</div>
-                <div className="text-white/90 text-sm font-medium">Institutions Served</div>
+                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">60+</div>
+                <div className="text-white/90 text-sm font-medium">Labs</div>
                 <div className="text-white/70 text-xs mt-1">Across India</div>
               </div>
               <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">

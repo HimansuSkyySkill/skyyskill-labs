@@ -77,11 +77,6 @@ const Navigation = () => {
             Contact Us
           </Link>
           
-          <Link to="/reseller" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
-            <Store className="w-4 h-4" />
-            Become Our Reseller
-          </Link>
-          
           <a 
             href="https://skyyskill.com/career" 
             target="_blank" 
@@ -100,6 +95,11 @@ const Navigation = () => {
               </Button>
             } 
           />
+          
+          <Link to="/reseller" className="text-orange hover:text-orange/80 transition-colors flex items-center gap-1 font-semibold bg-orange/10 px-3 py-2 rounded-lg border border-orange/20 hover:bg-orange/20">
+            <Store className="w-4 h-4" />
+            Become Our Reseller
+          </Link>
         </div>
         </div>
       </nav>

@@ -8,19 +8,73 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowRight
+  ArrowRight,
+  Store
 } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-navy/95 via-navy/90 to-primary/80 text-white">
+      {/* Become Our Reseller CTA Section */}
+      <section className="py-12 border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Reseller Info */}
+            <div className="text-center lg:text-left">
+              <Badge className="bg-orange/20 text-orange border-orange/30 mb-4 px-4 py-2 text-sm font-bold">
+                🤝 Partnership Opportunity
+              </Badge>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Become Our Reseller
+              </h3>
+              <p className="text-white/80 leading-relaxed">
+                Join our growing network of partners and help shape the future of technical education. 
+                Exclusive territories, comprehensive support, and attractive margins await you.
+              </p>
+            </div>
+            
+            {/* Benefits */}
+            <div className="text-center">
+              <div className="grid grid-cols-1 gap-3 mb-4">
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <div className="w-2 h-2 bg-orange rounded-full"></div>
+                  <span className="text-sm text-white/90">Exclusive Territory Rights</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <div className="w-2 h-2 bg-orange rounded-full"></div>
+                  <span className="text-sm text-white/90">Technical Training & Support</span>
+                </div>
+                <div className="flex items-center justify-center lg:justify-start gap-2">
+                  <div className="w-2 h-2 bg-orange rounded-full"></div>
+                  <span className="text-sm text-white/90">Marketing & Sales Resources</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            <div className="text-center lg:text-right">
+              <Link to="/reseller">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="px-8 py-4 bg-orange/10 border-orange/30 text-orange hover:bg-orange hover:text-white font-semibold text-lg"
+                >
+                  <Store className="w-5 h-5 mr-3" />
+                  Apply Now
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Parent Company Section */}
       <section className="py-8 border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             {/* Parent Company Info */}
             <div className="text-center lg:text-left">
-              <Badge className="bg-orange/20 text-orange border-orange/30 mb-3 px-4 py-2 text-sm font-bold">
+              <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-3 px-4 py-2 text-sm font-bold">
                 🎓 Parent Company
               </Badge>
               <h3 className="text-xl font-bold text-white mb-2">
