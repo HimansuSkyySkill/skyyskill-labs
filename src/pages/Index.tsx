@@ -363,9 +363,14 @@ const Index = () => {
                 <Car className="w-6 h-6 mr-3" />
                 Explore our various labs
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Request Demo
-              </Button>
+              <LeadCaptureForm 
+                type="quotation" 
+                trigger={
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
+                    Get a quotation
+                  </Button>
+                } 
+              />
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
                 Download Brochure
               </Button>
