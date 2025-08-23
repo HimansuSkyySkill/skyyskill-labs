@@ -8,54 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 50% 15%;
+    /* Dark Background Theme */
+    --background: 220 65% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 50% 15%;
+    --card: 220 50% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 15%;
+    --popover: 220 50% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Navy Blue Primary */
-    --primary: 215 50% 15%;
+    /* Deep Navy Primary */
+    --primary: 220 70% 12%;
     --primary-foreground: 0 0% 98%;
 
-    /* Light background secondary */
-    --secondary: 210 30% 98%;
-    --secondary-foreground: 215 50% 15%;
+    /* Darker background secondary */
+    --secondary: 220 45% 15%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 30% 96%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 220 40% 18%;
+    --muted-foreground: 215 20% 70%;
 
-    /* Aqua accent */
-    --accent: 187 85% 45%;
-    --accent-foreground: 0 0% 98%;
+    /* Bright Aqua/Cyan accent */
+    --accent: 187 85% 55%;
+    --accent-foreground: 220 70% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 15% 90%;
-    --input: 215 15% 95%;
-    --ring: 215 50% 15%;
+    --border: 220 35% 25%;
+    --input: 220 40% 20%;
+    --ring: 187 85% 55%;
 
-    /* SkyySkill Brand Colors */
-    --navy: 215 50% 15%;
-    --aqua: 187 85% 45%;
+    /* SkyySkill AI-Ready Brand Colors */
+    --navy: 220 70% 12%;
+    --dark-navy: 220 80% 8%;
+    --aqua: 187 85% 55%;
+    --cyan: 180 100% 60%;
     --green: 142 70% 45%;
     --orange: 25 95% 55%;
+    --electric-blue: 205 100% 75%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--aqua)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--aqua)) 50%, hsl(var(--green)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--secondary)));
+    /* AI-themed Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--dark-navy)), hsl(var(--navy)), hsl(var(--aqua)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-navy)) 0%, hsl(var(--navy)) 30%, hsl(var(--aqua)) 70%, hsl(var(--cyan)) 100%);
+    --gradient-ai: linear-gradient(45deg, hsl(var(--dark-navy)), hsl(var(--electric-blue)), hsl(var(--cyan)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--aqua) / 0.3), transparent 70%);
 
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--navy) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--aqua) / 0.3);
+    /* AI Shadows and Glows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--navy) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--aqua) / 0.4);
+    --shadow-ai-glow: 0 0 60px hsl(var(--cyan) / 0.3), 0 0 120px hsl(var(--electric-blue) / 0.2);
+    --shadow-neural: 0 0 20px hsl(var(--aqua) / 0.6), inset 0 0 20px hsl(var(--cyan) / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-ai: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --radius: 0.5rem;
 
@@ -147,7 +156,46 @@ All colors MUST be HSL.
     box-shadow: 0 0 5px hsl(var(--aqua) / 0.5);
   }
   50% {
-    box-shadow: 0 0 20px hsl(var(--aqua) / 0.8), 0 0 30px hsl(var(--primary) / 0.6);
+    box-shadow: 0 0 20px hsl(var(--aqua) / 0.8), 0 0 30px hsl(var(--cyan) / 0.6);
+  }
+}
+
+@keyframes neural-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(var(--cyan) / 0.3), 0 0 20px hsl(var(--electric-blue) / 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--cyan) / 0.6), 0 0 60px hsl(var(--electric-blue) / 0.4);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ai-breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(0);
+    opacity: 0;
   }
 }
 
@@ -189,6 +237,17 @@ All colors MUST be HSL.
   to { transform: rotate(360deg); }
 }
 
+@keyframes hologram {
+  0%, 100% {
+    text-shadow: 0 0 5px hsl(var(--cyan) / 0.5), 0 0 10px hsl(var(--aqua) / 0.3);
+    transform: translateY(0);
+  }
+  50% {
+    text-shadow: 0 0 10px hsl(var(--cyan) / 0.8), 0 0 20px hsl(var(--aqua) / 0.6), 0 0 30px hsl(var(--electric-blue) / 0.4);
+    transform: translateY(-1px);
+  }
+}
+
 @layer utilities {
   .animate-float {
     animation: float 3s ease-in-out infinite;
@@ -196,6 +255,18 @@ All colors MUST be HSL.
   
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-neural-pulse {
+    animation: neural-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-ai-breathe {
+    animation: ai-breathe 4s ease-in-out infinite;
+  }
+  
+  .animate-data-flow {
+    animation: data-flow 3s linear infinite;
   }
   
   .animate-gradient-x {
@@ -218,7 +289,41 @@ All colors MUST be HSL.
     animation: spin-slow 3s linear infinite;
   }
   
+  .animate-hologram {
+    animation: hologram 2s ease-in-out infinite;
+  }
+  
   .bg-gradient-radial {
     background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+  
+  /* AI Grid Pattern */
+  .ai-grid {
+    background-image: 
+      linear-gradient(hsl(var(--cyan) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--cyan) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-move 10s linear infinite;
+  }
+  
+  /* Neural Network Pattern */
+  .neural-bg {
+    background: 
+      radial-gradient(circle at 20% 50%, hsl(var(--cyan) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--electric-blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsl(var(--aqua) / 0.1) 0%, transparent 50%);
+  }
+  
+  /* Glow effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--cyan) / 0.4);
+  }
+  
+  .glow-ai {
+    box-shadow: var(--shadow-ai-glow);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--cyan) / 0.6), 0 0 20px hsl(var(--aqua) / 0.4);
   }
 }

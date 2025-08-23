@@ -156,15 +156,25 @@ const Index = () => {
     console.log("Form submitted:", formData);
     // Handle form submission here
   };
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background neural-bg">
+      {/* AI Data Flow Elements */}
+      <div className="fixed inset-0 pointer-events-none z-10">
+        <div className="absolute top-1/4 left-10 w-2 h-2 bg-cyan rounded-full animate-data-flow opacity-40"></div>
+        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-electric-blue rounded-full animate-data-flow opacity-40" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-cyan rounded-full animate-data-flow opacity-40" style={{animationDelay: '3s'}}></div>
+      </div>
       {/* Navigation */}
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ai-grid">
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/90 to-aqua/80"></div>
+          <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-hero"></div>
+          
+          {/* AI Floating Elements */}
+          <div className="absolute top-1/4 left-10 w-20 h-20 bg-cyan/20 rounded-full blur-xl animate-ai-breathe"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-electric-blue/20 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -173,14 +183,16 @@ const Index = () => {
               <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">🏆 India’s Leading OEM for EV & Green Skill Labs & CoEs</Badge>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-              Advanced Lab Solutions for
-              <span className="block bg-gradient-to-r from-aqua via-green to-orange bg-clip-text text-transparent mt-2">Next-Gen Universities & Skill Centers</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-hologram">
+              India's First AI-Ready
+              <span className="block bg-gradient-to-r from-cyan via-electric-blue to-aqua bg-clip-text text-transparent mt-2">EV Centre of Excellence Ecosystem</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">Empowering Education with Next-Gen Lab Solutions
+            <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
+              From ITI to IIT, SkyySkill delivers Industry 4.0-aligned, AI-integrated, patented EV Labs
             </p>
-            <p className="text-base md:text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto">Trusted by IITs, NITs, and 500+ institutions across India.
+            <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto text-glow">
+              Empowering institutions with cutting-edge infrastructure and innovation capacity.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -201,35 +213,29 @@ const Index = () => {
 
             {/* Enhanced Metrics */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">60+</div>
+              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-cyan/20 animate-neural-pulse">
+                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3">60+</div>
                 <div className="text-white/90 text-sm font-medium">Labs</div>
-                <div className="text-white/70 text-xs mt-1">Across India</div>
+                <div className="text-cyan/70 text-xs mt-1">Across India</div>
               </div>
-              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold text-green mb-3">30K+</div>
+              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-electric-blue/20 animate-neural-pulse" style={{animationDelay: '0.5s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-electric-blue mb-3">30K+</div>
                 <div className="text-white/90 text-sm font-medium">Students Trained</div>
-                <div className="text-white/70 text-xs mt-1">Annually</div>
+                <div className="text-electric-blue/70 text-xs mt-1">Annually</div>
               </div>
-              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold text-orange mb-3">625+</div>
+              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-aqua/20 animate-neural-pulse" style={{animationDelay: '1s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">625+</div>
                 <div className="text-white/90 text-sm font-medium">Product Category</div>
-                <div className="text-white/70 text-xs mt-1">Cutting-edge Tech</div>
+                <div className="text-aqua/70 text-xs mt-1">Cutting-edge Tech</div>
               </div>
-              <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">15+</div>
+              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-cyan/20 animate-neural-pulse" style={{animationDelay: '1.5s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3">15+</div>
                 <div className="text-white/90 text-sm font-medium">Years Experience</div>
-                <div className="text-white/70 text-xs mt-1">Industry Leader</div>
+                <div className="text-cyan/70 text-xs mt-1">Industry Leader</div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Floating elements for visual interest */}
-        <div className="absolute top-1/4 left-10 w-20 h-20 bg-aqua/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-green/20 rounded-full blur-xl animate-float" style={{
-        animationDelay: '1s'
-      }}></div>
       </section>
 
       {/* Why Us Section */}
