@@ -60,13 +60,25 @@ const Navigation = () => {
             <DropdownMenuContent className="bg-background border border-border shadow-lg z-50">
               {labs.map((lab) => (
                 <DropdownMenuItem key={lab.path} asChild>
-                  <Link 
-                    to={lab.path} 
-                    className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
-                  >
-                    <lab.icon className="w-4 h-4" />
-                    {lab.name}
-                  </Link>
+                  {lab.name === "EV Lab" ? (
+                    <a 
+                      href="https://www.evskilllab.com" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
+                    >
+                      <lab.icon className="w-4 h-4" />
+                      {lab.name}
+                    </a>
+                  ) : (
+                    <Link 
+                      to={lab.path} 
+                      className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
+                    >
+                      <lab.icon className="w-4 h-4" />
+                      {lab.name}
+                    </Link>
+                  )}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
