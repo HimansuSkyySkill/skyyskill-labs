@@ -14,6 +14,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Award, Users, Building2, Globe, CheckCircle, Cog, BookOpen, Shield, Cpu, Zap, Car, Sun, Plane, Printer, Settings, Wrench, Star, Play, Download, MapPin, Phone, Mail, Calendar, Camera, Trophy, Handshake, Brain } from "lucide-react";
 import heroImage from "@/assets/hero-lab.jpg";
+import { PhotoGallery } from "@/components/PhotoGallery";
 
 // Video Carousel Component
 const VideoCarousel = () => {
@@ -387,6 +388,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Photo Gallery Section */}
+      <PhotoGallery />
 
       {/* Electric Vehicle CoE Section */}
       <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
