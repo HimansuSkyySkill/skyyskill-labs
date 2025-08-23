@@ -59,6 +59,57 @@ export type Database = {
         }
         Relationships: []
       }
+      chatbot_leads: {
+        Row: {
+          completed: boolean | null
+          conversation_data: Json | null
+          conversation_id: string
+          created_at: string
+          department: string | null
+          email: string | null
+          id: string
+          inquiry_type: string | null
+          name: string | null
+          organization_type: string | null
+          phone: string | null
+          profession: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          completed?: boolean | null
+          conversation_data?: Json | null
+          conversation_id?: string
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          id?: string
+          inquiry_type?: string | null
+          name?: string | null
+          organization_type?: string | null
+          phone?: string | null
+          profession?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          completed?: boolean | null
+          conversation_data?: Json | null
+          conversation_id?: string
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          id?: string
+          inquiry_type?: string | null
+          name?: string | null
+          organization_type?: string | null
+          phone?: string | null
+          profession?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       news_events: {
         Row: {
           created_at: string
