@@ -19,7 +19,8 @@ import {
   Wrench,
   Home,
   Phone,
-  Brain
+  Brain,
+  Store
 } from "lucide-react";
 
 const Navigation = () => {
@@ -74,6 +75,11 @@ const Navigation = () => {
           <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
             <Phone className="w-4 h-4" />
             Contact Us
+          </Link>
+          
+          <Link to="/reseller" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+            <Store className="w-4 h-4" />
+            Become Our Reseller
           </Link>
           
           <a 
