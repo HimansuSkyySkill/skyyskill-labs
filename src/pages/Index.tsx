@@ -368,16 +368,16 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-navy mb-2">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-3xl md:text-4xl font-bold text-navy mb-2">60+</div>
+                <div className="text-sm text-muted-foreground">Labs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">99%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">2.5L+</div>
+                <div className="text-sm text-muted-foreground">Trained Across Our Labs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Support Available</div>
+                <div className="text-3xl md:text-4xl font-bold text-green mb-2">600+</div>
+                <div className="text-sm text-muted-foreground">Items Manufactured In House</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange mb-2">ISO</div>
