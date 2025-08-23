@@ -40,7 +40,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
 
   // Auto-scroll carousel
   useEffect(() => {
-    if (open && type === "quotation") {
+    if (open && (type === "quotation" || type === "brochure")) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
       }, 3000);
@@ -136,8 +136,8 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
         <div className="flex h-full">
           {/* Left Side - Carousel & Benefits for Quotation, Hero Image for others */}
           <div className="hidden md:flex w-1/2 bg-gradient-to-br from-primary via-primary/90 to-primary/80 relative overflow-hidden">
-            {type === "quotation" ? (
-              // Quotation popup with text at top and rectangular image holder at bottom
+            {type === "quotation" || type === "brochure" ? (
+              // Quotation and Brochure popup with text at top and rectangular image holder at bottom
               <>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
                 
@@ -151,7 +151,7 @@ export const LeadCaptureForm = ({ trigger, type }: LeadCaptureFormProps) => {
                         className="h-12 mb-4" 
                       />
                       <h3 className="text-2xl font-bold mb-2">
-                        High-End Research Labs
+                        {type === "brochure" ? "Complete Lab Solutions" : "High-End Research Labs"}
                       </h3>
                       <p className="text-white/90 mb-6">
                         We serve ITI to IITs - Trusted by 500+ institutions across India
