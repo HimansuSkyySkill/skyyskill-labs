@@ -156,7 +156,7 @@ const Index = () => {
     console.log("Form submitted:", formData);
     // Handle form submission here
   };
-  return <div className="min-h-screen bg-background neural-bg">
+  return <div className="min-h-screen bg-background">
       {/* AI Data Flow Elements */}
       <div className="fixed inset-0 pointer-events-none z-10">
         <div className="absolute top-1/4 left-10 w-2 h-2 bg-cyan rounded-full animate-data-flow opacity-40"></div>

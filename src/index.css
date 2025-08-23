@@ -8,26 +8,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark Background Theme */
-    --background: 220 65% 4%;
-    --foreground: 210 40% 98%;
+    /* Keep White Backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 215 50% 15%;
 
-    --card: 220 50% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 50% 15%;
 
-    --popover: 220 50% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 50% 15%;
 
     /* Deep Navy Primary */
     --primary: 220 70% 12%;
     --primary-foreground: 0 0% 98%;
 
-    /* Darker background secondary */
-    --secondary: 220 45% 15%;
-    --secondary-foreground: 210 40% 98%;
+    /* Light background secondary */
+    --secondary: 210 30% 98%;
+    --secondary-foreground: 215 50% 15%;
 
-    --muted: 220 40% 18%;
-    --muted-foreground: 215 20% 70%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 20% 45%;
 
     /* Bright Aqua/Cyan accent */
     --accent: 187 85% 55%;
@@ -36,8 +36,8 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 35% 25%;
-    --input: 220 40% 20%;
+    --border: 215 15% 90%;
+    --input: 215 15% 95%;
     --ring: 187 85% 55%;
 
     /* SkyySkill AI-Ready Brand Colors */
@@ -49,11 +49,11 @@ All colors MUST be HSL.
     --orange: 25 95% 55%;
     --electric-blue: 205 100% 75%;
 
-    /* AI-themed Gradients */
+    /* AI-themed Gradients for Hero Sections */
     --gradient-primary: linear-gradient(135deg, hsl(var(--dark-navy)), hsl(var(--navy)), hsl(var(--aqua)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--dark-navy)) 0%, hsl(var(--navy)) 30%, hsl(var(--aqua)) 70%, hsl(var(--cyan)) 100%);
     --gradient-ai: linear-gradient(45deg, hsl(var(--dark-navy)), hsl(var(--electric-blue)), hsl(var(--cyan)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--secondary)));
     --gradient-glow: radial-gradient(circle, hsl(var(--aqua) / 0.3), transparent 70%);
 
     /* AI Shadows and Glows */
