@@ -389,9 +389,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Photo Gallery Section */}
-      <PhotoGallery />
-
       {/* Electric Vehicle CoE Section */}
       <section id="ev-coe" className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4">
@@ -1223,6 +1220,8 @@ const Index = () => {
               Take a visual tour of our state-of-the-art laboratory equipment and training solutions.
             </p>
           </div>
+
+          <PhotoGallery />
 
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent>
