@@ -1098,7 +1098,6 @@ const Index = () => {
           backgroundPosition: 'center',
           filter: 'blur(2px)'
         }}></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-background/90"></div>
           
           {/* Floating geometric elements */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-aqua/10 rounded-full blur-xl animate-pulse"></div>
