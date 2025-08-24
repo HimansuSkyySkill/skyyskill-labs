@@ -349,121 +349,193 @@ const Index = () => {
       </section>
 
       {/* Electric Vehicle CoE Section */}
-      <section id="ev-coe" className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
+      <section id="ev-coe" className="relative py-24 bg-gradient-hero neural-bg overflow-hidden">
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 ai-grid opacity-20"></div>
+        
+        {/* Floating particles effect */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-2 h-2 bg-cyan rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-40 right-20 w-3 h-3 bg-aqua rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-electric-blue rounded-full animate-float opacity-80" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-cyan rounded-full animate-float opacity-50" style={{ animationDelay: '1.5s' }}></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-8 px-6 py-3 text-base font-medium animate-neural-pulse shadow-glow">
               🏆 Center of Excellence
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Electric Vehicle <span className="text-aqua">Center of Excellence</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              Electric Vehicle <span className="text-glow bg-gradient-to-r from-aqua via-cyan to-electric-blue bg-clip-text text-transparent animate-hologram">Center of Excellence</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-16 animate-fade-in-delay">
               Our 6+4 CoE model will make your CoE enabled for Skilling to Research to Consulting support.
             </p>
             
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mt-12">
-              <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">6 Core Labs</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Powertrain & Motor Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Battery & BMS Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Charging & Energy Management Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Electronics & Controller Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Simulation & Design (CAD/CAE) Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Testing & Diagnostics Lab
-                  </li>
-                </ul>
+            {/* Enhanced Labs Grid */}
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 mb-20">
+              <div className="relative group animate-scale-in">
+                <div className="absolute -inset-1 bg-gradient-ai rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                <div className="relative bg-card/20 backdrop-blur-xl border border-cyan/30 rounded-3xl p-10 shadow-ai-glow hover:shadow-neural transition-all duration-500 group-hover:transform group-hover:scale-105">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-aqua via-cyan to-electric-blue rounded-2xl flex items-center justify-center shadow-glow animate-neural-pulse">
+                      <span className="text-3xl font-bold text-white">6</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white">Core Labs</h3>
+                  </div>
+                  <ul className="space-y-5 text-left">
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow"></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Powertrain & Motor Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '0.2s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Battery & BMS Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '0.4s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Charging & Energy Management Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '0.6s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Electronics & Controller Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '0.8s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Simulation & Design (CAD/CAE) Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Testing & Diagnostics Lab</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
               
-              <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">4 Add-on Labs</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    ADAS & Autonomous EV Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    EV Retrofit & Hybrid Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    Renewable Energy & Microgrid Lab
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    AI & Digital Twin Integration Lab
-                  </li>
-                </ul>
-              </div>
-            </div>
-            {/* Metrics Section */}
-            <div className="grid grid-cols-5 gap-3 mb-8 max-w-4xl mx-auto">
-              <div className="text-center p-4 bg-primary/5 rounded-xl">
-                <div className="text-sm font-bold text-primary">ASDC</div>
-                <div className="text-xs text-muted-foreground">Approved</div>
-              </div>
-              <div className="text-center p-4 bg-aqua/5 rounded-xl">
-                <div className="text-sm font-bold text-aqua">AICTE/NCVET</div>
-                <div className="text-xs text-muted-foreground">Compliant</div>
-              </div>
-              <div className="text-center p-4 bg-green/5 rounded-xl">
-                <div className="text-sm font-bold text-green">Based on</div>
-                <div className="text-xs text-muted-foreground">NEP</div>
-              </div>
-              <div className="text-center p-4 bg-orange/5 rounded-xl">
-                <div className="text-sm font-bold text-orange">40+</div>
-                <div className="text-xs text-muted-foreground">EV CoE</div>
-              </div>
-              <div className="text-center p-4 bg-purple/5 rounded-xl">
-                <div className="text-sm font-bold text-purple">12 Months</div>
-                <div className="text-xs text-muted-foreground">ROI</div>
+              <div className="relative group animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <div className="absolute -inset-1 bg-gradient-to-r from-electric-blue via-cyan to-aqua rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                <div className="relative bg-card/20 backdrop-blur-xl border border-electric-blue/30 rounded-3xl p-10 shadow-ai-glow hover:shadow-neural transition-all duration-500 group-hover:transform group-hover:scale-105">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-16 h-16 bg-gradient-to-br from-electric-blue via-cyan to-aqua rounded-2xl flex items-center justify-center shadow-glow animate-neural-pulse" style={{ animationDelay: '0.5s' }}>
+                      <span className="text-3xl font-bold text-white">4</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white">Add-on Labs</h3>
+                  </div>
+                  <ul className="space-y-5 text-left">
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-electric-blue to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '1.2s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">ADAS & Autonomous EV Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-electric-blue to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '1.4s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">EV Retrofit & Hybrid Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-electric-blue to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '1.6s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">Renewable Energy & Microgrid Lab</span>
+                    </li>
+                    <li className="flex items-start gap-4 group/item hover:transform hover:translate-x-3 transition-all duration-300">
+                      <div className="w-4 h-4 bg-gradient-to-r from-electric-blue to-cyan rounded-full mt-2 flex-shrink-0 shadow-sm group-hover/item:shadow-glow animate-pulse-glow" style={{ animationDelay: '1.8s' }}></div>
+                      <span className="text-lg text-muted-foreground group-hover/item:text-white transition-colors duration-300">AI & Digital Twin Integration Lab</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button onClick={() => window.open('https://www.evskilllab.com', '_blank')} size="lg" className="bg-gradient-to-r from-primary via-aqua to-green hover:from-primary/90 hover:via-aqua/90 hover:to-green/90 text-white text-lg px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <Car className="w-6 h-6 mr-3" />
-                Explore our various labs
-              </Button>
-              <LeadCaptureForm 
-                type="quotation" 
-                trigger={
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                    Get a quotation
-                  </Button>
-                } 
-              />
-              <LeadCaptureForm 
-                type="brochure" 
-                trigger={
-                  <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                    Download Brochure
-                  </Button>
-                } 
-              />
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Know More
-              </Button>
+            {/* Enhanced Metrics Section */}
+            <div className="relative mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="absolute inset-0 bg-gradient-glow opacity-30 rounded-3xl blur-xl"></div>
+              <div className="relative bg-card/15 backdrop-blur-2xl border border-cyan/30 rounded-3xl p-8 shadow-ai-glow">
+                <div className="grid grid-cols-5 gap-6 max-w-6xl mx-auto">
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-aqua to-cyan rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="relative text-center p-6 bg-primary/15 backdrop-blur-sm rounded-2xl border border-aqua/30 hover:bg-primary/25 transition-all duration-300 animate-neural-pulse shadow-glow">
+                      <div className="text-xl font-bold text-aqua mb-2">ASDC</div>
+                      <div className="text-sm text-muted-foreground">Approved</div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-cyan to-electric-blue rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="relative text-center p-6 bg-cyan/15 backdrop-blur-sm rounded-2xl border border-cyan/30 hover:bg-cyan/25 transition-all duration-300 animate-neural-pulse shadow-glow" style={{ animationDelay: '0.5s' }}>
+                      <div className="text-xl font-bold text-cyan mb-2">AICTE/NCVET</div>
+                      <div className="text-sm text-muted-foreground">Compliant</div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-green to-aqua rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="relative text-center p-6 bg-green/15 backdrop-blur-sm rounded-2xl border border-green/30 hover:bg-green/25 transition-all duration-300 animate-neural-pulse shadow-glow" style={{ animationDelay: '1s' }}>
+                      <div className="text-xl font-bold text-green mb-2">Based on</div>
+                      <div className="text-sm text-muted-foreground">NEP</div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-orange to-aqua rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="relative text-center p-6 bg-orange/15 backdrop-blur-sm rounded-2xl border border-orange/30 hover:bg-orange/25 transition-all duration-300 animate-neural-pulse shadow-glow" style={{ animationDelay: '1.5s' }}>
+                      <div className="text-xl font-bold text-orange mb-2">40+</div>
+                      <div className="text-sm text-muted-foreground">EV CoE</div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-electric-blue to-aqua rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-300"></div>
+                    <div className="relative text-center p-6 bg-electric-blue/15 backdrop-blur-sm rounded-2xl border border-electric-blue/30 hover:bg-electric-blue/25 transition-all duration-300 animate-neural-pulse shadow-glow" style={{ animationDelay: '2s' }}>
+                      <div className="text-xl font-bold text-electric-blue mb-2">12 Months</div>
+                      <div className="text-sm text-muted-foreground">ROI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center animate-scale-in" style={{ animationDelay: '0.6s' }}>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-hero rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <Button 
+                  onClick={() => window.open('https://www.evskilllab.com', '_blank')} 
+                  size="lg" 
+                  className="relative bg-gradient-hero hover:bg-gradient-ai text-white text-xl px-12 py-8 h-auto shadow-ai-glow hover:shadow-neural transition-all duration-500 transform hover:scale-110 border border-cyan/40 rounded-2xl"
+                >
+                  <Car className="w-7 h-7 mr-4" />
+                  Explore our various labs
+                </Button>
+              </div>
+              
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan to-electric-blue rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <LeadCaptureForm 
+                  type="quotation" 
+                  trigger={
+                    <Button variant="outline" size="lg" className="relative bg-transparent border-2 border-cyan/50 text-cyan hover:bg-cyan/10 text-xl px-12 py-8 h-auto shadow-glow hover:shadow-ai-glow transition-all duration-500 transform hover:scale-110 rounded-2xl backdrop-blur-sm">
+                      Get a quotation
+                    </Button>
+                  } 
+                />
+              </div>
+              
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-aqua to-green rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <LeadCaptureForm 
+                  type="brochure" 
+                  trigger={
+                    <Button variant="outline" size="lg" className="relative bg-transparent border-2 border-aqua/50 text-aqua hover:bg-aqua/10 text-xl px-12 py-8 h-auto shadow-glow hover:shadow-ai-glow transition-all duration-500 transform hover:scale-110 rounded-2xl backdrop-blur-sm">
+                      Download Brochure
+                    </Button>
+                  } 
+                />
+              </div>
+              
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-green to-orange rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition duration-300"></div>
+                <Button variant="outline" size="lg" className="relative bg-transparent border-2 border-green/50 text-green hover:bg-green/10 text-xl px-12 py-8 h-auto shadow-glow hover:shadow-ai-glow transition-all duration-500 transform hover:scale-110 rounded-2xl backdrop-blur-sm">
+                  Know More
+                </Button>
+              </div>
             </div>
           </div>
 
