@@ -32,7 +32,7 @@ const Navigation = () => {
     { name: "3D Printing Lab", path: "/3d-printing-lab", icon: Printer },
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
-    { name: "AI Trainer", path: "https://www.skyyskilllabs.org/ai-trainer", icon: Brain },
+    { name: "AI Interactive Trainer", path: "https://www.skyyskilllabs.org/ai-trainer", icon: Brain },
   ];
 
   return (
@@ -71,7 +71,7 @@ const Navigation = () => {
                       <lab.icon className="w-4 h-4" />
                       {lab.name}
                     </a>
-                  ) : lab.name === "AI Trainer" ? (
+                  ) : lab.name === "AI Interactive Trainer" ? (
                     <a 
                       href={lab.path}
                       target="_blank"
