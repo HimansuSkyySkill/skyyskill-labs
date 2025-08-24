@@ -493,62 +493,98 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Auto-sliding Carousel with 2 Photos */}
+            {/* Auto-sliding Carousel with Lab Photos */}
             <div className="max-w-6xl mx-auto">
-              <Carousel 
-                className="w-full" 
-                plugins={[Autoplay({ delay: 4000 })]}
-                opts={{ align: "start", loop: true }}
-              >
-                <CarouselContent>
-                  {/* Photo 1 */}
-                  <CarouselItem className="md:basis-1/2">
-                    <div className="p-4">
-                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                        <CardContent className="p-0">
-                          <div className="aspect-video relative rounded-lg overflow-hidden">
-                            <img 
-                              src="https://images.unsplash.com/photo-1581092795442-54c77393e0ac?w=800&h=450&fit=crop&crop=center" 
-                              alt="Photo-1" 
-                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                          </div>
-                          <div className="p-6 text-center">
-                            <h3 className="text-xl font-bold text-primary mb-2">Photo-1</h3>
-                            <p className="text-base text-muted-foreground">Client Name - Institute A</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
+              {(() => {
+                const labSetups = [
+                  {
+                    image: "/lovable-uploads/61883ced-0da6-43a6-a37f-4774c02d7829.png",
+                    client: "Amara Raja Batteries Pvt Ltd, Hyderabad",
+                    alt: "EV Lab Setup at Amara Raja Batteries"
+                  },
+                  {
+                    image: "/lovable-uploads/488d29b2-ad49-44a3-a553-874f3f9729fc.png", 
+                    client: "Rajeev Gandhi Memorial college, AP",
+                    alt: "EV Lab Setup at Rajeev Gandhi Memorial college"
+                  },
+                  {
+                    image: "/lovable-uploads/46c9f349-5e19-4f47-b0f9-00612ed5aa97.png",
+                    client: "L&T Edutech",
+                    alt: "EV Lab Setup at L&T Edutech"
+                  },
+                  {
+                    image: "/lovable-uploads/bf8f29a0-b018-4184-9e25-ea404a381eec.png",
+                    client: "Birla Vishwakarma Mahavidyalaya, Gujarat",
+                    alt: "EV Lab Setup at Birla Vishwakarma Mahavidyalaya"
+                  },
+                  {
+                    image: "/lovable-uploads/752906bf-0d61-4537-82e8-ebbdd9d0ffe8.png",
+                    client: "Bharati Vidyapeeth, New Delhi",
+                    alt: "EV Lab Setup at Bharati Vidyapeeth"
+                  },
+                  {
+                    image: "/lovable-uploads/2586a3d0-b8f9-447f-8717-4424e6582924.png",
+                    client: "NIT Raipur",
+                    alt: "EV Lab Setup at NIT Raipur"
+                  },
+                  {
+                    image: "/lovable-uploads/fefb9e34-e20b-4dd9-97be-8f7ece253b92.png",
+                    client: "Sandeep University",
+                    alt: "EV Lab Setup at Sandeep University"
+                  },
+                  {
+                    image: "/lovable-uploads/52256932-fdf3-4920-b6a7-47df000ec98b.png",
+                    client: "SkyySkill Academy Thane, Mumbai",
+                    alt: "EV Lab Setup at SkyySkill Academy"
+                  },
+                  {
+                    image: "/lovable-uploads/b3a9dcf4-641d-4511-90d6-76f6d834c8d3.png",
+                    client: "LearningHub Kolkata",
+                    alt: "EV Lab Setup at LearningHub Kolkata"
+                  },
+                  {
+                    image: "/lovable-uploads/938822fc-7a3b-4d99-b486-b02dae3792c8.png",
+                    client: "Govt ITI Rasanpur",
+                    alt: "EV Lab Setup at Govt ITI Rasanpur"
+                  }
+                ];
 
-                  {/* Photo 2 */}
-                  <CarouselItem className="md:basis-1/2">
-                    <div className="p-4">
-                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                        <CardContent className="p-0">
-                          <div className="aspect-video relative rounded-lg overflow-hidden">
-                            <img 
-                              src="https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=450&fit=crop&crop=center" 
-                              alt="Photo-2" 
-                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                return (
+                  <Carousel 
+                    className="w-full" 
+                    plugins={[Autoplay({ delay: 4000 })]}
+                    opts={{ align: "start", loop: true }}
+                  >
+                    <CarouselContent>
+                      {labSetups.map((lab, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2">
+                          <div className="p-4">
+                            <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                              <CardContent className="p-0">
+                                <div className="aspect-video relative rounded-lg overflow-hidden">
+                                  <img 
+                                    src={lab.image} 
+                                    alt={lab.alt} 
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                                </div>
+                                <div className="p-6 text-center">
+                                  <h3 className="text-xl font-bold text-primary mb-2">Photo-{index + 1}</h3>
+                                  <p className="text-base text-muted-foreground">{lab.client}</p>
+                                </div>
+                              </CardContent>
+                            </Card>
                           </div>
-                          <div className="p-6 text-center">
-                            <h3 className="text-xl font-bold text-primary mb-2">Photo-2</h3>
-                            <p className="text-base text-muted-foreground">Client Name - Institute B</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-                
-                <CarouselPrevious className="hidden md:flex" />
-                <CarouselNext className="hidden md:flex" />
-              </Carousel>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    
+                    <CarouselPrevious className="hidden md:flex" />
+                    <CarouselNext className="hidden md:flex" />
+                  </Carousel>
+                );
+              })()}
             </div>
           </div>
 
