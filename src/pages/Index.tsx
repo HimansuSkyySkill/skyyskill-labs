@@ -167,7 +167,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ai-grid">
         <div className="absolute inset-0 z-0">
           <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-hero"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-primary/80 to-green/70"></div>
           
           {/* AI Floating Elements - Reduced Glow */}
           <div className="absolute top-1/4 left-10 w-20 h-20 bg-navy/10 rounded-full blur-xl animate-ai-breathe"></div>
