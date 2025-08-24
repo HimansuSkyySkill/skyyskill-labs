@@ -33,7 +33,6 @@ const Navigation = () => {
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
     { name: "AI Trainer", path: "https://www.skyyskilllabs.org/ai-trainer", icon: Brain },
-    { name: "Lab Solutions in Action", path: "/lab-videos", icon: Play },
   ];
 
   return (
