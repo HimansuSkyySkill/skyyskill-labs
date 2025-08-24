@@ -32,7 +32,7 @@ const Navigation = () => {
     { name: "3D Printing Lab", path: "/3d-printing-lab", icon: Printer },
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
-    { name: "AI Labs", path: "/ai-lab", icon: Brain },
+    { name: "AI Trainer", path: "https://www.skyyskilllabs.org/ai-trainer", icon: Brain },
     { name: "Lab Solutions in Action", path: "/lab-videos", icon: Play },
   ];
 
@@ -65,6 +65,16 @@ const Navigation = () => {
                   {lab.name === "EV Lab" ? (
                     <a 
                       href="https://www.evskilllab.com" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
+                    >
+                      <lab.icon className="w-4 h-4" />
+                      {lab.name}
+                    </a>
+                  ) : lab.name === "AI Trainer" ? (
+                    <a 
+                      href={lab.path}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
