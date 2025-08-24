@@ -601,55 +601,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* EV Lab Details */}
-          <Card className="border-0 shadow-2xl bg-gradient-to-br from-background via-background to-secondary/20 overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Content Side */}
-              <div className="p-8 lg:p-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-primary text-white shadow-lg">
-                    <Car className="w-6 h-6" />
-                  </div>
-                  <Badge className="bg-primary/10 text-primary border-primary/20">
-                    ASDC Approved
-                  </Badge>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-primary mb-4">Electric Vehicle Technology Lab</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                  Comprehensive EV ecosystem training covering battery technology, motor systems, charging infrastructure, and vehicle diagnostics for the next generation of automotive engineers.
-                </p>
-                
-                <div className="grid sm:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green" />
-                      Core Modules
-                    </h4>
-                    <div className="space-y-3">
-                      {["Battery Management Systems", "BLDC Motor Control", "Fast Charging Technology"].map((feature, index) => <div key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>)}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green" />
-                      Advanced Features
-                    </h4>
-                    <div className="space-y-3">
-                      {["EV Diagnostics & Testing", "Hybrid Vehicle Systems", "Safety & Protection Circuits"].map((feature, index) => <div key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-orange rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>)}
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </Card>
         </div>
       </section>
 
