@@ -48,7 +48,7 @@ export const PhotoGallery = () => {
         {/* Header Section */}
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="text-aqua">Lab Solutions</span> in Action
+            Our Product & <span className="text-aqua">Lab Gallery</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Take a visual tour of our state-of-the-art laboratory equipment and training solutions.
