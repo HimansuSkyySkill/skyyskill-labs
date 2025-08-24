@@ -416,18 +416,26 @@ const Index = () => {
               </div>
             </div>
             {/* Metrics Section */}
-            <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+            <div className="grid grid-cols-5 gap-3 mb-8 max-w-4xl mx-auto">
               <div className="text-center p-4 bg-primary/5 rounded-xl">
-                <div className="text-2xl font-bold text-primary">200+</div>
-                <div className="text-xs text-muted-foreground">Institutions</div>
+                <div className="text-sm font-bold text-primary">ASDC</div>
+                <div className="text-xs text-muted-foreground">Approved</div>
               </div>
               <div className="text-center p-4 bg-aqua/5 rounded-xl">
-                <div className="text-2xl font-bold text-aqua">15K+</div>
-                <div className="text-xs text-muted-foreground">Students</div>
+                <div className="text-sm font-bold text-aqua">AICTE/NCVET</div>
+                <div className="text-xs text-muted-foreground">Compliant</div>
               </div>
               <div className="text-center p-4 bg-green/5 rounded-xl">
-                <div className="text-2xl font-bold text-green">99%</div>
-                <div className="text-xs text-muted-foreground">Success Rate</div>
+                <div className="text-sm font-bold text-green">Based on</div>
+                <div className="text-xs text-muted-foreground">NEP</div>
+              </div>
+              <div className="text-center p-4 bg-orange/5 rounded-xl">
+                <div className="text-sm font-bold text-orange">40+</div>
+                <div className="text-xs text-muted-foreground">EV CoE</div>
+              </div>
+              <div className="text-center p-4 bg-purple/5 rounded-xl">
+                <div className="text-sm font-bold text-purple">12 Months</div>
+                <div className="text-xs text-muted-foreground">ROI</div>
               </div>
             </div>
             
