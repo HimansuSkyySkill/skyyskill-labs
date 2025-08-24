@@ -888,54 +888,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              What Our <span className="text-aqua">Partners Say</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[{
-            quote: "SkyySkill Labs has transformed our engineering curriculum with their cutting-edge EV lab setup. Student engagement has increased significantly.",
-            author: "Dr. Rajesh Kumar",
-            position: "HOD, Electrical Engineering",
-            institution: "IIT Dharwad"
-          }, {
-            quote: "The comprehensive training and ongoing support provided by SkyySkill has been exceptional. Their solar lab is world-class.",
-            author: "Prof. Meera Patel",
-            position: "Director",
-            institution: "NIT Raipur"
-          }, {
-            quote: "Industry-aligned curriculum and practical training modules have prepared our students for real-world challenges effectively.",
-            author: "Dr. Amit Sharma",
-            position: "Principal",
-            institution: "MNIT Bhopal"
-          }].map((testimonial, index) => <Card key={index} className="border-0 bg-gradient-card shadow-elegant">
-                <CardContent className="p-6">
-                  <div className="flex items-start mb-4">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-orange text-orange" />)}
-                  </div>
-                  <blockquote className="text-muted-foreground mb-6 italic">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div>
-                    <div className="font-semibold text-primary">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.position}</div>
-                    <div className="text-sm text-aqua">{testimonial.institution}</div>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Faculty Feedback Section */}
-      <FacultyFeedback />
-
       {/* News & Events Section */}
       <section className="py-16 bg-gradient-to-br from-green/5 via-background to-aqua/5">
         <div className="container mx-auto px-4">
@@ -1000,6 +952,55 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              What Our <span className="text-aqua">Partners Say</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[{
+            quote: "SkyySkill Labs has transformed our engineering curriculum with their cutting-edge EV lab setup. Student engagement has increased significantly.",
+            author: "Dr. Rajesh Kumar",
+            position: "HOD, Electrical Engineering",
+            institution: "IIT Dharwad"
+          }, {
+            quote: "The comprehensive training and ongoing support provided by SkyySkill has been exceptional. Their solar lab is world-class.",
+            author: "Prof. Meera Patel",
+            position: "Director",
+            institution: "NIT Raipur"
+          }, {
+            quote: "Industry-aligned curriculum and practical training modules have prepared our students for real-world challenges effectively.",
+            author: "Dr. Amit Sharma",
+            position: "Principal",
+            institution: "MNIT Bhopal"
+          }].map((testimonial, index) => <Card key={index} className="border-0 bg-gradient-card shadow-elegant">
+                <CardContent className="p-6">
+                  <div className="flex items-start mb-4">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-orange text-orange" />)}
+                  </div>
+                  <blockquote className="text-muted-foreground mb-6 italic">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div>
+                    <div className="font-semibold text-primary">{testimonial.author}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.position}</div>
+                    <div className="text-sm text-aqua">{testimonial.institution}</div>
+                  </div>
+                </CardContent>
+              </Card>)}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Faculty Feedback Section */}
+      <FacultyFeedback />
+
 
       {/* AI Trainer Section */}
       <section className="py-16">
