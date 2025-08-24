@@ -416,7 +416,7 @@ const Index = () => {
               </div>
             </div>
             {/* Metrics Section */}
-            <div className="grid grid-cols-5 gap-3 mb-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-5 gap-6 mb-8 max-w-4xl mx-auto">
               <div className="text-center p-4 bg-primary/5 rounded-xl">
                 <div className="text-sm font-bold text-primary">ASDC</div>
                 <div className="text-xs text-muted-foreground">Approved</div>
