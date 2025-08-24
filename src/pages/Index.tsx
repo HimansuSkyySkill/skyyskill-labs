@@ -1188,7 +1188,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Insights & <span className="text-aqua">Innovation</span>
+              Blogs & <span className="text-aqua">Insights</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Stay updated with the latest in skill development and technology
