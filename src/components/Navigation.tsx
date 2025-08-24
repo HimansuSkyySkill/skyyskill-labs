@@ -20,7 +20,8 @@ import {
   Home,
   Phone,
   Brain,
-  Store
+  Store,
+  Play
 } from "lucide-react";
 
 const Navigation = () => {
@@ -32,6 +33,7 @@ const Navigation = () => {
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
     { name: "AI Labs", path: "/ai-lab", icon: Brain },
+    { name: "Lab Solutions in Action", path: "/lab-videos", icon: Play },
   ];
 
   return (

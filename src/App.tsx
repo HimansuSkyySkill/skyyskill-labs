@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Reseller from "./pages/Reseller";
 import EvLab from "./pages/EvLab";
+import LabVideos from "./pages/LabVideos";
 import AITrainer from "./pages/AITrainer";
 import AICounsellor from "./pages/AICounsellor";
 import Blogs from "./pages/Blogs";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/3d-printing-lab" element={<UnderConstruction title="3D Printing Lab - Coming Soon" />} />
           <Route path="/cnc-lab" element={<UnderConstruction title="CNC Simulation Lab - Coming Soon" />} />
           <Route path="/ai-lab" element={<UnderConstruction title="AI Labs - Coming Soon" />} />
+          <Route path="/lab-videos" element={<LabVideos />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/admin/blogs" element={<BlogAdmin />} />
