@@ -364,53 +364,53 @@ const Index = () => {
             
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mt-12">
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">6 Core Labs</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Powertrain & Motor Lab
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-aqua to-cyan bg-clip-text text-transparent mb-6">6 Core Labs</h3>
+                <ul className="space-y-4 text-foreground">
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Powertrain & Motor Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Battery & BMS Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Battery & BMS Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Charging & Energy Management Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Charging & Energy Management Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Electronics & Controller Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Electronics & Controller Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Simulation & Design (CAD/CAE) Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Simulation & Design (CAD/CAE) Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
-                    EV Testing & Diagnostics Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-aqua/5 border border-aqua/20 hover:bg-aqua/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-aqua to-cyan rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Testing & Diagnostics Lab</span>
                   </li>
                 </ul>
               </div>
               
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">4 Add-on Labs</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    ADAS & Autonomous EV Lab
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-green to-emerald-400 bg-clip-text text-transparent mb-6">4 Add-on Labs</h3>
+                <ul className="space-y-4 text-foreground">
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-green/5 border border-green/20 hover:bg-green/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green to-emerald-400 rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">ADAS & Autonomous EV Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    EV Retrofit & Hybrid Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-green/5 border border-green/20 hover:bg-green/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green to-emerald-400 rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">EV Retrofit & Hybrid Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    Renewable Energy & Microgrid Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-green/5 border border-green/20 hover:bg-green/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green to-emerald-400 rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">Renewable Energy & Microgrid Lab</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                    AI & Digital Twin Integration Lab
+                  <li className="flex items-start gap-3 p-3 rounded-lg bg-green/5 border border-green/20 hover:bg-green/10 transition-colors">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green to-emerald-400 rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                    <span className="font-medium">AI & Digital Twin Integration Lab</span>
                   </li>
                 </ul>
               </div>
