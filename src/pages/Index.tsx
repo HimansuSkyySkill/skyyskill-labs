@@ -1127,32 +1127,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <section id="clients" className="py-12 bg-secondary/50 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Join the Growing <span className="text-aqua">Community</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Trusted by India's leading institutions and industry partners
-            </p>
-          </div>
-
-          {/* Auto-sliding logos */}
-          <div className="relative">
-            <div className="flex animate-marquee space-x-16 items-center">
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>)}
-              {/* Duplicate for seamless loop */}
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
-                  <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Product Gallery Section */}
       <PhotoGallery />
