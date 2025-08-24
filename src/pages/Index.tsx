@@ -467,136 +467,87 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Lab Images Carousel - Moved up */}
-          <div className="container mx-auto px-4 py-12">
-            <div className="relative bg-gradient-to-br from-primary/10 to-aqua/10 p-4 lg:p-6 rounded-2xl max-w-4xl mx-auto">
-              <Carousel className="w-full max-w-md mx-auto" plugins={[Autoplay({
-              delay: 2000
-            })]}>
+          {/* EV Lab Setup as CoE Section */}
+          <div className="container mx-auto px-4 py-16">
+            <div className="text-center mb-12">
+              {/* Badge */}
+              <div className="mb-8">
+                <Badge className="bg-gradient-to-r from-aqua to-green text-white border-0 px-8 py-4 text-lg font-bold shadow-lg">
+                  📊 EV Lab Setup as CoE
+                </Badge>
+              </div>
+              
+              {/* Main Heading */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-aqua via-green to-cyan bg-clip-text text-transparent">
+                  EV LAB SETUP
+                </span>
+                <span className="block text-primary mt-2">
+                  AS COE AT DIFFERENT PLACES
+                </span>
+              </h2>
+              
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Our Centers of Excellence are transforming technical education across India with state-of-the-art EV laboratories.
+              </p>
+            </div>
+
+            {/* Auto-sliding Carousel with 2 Photos */}
+            <div className="max-w-6xl mx-auto">
+              <Carousel 
+                className="w-full" 
+                plugins={[Autoplay({ delay: 4000 })]}
+                opts={{ align: "start", loop: true }}
+              >
                 <CarouselContent>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" alt="EV Lab Equipment Display" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/44f1617a-3351-4ffe-b6e9-bd19b5487061.png" alt="EV Lab Equipment Display" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
+                  {/* Photo 1 */}
+                  <CarouselItem className="md:basis-1/2">
+                    <div className="p-4">
+                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                        <CardContent className="p-0">
+                          <div className="aspect-video relative rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1581092795442-54c77393e0ac?w=800&h=450&fit=crop&crop=center" 
+                              alt="Photo-1" 
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                          </div>
+                          <div className="p-6 text-center">
+                            <h3 className="text-xl font-bold text-primary mb-2">Photo-1</h3>
+                            <p className="text-base text-muted-foreground">Client Name - Institute A</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" alt="EV Lab Training Systems" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/66f17b2d-4841-46ae-8c59-d86053609fcd.png" alt="EV Lab Training Systems" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" alt="EV Components Lab" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/a795a1e7-2815-4fde-b4c4-b2e5554a4476.png" alt="EV Components Lab" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" alt="EV Testing Lab Overview" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/c6671eee-13e6-440b-8270-1cc8862cc4b1.png" alt="EV Testing Lab Overview" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/7136fb6c-8ed0-4863-bf95-3ed7e518119a.png" alt="Battery Technology Lab" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/d1bd14a3-43d1-4305-ac7e-19c00b6a835b.png" alt="EV Skills Training Center" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/c96ae964-86d9-4628-a53e-ccc2d9314e3a.png" alt="Advanced EV Lab Setup" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/4a10bf6b-dbcf-4d08-ae97-eefaf62af213.png" alt="EV Testing Equipment" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/0d0bf5c8-113c-49c1-93df-41dfbcb4c921.png" alt="Battery Analysis System" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <div className="aspect-video relative rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
-                          <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-full object-cover" />
-                        </div>
-                      </DialogTrigger>
-                      <DialogContent className="max-w-4xl w-full">
-                        <img src="/lovable-uploads/13281197-eba4-4fbd-b5a0-d1d6ee060741.png" alt="Electrical Training Kit" className="w-full h-auto object-contain rounded-lg" />
-                      </DialogContent>
-                    </Dialog>
+
+                  {/* Photo 2 */}
+                  <CarouselItem className="md:basis-1/2">
+                    <div className="p-4">
+                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                        <CardContent className="p-0">
+                          <div className="aspect-video relative rounded-lg overflow-hidden">
+                            <img 
+                              src="https://images.unsplash.com/photo-1562813733-b31f71025d54?w=800&h=450&fit=crop&crop=center" 
+                              alt="Photo-2" 
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                          </div>
+                          <div className="p-6 text-center">
+                            <h3 className="text-xl font-bold text-primary mb-2">Photo-2</h3>
+                            <p className="text-base text-muted-foreground">Client Name - Institute B</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2" />
+                
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
               </Carousel>
             </div>
           </div>
