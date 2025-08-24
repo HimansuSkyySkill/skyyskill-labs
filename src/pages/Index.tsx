@@ -570,8 +570,7 @@ const Index = () => {
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6 text-center">
-                                  <h3 className="text-xl font-bold text-primary mb-2">Photo-{index + 1}</h3>
-                                  <p className="text-base text-muted-foreground">{lab.client}</p>
+                                  <h3 className="text-xl font-bold text-primary">{lab.client}</h3>
                                 </div>
                               </CardContent>
                             </Card>
