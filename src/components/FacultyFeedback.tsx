@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Play, Quote, Star } from 'lucide-react';
+import { Play, Quote, Star, FileText } from 'lucide-react';
+import { LeadCaptureForm } from '@/components/LeadCaptureForm';
 
 const FacultyFeedback = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -150,10 +152,21 @@ const FacultyFeedback = () => {
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Discover how our Centers of Excellence can transform your institution's approach to modern education and skill development.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Badge className="bg-primary/10 text-primary border-primary/20 px-6 py-2">
                 500+ Satisfied Faculty Members
               </Badge>
+              
+              <LeadCaptureForm 
+                type="quotation" 
+                trigger={
+                  <Button className="bg-gradient-to-r from-orange to-red-500 hover:from-orange/90 hover:to-red-500/90 text-white px-8 py-3 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0">
+                    <FileText className="w-5 h-5 mr-2" />
+                    Get a Quotation Now
+                  </Button>
+                } 
+              />
+              
               <Badge className="bg-aqua/10 text-aqua border-aqua/20 px-6 py-2">
                 95% Positive Feedback Rate
               </Badge>
