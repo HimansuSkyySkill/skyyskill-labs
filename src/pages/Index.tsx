@@ -359,9 +359,62 @@ const Index = () => {
               Electric Vehicle <span className="text-aqua">Center of Excellence</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              India's most comprehensive EV skill development ecosystem with cutting-edge technology 
-              and industry-aligned training programs.
+              Our 6+4 CoE model will make your CoE enabled for Skilling to Research to Consulting support.
             </p>
+            
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mt-12">
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-white mb-6">6 Core Labs</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Powertrain & Motor Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Battery & BMS Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Charging & Energy Management Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Electronics & Controller Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Simulation & Design (CAD/CAE) Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-aqua rounded-full mt-2 flex-shrink-0"></div>
+                    EV Testing & Diagnostics Lab
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-white mb-6">4 Add-on Labs</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    ADAS & Autonomous EV Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    EV Retrofit & Hybrid Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    Renewable Energy & Microgrid Lab
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    AI & Digital Twin Integration Lab
+                  </li>
+                </ul>
+              </div>
+            </div>
             {/* Metrics Section */}
             <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
               <div className="text-center p-4 bg-primary/5 rounded-xl">
