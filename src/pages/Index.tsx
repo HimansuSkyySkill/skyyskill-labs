@@ -461,9 +461,6 @@ const Index = () => {
                   </Button>
                 } 
               />
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-                Know More
-              </Button>
             </div>
           </div>
 
