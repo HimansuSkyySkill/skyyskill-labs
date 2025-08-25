@@ -16,7 +16,7 @@ import BlogDetail from "./pages/BlogDetail";
 import BlogAdmin from "./pages/BlogAdmin";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
-import ChatbotTrigger from "./components/ChatbotTrigger";
+// import ChatbotTrigger from "./components/ChatbotTrigger";
 import WhatsAppChat from "./components/WhatsAppChat";
 
 const queryClient = new QueryClient();
@@ -50,7 +50,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppChat />
-        <ChatbotTrigger />
+        {/* <ChatbotTrigger /> */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
