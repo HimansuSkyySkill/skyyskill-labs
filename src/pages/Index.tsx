@@ -299,7 +299,12 @@ const Index = () => {
                     <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>
                       {item.icon}
                     </div>
-                    <Badge className={`bg-${item.color}/10 text-${item.color} border-${item.color}/20`}>
+                    <Badge variant={
+                      item.color === 'primary' ? 'primary-light' :
+                      item.color === 'aqua' ? 'aqua-light' :
+                      item.color === 'green' ? 'green-light' :
+                      'outline'
+                    } className={item.color === 'orange' ? 'bg-orange/10 text-orange border-orange/20 hover:bg-orange hover:text-white' : ''}>
                       {item.highlight}
                     </Badge>
                   </div>
