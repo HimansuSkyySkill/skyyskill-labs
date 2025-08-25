@@ -217,7 +217,7 @@ const AICounsellor = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <GraduationCap className="w-8 h-8 text-primary group-hover:animate-pulse" />
-                      <Badge variant="secondary" className="bg-primary/10 text-primary">
+                      <Badge variant="primary-light">
                         {program.type}
                       </Badge>
                     </div>

@@ -89,7 +89,7 @@ const Blogs = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2">
+          <Badge variant="primary-light" className="mb-6 px-6 py-2">
             <BookOpen className="w-4 h-4 mr-2" />
             Insights & Innovation
           </Badge>

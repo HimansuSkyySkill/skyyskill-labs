@@ -518,7 +518,7 @@ const EvLab = () => {
                     {program.name}
                   </CardTitle>
                   <div className="flex justify-between items-center">
-                    <Badge className="bg-primary/10 text-primary">{program.duration}</Badge>
+                    <Badge variant="primary-light">{program.duration}</Badge>
                     <Badge variant="outline">{program.certification}</Badge>
                   </div>
                 </CardHeader>

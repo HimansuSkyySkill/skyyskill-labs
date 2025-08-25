@@ -352,7 +352,7 @@ const Index = () => {
       <section id="ev-coe" className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-primary/10 text-primary border-primary/20 mb-6 px-4 py-2">
+            <Badge variant="primary-light" className="mb-6 px-4 py-2">
               🏆 Center of Excellence
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
@@ -1082,7 +1082,7 @@ const Index = () => {
                   <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-white" />
                   </div>
-                  <Badge className="bg-primary/10 text-primary border-primary/20">
+                  <Badge variant="primary-light">
                     Headquarters
                   </Badge>
                 </div>

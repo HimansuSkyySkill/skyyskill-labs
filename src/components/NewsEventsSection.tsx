@@ -242,12 +242,13 @@ const NewsEventsSection = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <Badge 
-                    className={`text-xs ${
-                      item.type === 'Partnership' ? 'bg-primary/10 text-primary border-primary/20' :
-                      item.type === 'Launch' ? 'bg-green/10 text-green border-green/20' :
-                      item.type === 'Collaboration' ? 'bg-aqua/10 text-aqua border-aqua/20' :
-                      'bg-orange/10 text-orange border-orange/20'
-                    }`}
+                    variant={
+                      item.type === 'Partnership' ? 'primary-light' :
+                      item.type === 'Launch' ? 'green-light' :
+                      item.type === 'Collaboration' ? 'aqua-light' :
+                      'outline'
+                    }
+                    className={item.type === 'Innovation' ? 'bg-orange/10 text-orange border-orange/20' : ''}
                   >
                     {item.type}
                   </Badge>

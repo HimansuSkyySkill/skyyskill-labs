@@ -153,7 +153,7 @@ const FacultyFeedback = () => {
               Discover how our Centers of Excellence can transform your institution's approach to modern education and skill development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Badge className="bg-primary/10 text-primary border-primary/20 px-6 py-2">
+              <Badge variant="primary-light" className="px-6 py-2">
                 500+ Satisfied Faculty Members
               </Badge>
               
@@ -167,7 +167,7 @@ const FacultyFeedback = () => {
                 } 
               />
               
-              <Badge className="bg-aqua/10 text-aqua border-aqua/20 px-6 py-2">
+              <Badge variant="aqua-light" className="px-6 py-2">
                 95% Positive Feedback Rate
               </Badge>
             </div>

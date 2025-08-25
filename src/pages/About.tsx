@@ -228,7 +228,7 @@ const About = () => {
             <div className="text-center lg:text-left">
               <div className="mb-8">
                 <Target className="w-16 h-16 text-primary mx-auto lg:mx-0 mb-6" />
-                <Badge className="bg-primary/10 text-primary border-primary/20 px-6 py-3 text-lg font-bold">
+                <Badge variant="primary-light" className="px-6 py-3 text-lg font-bold">
                   🎯 Our Vision
                 </Badge>
               </div>
@@ -339,7 +339,7 @@ const About = () => {
       <section className="py-32 bg-gradient-to-br from-secondary/30 via-background to-secondary/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
-            <Badge className="bg-primary/10 text-primary border-primary/20 mb-8 px-8 py-4 text-lg font-bold">
+            <Badge variant="primary-light" className="mb-8 px-8 py-4 text-lg font-bold">
               🧠 Why Institutions Trust Us
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">

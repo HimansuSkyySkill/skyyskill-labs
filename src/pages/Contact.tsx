@@ -135,7 +135,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2">
+          <Badge variant="primary-light" className="mb-6 px-6 py-2">
             Contact Us
           </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
@@ -283,7 +283,7 @@ const Contact = () => {
                     <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
                       <Building2 className="w-6 h-6 text-white" />
                     </div>
-                    <Badge className="bg-primary/10 text-primary border-primary/20">
+                    <Badge variant="primary-light">
                       Headquarters
                     </Badge>
                   </div>
