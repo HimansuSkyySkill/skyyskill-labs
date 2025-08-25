@@ -18,6 +18,9 @@ import BlogAdmin from "./pages/BlogAdmin";
 import EVCentreOfExcellence from "./pages/EVCentreOfExcellence";
 import SolarLabCoE from "./pages/SolarLabCoE";
 import AutomotiveLabCoE from "./pages/AutomotiveLabCoE";
+import DroneLabCoE from "./pages/DroneLabCoE";
+import ThreeDPrintingLab from "./pages/ThreeDPrintingLab";
+import CNCSimulationLab from "./pages/CNCSimulationLab";
 import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 // import ChatbotTrigger from "./components/ChatbotTrigger";
@@ -41,14 +44,14 @@ const App = () => (
           <Route path="/ev-centre-of-excellence" element={<EVCentreOfExcellence />} />
           <Route path="/solar-lab-coe" element={<SolarLabCoE />} />
           <Route path="/automotive-lab-coe" element={<AutomotiveLabCoE />} />
+          <Route path="/drone-lab" element={<DroneLabCoE />} />
+          <Route path="/3d-printing-lab" element={<ThreeDPrintingLab />} />
+          <Route path="/cnc-lab" element={<CNCSimulationLab />} />
           <Route path="/ai-trainer" element={<AITrainer />} />
           <Route path="/ai-counsellor" element={<AICounsellor />} />
           <Route path="/under-construction" element={<UnderConstruction />} />
           <Route path="/solar-lab" element={<UnderConstruction title="Solar Lab - Coming Soon" />} />
-          <Route path="/drone-lab" element={<UnderConstruction title="Drone Lab - Coming Soon" />} />
           <Route path="/automotive-lab" element={<UnderConstruction title="Automotive Lab - Coming Soon" />} />
-          <Route path="/3d-printing-lab" element={<UnderConstruction title="3D Printing Lab - Coming Soon" />} />
-          <Route path="/cnc-lab" element={<UnderConstruction title="CNC Simulation Lab - Coming Soon" />} />
           <Route path="/ai-lab" element={<UnderConstruction title="AI Labs - Coming Soon" />} />
           <Route path="/lab-videos" element={<LabVideos />} />
           <Route path="/blogs" element={<Blogs />} />
