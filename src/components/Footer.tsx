@@ -131,7 +131,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-4">
                 <img 
-                  src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
+                  src="/lovable-uploads/d57ad5b0-a8dc-4709-bfc4-f14f386c5c30.png" 
                   alt="SkyySkill Labs" 
                   className="h-10 mb-3" 
                 />
