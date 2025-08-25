@@ -27,12 +27,9 @@ import {
 const Navigation = () => {
   const labs = [
     { name: "EV Centre of Excellence", path: "/ev-centre-of-excellence", icon: Car },
-    { name: "EV Lab", path: "/ev-lab", icon: Car },
     { name: "Solar Lab CoE", path: "/solar-lab-coe", icon: Sun },
-    { name: "Solar Lab", path: "/solar-lab", icon: Sun },
     { name: "Automotive Lab CoE", path: "/automotive-lab-coe", icon: Wrench },
-    { name: "Automotive Lab", path: "/automotive-lab", icon: Wrench },
-    { name: "Drone Lab", path: "/drone-lab", icon: Plane },
+    { name: "Drone Lab CoE", path: "/drone-lab", icon: Plane },
     { name: "3D Printing Lab", path: "/3d-printing-lab", icon: Printer },
     { name: "CNC Simulation Lab", path: "/cnc-lab", icon: Settings },
     { name: "AI Interactive Trainer", path: "https://www.skyyskilllabs.org/ai-trainer", icon: Brain },
@@ -64,17 +61,7 @@ const Navigation = () => {
             <DropdownMenuContent className="bg-background border border-border shadow-lg z-50">
               {labs.map((lab) => (
                 <DropdownMenuItem key={lab.path} asChild>
-                  {lab.name === "EV Lab" ? (
-                    <a 
-                      href="https://www.evskilllab.com" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
-                    >
-                      <lab.icon className="w-4 h-4" />
-                      {lab.name}
-                    </a>
-                  ) : lab.name === "AI Interactive Trainer" ? (
+                  {lab.name === "AI Interactive Trainer" ? (
                     <a 
                       href={lab.path}
                       target="_blank"
