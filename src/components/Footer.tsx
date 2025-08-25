@@ -210,15 +210,27 @@ const Footer = () => {
               <h3 className="text-lg font-bold mb-4 text-white">Lab Solutions</h3>
               <ul className="space-y-2">
                 <li>
+                  <Link to="/ev-centre-of-excellence" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                    <ArrowRight className="w-3 h-3" />
+                    EV Centre of Excellence
+                  </Link>
+                </li>
+                <li>
                   <Link to="/ev-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Electric Vehicle Lab
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solar-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/solar-lab-coe" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
-                    Solar Lab
+                    Solar Lab CoE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/automotive-lab-coe" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                    <ArrowRight className="w-3 h-3" />
+                    Automotive Lab CoE
                   </Link>
                 </li>
                 <li>

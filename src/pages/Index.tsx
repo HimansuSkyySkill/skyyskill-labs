@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -159,9 +160,54 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <Navigation />
+    <>
+      <Helmet>
+        <title>SkyySkill Labs | EV CoE, EV Lab, Solar CoE & Automotive Labs in India</title>
+        <meta name="description" content="SkyySkill Labs is India's leading provider of EV Centres of Excellence (CoE), Solar Labs, and Automotive Skill Labs. Trusted by IITs, ITIs & Engineering Colleges for advanced skilling and R&D." />
+        <meta name="keywords" content="EV CoE, EV Lab, Solar Lab, Solar CoE, Automotive Lab, Automotive CoE, SkyySkill Labs, Engineering College Labs, Skill Development" />
+        <link rel="canonical" href="https://skyyskilllabs.org/" />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="SkyySkill Labs | EV CoE, EV Lab, Solar CoE & Automotive Labs in India" />
+        <meta property="og:description" content="SkyySkill Labs is India's leading provider of EV Centres of Excellence (CoE), Solar Labs, and Automotive Skill Labs. Trusted by IITs, ITIs & Engineering Colleges for advanced skilling and R&D." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://skyyskilllabs.org/" />
+        
+        {/* Structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "SkyySkill Labs",
+            "url": "https://skyyskilllabs.org",
+            "logo": "https://skyyskilllabs.org/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png",
+            "description": "India's leading provider of EV Centres of Excellence, Solar Labs, and Automotive Skill Labs",
+            "areaServed": "India",
+            "serviceType": ["Educational Infrastructure", "Skill Development", "Laboratory Setup"],
+            "offers": [
+              {
+                "@type": "Service",
+                "name": "EV Centre of Excellence",
+                "description": "Electric Vehicle training labs and CoE setup"
+              },
+              {
+                "@type": "Service", 
+                "name": "Solar Lab CoE",
+                "description": "Solar energy training and renewable energy labs"
+              },
+              {
+                "@type": "Service",
+                "name": "Automotive Lab CoE", 
+                "description": "Automotive training labs and skill development"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        {/* Navigation */}
+        <Navigation />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ai-grid">
@@ -1323,8 +1369,9 @@ const Index = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 
