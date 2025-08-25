@@ -859,11 +859,11 @@ const Index = () => {
           {/* Auto-sliding logos */}
           <div className="relative">
             <div className="flex animate-marquee space-x-16 items-center">
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+              {["L&T Edutech", "ESSCI", "Microsoft", "Capgemni", "Shell", "SBI Foundation", "AmaraRaja Batteries"].map((client, index) => <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
                 </div>)}
               {/* Duplicate for seamless loop */}
-              {["IIT Dharwad", "NIT Raipur", "MNIT Bhopal", "Bosch", "Ola Electric", "ASDC", "Hero MotoCorp", "Mahindra", "TATA Motors", "Bajaj Auto", "TVS Motors", "L&T"].map((client, index) => <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
+              {["L&T Edutech", "ESSCI", "Microsoft", "Capgemni", "Shell", "SBI Foundation", "AmaraRaja Batteries"].map((client, index) => <div key={`dup-${index}`} className="flex-shrink-0 w-48 h-20 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300">
                   <span className="font-bold text-lg text-foreground whitespace-nowrap">{client}</span>
                 </div>)}
             </div>
