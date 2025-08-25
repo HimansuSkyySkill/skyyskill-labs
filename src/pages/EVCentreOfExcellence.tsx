@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import { 
   Car, 
   Battery, 
@@ -100,6 +101,15 @@ const EVCentreOfExcellence = () => {
                     <ArrowRight className="w-5 h-5 mr-2" />
                     Setup EV CoE Now
                   </Button>
+                  <LeadCaptureForm 
+                    type="quotation" 
+                    trigger={
+                      <Button variant="outline" size="lg">
+                        <Phone className="w-5 h-5 mr-2" />
+                        Get Quotation
+                      </Button>
+                    } 
+                  />
                   <Button variant="outline" size="lg" onClick={handleCTAClick}>
                     <Phone className="w-5 h-5 mr-2" />
                     Schedule Demo
@@ -193,10 +203,21 @@ const EVCentreOfExcellence = () => {
                 Our EV CoE is developed in partnership with leading automotive OEMs, 
                 ensuring your students learn on the same equipment used in the industry.
               </p>
-              <Button size="lg" onClick={handleCTAClick} className="bg-primary hover:bg-primary/90">
-                <Mail className="w-5 h-5 mr-2" />
-                Get Partnership Details
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" onClick={handleCTAClick} className="bg-primary hover:bg-primary/90">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Get Partnership Details
+                </Button>
+                <LeadCaptureForm 
+                  type="quotation" 
+                  trigger={
+                    <Button variant="outline" size="lg">
+                      <ArrowRight className="w-5 h-5 mr-2" />
+                      Request Quote
+                    </Button>
+                  } 
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -252,10 +273,21 @@ const EVCentreOfExcellence = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join 200+ institutions across India who have chosen SkyySkill Labs for their EV training needs.
             </p>
-            <Button size="lg" onClick={handleCTAClick} className="bg-primary hover:bg-primary/90">
-              <ArrowRight className="w-5 h-5 mr-2" />
-              Start Your EV CoE Journey
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" onClick={handleCTAClick} className="bg-primary hover:bg-primary/90">
+                <ArrowRight className="w-5 h-5 mr-2" />
+                Start Your EV CoE Journey
+              </Button>
+              <LeadCaptureForm 
+                type="quotation" 
+                trigger={
+                  <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Get Detailed Quote
+                  </Button>
+                } 
+              />
+            </div>
           </div>
         </section>
       </main>
