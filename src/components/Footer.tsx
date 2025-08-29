@@ -173,15 +173,9 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ev-lab" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
-                    <ArrowRight className="w-3 h-3" />
-                    EV Lab
-                  </Link>
-                </li>
-                <li>
                   <Link to="/blogs" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
-                    Blogs
+                    Blog & News
                   </Link>
                 </li>
                 <li>
@@ -213,12 +207,6 @@ const Footer = () => {
                   <Link to="/ev-centre-of-excellence" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     EV Centre of Excellence
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/ev-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
-                    <ArrowRight className="w-3 h-3" />
-                    Electric Vehicle Lab
                   </Link>
                 </li>
                 <li>

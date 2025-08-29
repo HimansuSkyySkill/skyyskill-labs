@@ -85,6 +85,11 @@ const Navigation = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           
+          <Link to="/blogs" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+            <Play className="w-4 h-4" />
+            Blog
+          </Link>
+          
           <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
             <Phone className="w-4 h-4" />
             Contact Us

@@ -162,14 +162,14 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>SkyySkill Labs | EV CoE, EV Lab, Solar CoE & Automotive Labs in India</title>
-        <meta name="description" content="SkyySkill Labs is India's leading provider of EV Centres of Excellence (CoE), Solar Labs, and Automotive Skill Labs. Trusted by IITs, ITIs & Engineering Colleges for advanced skilling and R&D." />
+        <title>SkyySkill Labs | EV CoE · Solar CoE · Automotive Labs · India's Leading CoE Builder</title>
+        <meta name="description" content="Setup world-class EV, Solar & Automotive Centres of Excellence with SkyySkill Labs—partnered with IIT Kanpur and top institutions for hands-on training, innovation, and placement." />
         <meta name="keywords" content="EV CoE, EV Lab, Solar Lab, Solar CoE, Automotive Lab, Automotive CoE, SkyySkill Labs, Engineering College Labs, Skill Development" />
         <link rel="canonical" href="https://skyyskilllabs.org/" />
         
         {/* Open Graph tags */}
-        <meta property="og:title" content="SkyySkill Labs | EV CoE, EV Lab, Solar CoE & Automotive Labs in India" />
-        <meta property="og:description" content="SkyySkill Labs is India's leading provider of EV Centres of Excellence (CoE), Solar Labs, and Automotive Skill Labs. Trusted by IITs, ITIs & Engineering Colleges for advanced skilling and R&D." />
+        <meta property="og:title" content="SkyySkill Labs | EV CoE · Solar CoE · Automotive Labs · India's Leading CoE Builder" />
+        <meta property="og:description" content="Setup world-class EV, Solar & Automotive Centres of Excellence with SkyySkill Labs—partnered with IIT Kanpur and top institutions for hands-on training, innovation, and placement." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://skyyskilllabs.org/" />
         
@@ -212,7 +212,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ai-grid">
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Modern Laboratory" className="w-full h-full object-cover opacity-20" />
+          <img src={heroImage} alt="SkyySkill Labs EV CoE Solar Lab Automotive CoE training facility" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-primary/80 to-green/70"></div>
           
           {/* AI Floating Elements - Reduced Glow */}
@@ -228,15 +228,15 @@ const Index = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-hologram">
-              India's First AI-Ready
-              <span className="block bg-gradient-to-r from-cyan via-electric-blue to-aqua bg-clip-text text-transparent mt-2">EV Centre of Excellence Ecosystem</span>
+              EV, Solar & Automotive CoE
+              <span className="block bg-gradient-to-r from-cyan via-electric-blue to-aqua bg-clip-text text-transparent mt-2">Lab Providers in India</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
-              From ITI to IIT, SkyySkill delivers Industry 4.0-aligned, AI-integrated, patented EV Labs
+              From ITI to IIT, SkyySkill delivers world-class EV CoE, Solar CoE & Automotive CoE solutions
             </p>
             <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Empowering institutions with cutting-edge infrastructure and innovation capacity.
+              Partnered with IIT Kanpur and top institutions for hands-on training, innovation, and placement.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
