@@ -1098,7 +1098,7 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Stay updated with our latest developments, events, and industry insights.
             </p>
-            <Button onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')} size="lg" className="bg-green hover:bg-green/90 text-lg px-10 py-6 h-auto">
+            <Button onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')} size="lg" className="bg-green hover:bg-green/80 text-white border border-green/30 text-lg px-10 py-6 h-auto hover:shadow-[0_0_30px_hsl(var(--green)/0.6)]">
               <Calendar className="w-5 h-5 mr-3" />
               View All News & Events
             </Button>
