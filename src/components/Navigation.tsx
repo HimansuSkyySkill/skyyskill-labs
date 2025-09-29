@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   Download, 
   ChevronDown,
@@ -21,11 +22,14 @@ import {
   Phone,
   Brain,
   Store,
-  Play
+  Play,
+  FileText
 } from "lucide-react";
 import skyyLogo from "@/assets/skyy-logo.png";
 
 const Navigation = () => {
+  const isMobile = useIsMobile();
+  
   const labs = [
     { name: "EV Centre of Excellence", path: "/ev-centre-of-excellence", icon: Car },
     { name: "Solar Lab CoE", path: "/solar-lab-coe", icon: Sun },
@@ -39,24 +43,37 @@ const Navigation = () => {
   return (
     <>
       <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-md border-b border-violet/20 z-50 shadow-card">
-      <div className="container mx-auto px-4 py-1.5 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="relative">
-            <img 
-              src={skyyLogo} 
-              alt="SkyySkill Labs" 
-              className="h-10 md:h-12 relative z-10 transition-transform duration-300 group-hover:scale-105" 
-            />
-            {/* Glowing effect */}
-            <div className="absolute inset-0 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow"
-                 style={{
-                   background: 'radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(59, 130, 246, 0.3), rgba(34, 197, 94, 0.2))'
-                 }}>
+        <div className="container mx-auto px-4 py-1.5 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="relative">
+              <img 
+                src={skyyLogo} 
+                alt="SkyySkill Labs" 
+                className="h-10 md:h-12 relative z-10 transition-transform duration-300 group-hover:scale-105" 
+              />
+              {/* Glowing effect */}
+              <div className="absolute inset-0 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow"
+                   style={{
+                     background: 'radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(59, 130, 246, 0.3), rgba(34, 197, 94, 0.2))'
+                   }}>
+              </div>
             </div>
-          </div>
-        </Link>
-        
-        <div className="hidden md:flex items-center space-x-5">
+          </Link>
+          
+          {/* Mobile Get Quotation Button */}
+          {isMobile && (
+            <LeadCaptureForm 
+              type="quotation"
+              trigger={
+                <Button variant="cta" size="sm" className="md:hidden">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Get Quotation
+                </Button>
+              }
+            />
+          )}
+
+          <div className="hidden md:flex items-center space-x-5">
           <Link to="/" className="text-foreground/80 hover:text-violet transition-colors flex items-center gap-1">
             <Home className="w-4 h-4" />
             Home
@@ -123,12 +140,57 @@ const Navigation = () => {
             } 
           />
           
-          <Link to="/reseller" className="text-tech-orange hover:text-tech-orange/80 transition-colors flex items-center gap-1 font-semibold bg-tech-orange/10 px-3 py-2 rounded-lg border border-tech-orange/30 hover:bg-tech-orange/20 hover:shadow-glow">
-            <Store className="w-4 h-4" />
-            Become Our Reseller
-          </Link>
+            <Link to="/reseller" className="text-tech-orange hover:text-tech-orange/80 transition-colors flex items-center gap-1 font-semibold bg-tech-orange/10 px-3 py-2 rounded-lg border border-tech-orange/30 hover:bg-tech-orange/20 hover:shadow-glow">
+              <Store className="w-4 h-4" />
+              Become Our Reseller
+            </Link>
+          </div>
         </div>
-        </div>
+        
+        {/* Mobile Second Navigation Line */}
+        {isMobile && (
+          <div className="md:hidden bg-card/50 backdrop-blur-sm border-t border-violet/10">
+            <div className="container mx-auto px-4 py-2 flex items-center justify-center gap-6">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-foreground/70 hover:text-violet transition-colors flex items-center gap-1 text-sm outline-none">
+                  <Settings className="w-4 h-4" />
+                  Labs
+                  <ChevronDown className="w-3 h-3" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-card/95 backdrop-blur-md border border-violet/20 shadow-glow z-50">
+                  {labs.map((lab) => (
+                    <DropdownMenuItem key={lab.path} asChild>
+                      {lab.name === "AI Interactive Trainer" ? (
+                        <a 
+                          href={lab.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
+                        >
+                          <lab.icon className="w-4 h-4" />
+                          {lab.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          to={lab.path} 
+                          className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-muted cursor-pointer"
+                        >
+                          <lab.icon className="w-4 h-4" />
+                          {lab.name}
+                        </Link>
+                      )}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
+              <Link to="/contact" className="text-foreground/70 hover:text-violet transition-colors flex items-center gap-1 text-sm">
+                <Phone className="w-4 h-4" />
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
       <FloatingButtons />
     </>
