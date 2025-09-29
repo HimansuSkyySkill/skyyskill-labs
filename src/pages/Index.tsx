@@ -241,14 +241,14 @@ const Index = () => {
               <span className="text-cyan">Eco-System</span>
             </h1>
             
-            <div className="text-lg md:text-xl mb-12 leading-relaxed max-w-4xl mx-auto">
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-violet/20 text-violet border border-violet/30 rounded-full font-medium">Electric Vehicle</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-green/20 text-green border border-green/30 rounded-full font-medium">Solar</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-purple-pink/20 text-purple-pink border border-purple-pink/30 rounded-full font-medium">AI & ML</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-cyan/20 text-cyan border border-cyan/30 rounded-full font-medium">Drone</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-tech-orange/20 text-tech-orange border border-tech-orange/30 rounded-full font-medium">Automotive</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-electric-blue/20 text-electric-blue border border-electric-blue/30 rounded-full font-medium">Robotics</span>
-              <span className="inline-block px-3 py-1 mx-1 my-1 bg-glow-cyan/20 text-glow-cyan border border-glow-cyan/30 rounded-full font-medium">IoT</span>
+            <div className="text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-violet/20 text-violet border border-violet/30 rounded-full font-medium text-sm">Electric Vehicle</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-green/20 text-green border border-green/30 rounded-full font-medium text-sm">Solar</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-purple-pink/20 text-purple-pink border border-purple-pink/30 rounded-full font-medium text-sm">AI & ML</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-cyan/20 text-cyan border border-cyan/30 rounded-full font-medium text-sm">Drone</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-tech-orange/20 text-tech-orange border border-tech-orange/30 rounded-full font-medium text-sm">Automotive</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-electric-blue/20 text-electric-blue border border-electric-blue/30 rounded-full font-medium text-sm">Robotics</span>
+              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-glow-cyan/20 text-glow-cyan border border-glow-cyan/30 rounded-full font-medium text-sm">IoT</span>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
