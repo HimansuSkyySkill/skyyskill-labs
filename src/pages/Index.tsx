@@ -210,7 +210,7 @@ const Index = () => {
         <Navigation />
 
       {/* Hero Section - Futuristic redesign */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 orb-bg">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-16 orb-bg">
         <div className="absolute inset-0 z-0 ai-grid opacity-20">
           <img src={heroImage} alt="SkyySkill Labs EV CoE Solar Lab Automotive CoE training facility" className="w-full h-full object-cover opacity-10" />
           <div className="absolute inset-0 bg-gradient-hero"></div>
