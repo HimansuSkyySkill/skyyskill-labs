@@ -23,6 +23,7 @@ import {
   Store,
   Play
 } from "lucide-react";
+import skyyLogo from "@/assets/skyy-logo.png";
 
 const Navigation = () => {
   const labs = [
@@ -37,28 +38,36 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-md border-b border-violet/20 z-50 shadow-card">
       <div className="container mx-auto px-4 py-1.5 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <img 
-            src="/lovable-uploads/8e3b68c3-b813-48fb-900d-39f73318a10e.png" 
-            alt="SkyySkill Labs" 
-            className="h-8 md:h-10" 
-          />
+        <Link to="/" className="flex items-center space-x-2 group">
+          <div className="relative">
+            <img 
+              src={skyyLogo} 
+              alt="SkyySkill Labs" 
+              className="h-10 md:h-12 relative z-10 transition-transform duration-300 group-hover:scale-105" 
+            />
+            {/* Glowing effect */}
+            <div className="absolute inset-0 blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-glow"
+                 style={{
+                   background: 'radial-gradient(circle, rgba(99, 102, 241, 0.4), rgba(59, 130, 246, 0.3), rgba(34, 197, 94, 0.2))'
+                 }}>
+            </div>
+          </div>
         </Link>
         
         <div className="hidden md:flex items-center space-x-5">
-          <Link to="/" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+          <Link to="/" className="text-foreground/80 hover:text-violet transition-colors flex items-center gap-1">
             <Home className="w-4 h-4" />
             Home
           </Link>
           
           <DropdownMenu>
-            <DropdownMenuTrigger className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 outline-none">
+            <DropdownMenuTrigger className="text-foreground/80 hover:text-violet transition-colors flex items-center gap-1 outline-none">
               Labs
               <ChevronDown className="w-4 h-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-background border border-border shadow-lg z-50">
+            <DropdownMenuContent className="bg-card/95 backdrop-blur-md border border-violet/20 shadow-glow z-50">
               {labs.map((lab) => (
                 <DropdownMenuItem key={lab.path} asChild>
                   {lab.name === "AI Interactive Trainer" ? (
@@ -85,12 +94,12 @@ const Navigation = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           
-          <Link to="/blogs" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+          <Link to="/blogs" className="text-foreground/80 hover:text-violet transition-colors flex items-center gap-1">
             <Play className="w-4 h-4" />
             Blog
           </Link>
           
-          <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+          <Link to="/contact" className="text-foreground/80 hover:text-violet transition-colors flex items-center gap-1">
             <Phone className="w-4 h-4" />
             Contact Us
           </Link>
@@ -99,7 +108,7 @@ const Navigation = () => {
             href="https://skyyskill.com/career" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-foreground/80 hover:text-violet transition-colors"
           >
             Careers
           </a>
@@ -114,7 +123,7 @@ const Navigation = () => {
             } 
           />
           
-          <Link to="/reseller" className="text-orange hover:text-orange/80 transition-colors flex items-center gap-1 font-semibold bg-orange/10 px-3 py-2 rounded-lg border border-orange/20 hover:bg-orange/20">
+          <Link to="/reseller" className="text-tech-orange hover:text-tech-orange/80 transition-colors flex items-center gap-1 font-semibold bg-tech-orange/10 px-3 py-2 rounded-lg border border-tech-orange/30 hover:bg-tech-orange/20 hover:shadow-glow">
             <Store className="w-4 h-4" />
             Become Our Reseller
           </Link>

@@ -11,17 +11,20 @@ import {
   ArrowRight,
   Store
 } from "lucide-react";
+import skyyLogo from "@/assets/skyy-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-navy/95 via-navy/90 to-primary/80 text-white">
+    <footer className="bg-gradient-hero text-white relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 neural-bg opacity-30"></div>
       {/* Become Our Reseller CTA Section */}
-      <section className="py-12 border-b border-white/10">
+      <section className="py-12 border-b border-violet/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Reseller Info */}
             <div className="text-center lg:text-left">
-              <Badge className="bg-orange/20 text-orange border-orange/30 mb-4 px-4 py-2 text-sm font-bold">
+              <Badge className="bg-tech-orange/20 text-tech-orange border-tech-orange/30 mb-4 px-4 py-2 text-sm font-bold animate-pulse-glow">
                 🤝 Partnership Opportunity
               </Badge>
               <h3 className="text-2xl font-bold text-white mb-3">
@@ -57,7 +60,7 @@ const Footer = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="px-8 py-4 bg-orange/10 border-orange/30 text-orange hover:bg-orange hover:text-white font-semibold text-lg"
+                  className="px-8 py-4 bg-tech-orange/10 border-tech-orange/30 text-tech-orange hover:bg-tech-orange hover:text-white font-semibold text-lg hover:shadow-glow"
                 >
                   <Store className="w-5 h-5 mr-3" />
                   Apply Now
@@ -69,7 +72,7 @@ const Footer = () => {
       </section>
 
       {/* Parent Company Section */}
-      <section className="py-8 border-b border-white/10">
+      <section className="py-8 border-b border-violet/20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             {/* Parent Company Info */}
@@ -91,7 +94,7 @@ const Footer = () => {
                 onClick={() => window.open('https://www.skyyskill.com', '_blank')}
                 variant="outline" 
                 size="sm" 
-                className="px-6 py-3 bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy"
+                className="px-6 py-3 bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy hover:shadow-glow"
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Visit Website
@@ -124,17 +127,25 @@ const Footer = () => {
       </section>
 
       {/* Main Footer Content */}
-      <div className="py-8">
+      <div className="py-8 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Company Info */}
+            {/* Company Info with glowing logo */}
             <div className="lg:col-span-2">
               <div className="mb-4">
-                <img 
-                  src="/lovable-uploads/d57ad5b0-a8dc-4709-bfc4-f14f386c5c30.png" 
-                  alt="SkyySkill Labs" 
-                  className="h-10 mb-3" 
-                />
+                <div className="relative inline-block group">
+                  <img 
+                    src={skyyLogo} 
+                    alt="SkyySkill Labs" 
+                    className="h-12 relative z-10 transition-transform duration-300 group-hover:scale-105" 
+                  />
+                  {/* Glowing effect */}
+                  <div className="absolute inset-0 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-300 animate-pulse-glow"
+                       style={{
+                         background: 'radial-gradient(circle, rgba(99, 102, 241, 0.5), rgba(59, 130, 246, 0.4), rgba(34, 197, 94, 0.3))'
+                       }}>
+                  </div>
+                </div>
               </div>
               <p className="text-white/80 mb-4 text-base leading-relaxed">
                 India's leading OEM for future-ready lab solutions in Electric Vehicles, 
@@ -142,15 +153,15 @@ const Footer = () => {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-aqua" />
+                  <Phone className="w-4 h-4 text-cyan" />
                   <span className="text-sm">+91 9237378472</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-aqua" />
+                  <Mail className="w-4 h-4 text-cyan" />
                   <span className="text-sm">proposal@evskilllab.com</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-aqua mt-0.5 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 text-cyan mt-0.5 flex-shrink-0" />
                   <span className="text-xs">Dr. Atmaram Estates, 2nd Floor, NH 65, Beside TMC, Hyder Nagar, Kukatpally, Hyderabad, Telangana 500072</span>
                 </div>
               </div>
@@ -161,37 +172,37 @@ const Footer = () => {
               <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/about" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blogs" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/blogs" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Blog & News
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/contact" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/reseller" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/reseller" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Become Reseller
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ai-counsellor" className="text-white/80 hover:text-aqua transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/ai-counsellor" className="text-white/80 hover:text-violet transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     AI Counsellor
                   </Link>
@@ -204,43 +215,43 @@ const Footer = () => {
               <h3 className="text-lg font-bold mb-4 text-white">Lab Solutions</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/ev-centre-of-excellence" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/ev-centre-of-excellence" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     EV Centre of Excellence
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solar-lab-coe" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/solar-lab-coe" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Solar Lab CoE
                   </Link>
                 </li>
                 <li>
-                  <Link to="/automotive-lab-coe" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/automotive-lab-coe" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Automotive Lab CoE
                   </Link>
                 </li>
                 <li>
-                  <Link to="/drone-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/drone-lab" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     Drone Lab
                   </Link>
                 </li>
                 <li>
-                  <Link to="/3d-printing-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/3d-printing-lab" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     3D Printing Lab
                   </Link>
                 </li>
                 <li>
-                  <Link to="/cnc-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/cnc-lab" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     CNC Simulation Lab
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ai-lab" className="text-white/80 hover:text-green transition-colors flex items-center gap-2 text-sm">
+                  <Link to="/ai-lab" className="text-white/80 hover:text-cyan transition-colors flex items-center gap-2 text-sm">
                     <ArrowRight className="w-3 h-3" />
                     AI Labs
                   </Link>
@@ -252,16 +263,16 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6">
+      <div className="border-t border-violet/20 py-6 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white/70 text-sm">
               © 2024 SkyySkill Labs. All rights reserved. | Part of SkyySkill Academy Group
             </div>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-white/70 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">Sitemap</a>
+              <a href="#" className="text-white/70 hover:text-violet transition-colors">Privacy Policy</a>
+              <a href="#" className="text-white/70 hover:text-violet transition-colors">Terms of Service</a>
+              <a href="#" className="text-white/70 hover:text-violet transition-colors">Sitemap</a>
             </div>
           </div>
         </div>
