@@ -235,11 +235,8 @@ const Index = () => {
               <span className="text-cyan">Eco-System</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">
               Electric Vehicle, Solar, AI & ML, Drone, Automotive, Robotics and IoT
-            </p>
-            <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Partnered with IIT Kanpur and top institutions for hands-on training, innovation, and placement.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
