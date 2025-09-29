@@ -214,12 +214,16 @@ const Index = () => {
         <div className="absolute inset-0 z-0 ai-grid opacity-20">
           <img src={heroImage} alt="SkyySkill Labs EV CoE Solar Lab Automotive CoE training facility" className="w-full h-full object-cover opacity-10" />
           <div className="absolute inset-0 bg-gradient-hero"></div>
+          {/* Subtle deeper violet overlay for enhanced depth */}
+          <div className="absolute inset-0 bg-gradient-to-br from-violet/15 via-slate-950/40 to-violet/10"></div>
           <div className="absolute inset-0 neural-bg"></div>
           
-          {/* Enhanced AI Floating Elements */}
-          <div className="absolute top-1/4 left-10 w-24 h-24 bg-gradient-orb-1 rounded-full blur-xl animate-ai-breathe orb-glow opacity-60"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-orb-2 rounded-full blur-xl animate-ai-breathe opacity-40" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-2/3 right-1/4 w-28 h-28 bg-violet/30 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
+          {/* Enhanced AI Floating Elements with slightly deeper tones */}
+          <div className="absolute top-1/4 left-10 w-24 h-24 bg-gradient-orb-1 rounded-full blur-xl animate-ai-breathe orb-glow opacity-70"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-orb-2 rounded-full blur-xl animate-ai-breathe opacity-50" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-2/3 right-1/4 w-28 h-28 bg-violet/35 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
+          {/* Additional subtle violet glow for depth */}
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-violet/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
