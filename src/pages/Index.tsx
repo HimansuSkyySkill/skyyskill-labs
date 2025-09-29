@@ -317,49 +317,68 @@ const Index = () => {
             title: "In-house Manufacturing & R&D",
             description: "Complete control over quality, customization, and innovation. Our state-of-the-art facilities ensure precision engineering.",
             highlight: "100% Made in India",
-            color: "primary"
+            iconBg: "bg-violet/10",
+            iconColor: "text-violet",
+            badgeBg: "bg-violet/10",
+            badgeText: "text-violet",
+            badgeBorder: "border-violet/30"
           }, {
             icon: <Award className="w-8 h-8" />,
             title: "Sector Skill Council Approved",
             description: "All lab models are certified and aligned with national skill development standards and industry requirements.",
             highlight: "Government Certified",
-            color: "aqua"
+            iconBg: "bg-cyan/10",
+            iconColor: "text-cyan",
+            badgeBg: "bg-cyan/10",
+            badgeText: "text-cyan",
+            badgeBorder: "border-cyan/30"
           }, {
             icon: <Building2 className="w-8 h-8" />,
             title: "Premier Institution Network",
             description: "Trusted by IITs, NITs, Government ITIs, and leading private institutions across India.",
             highlight: "50+ IITs & NITs",
-            color: "green"
+            iconBg: "bg-green/10",
+            iconColor: "text-green",
+            badgeBg: "bg-green/10",
+            badgeText: "text-green",
+            badgeBorder: "border-green/30"
           }, {
             icon: <BookOpen className="w-8 h-8" />,
             title: "Curriculum-Aligned Solutions",
             description: "Perfect integration with academic programs, from basic concepts to advanced research applications.",
             highlight: "Future-Ready Skills",
-            color: "orange"
+            iconBg: "bg-tech-orange/10",
+            iconColor: "text-tech-orange",
+            badgeBg: "bg-tech-orange/10",
+            badgeText: "text-tech-orange",
+            badgeBorder: "border-tech-orange/30"
           }, {
             icon: <Cpu className="w-8 h-8" />,
             title: "AI & Digital Twin Enabled",
             description: "Next-generation technology integration with simulation, virtual reality, and AI-powered learning modules.",
             highlight: "Industry 4.0 Ready",
-            color: "primary"
+            iconBg: "bg-purple-pink/10",
+            iconColor: "text-purple-pink",
+            badgeBg: "bg-purple-pink/10",
+            badgeText: "text-purple-pink",
+            badgeBorder: "border-purple-pink/30"
           }, {
             icon: <Settings className="w-8 h-8" />,
             title: "Flexible Lab Configurations",
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
             highlight: "Scalable Solutions",
-            color: "aqua"
+            iconBg: "bg-electric-blue/10",
+            iconColor: "text-electric-blue",
+            badgeBg: "bg-electric-blue/10",
+            badgeText: "text-electric-blue",
+            badgeBorder: "border-electric-blue/30"
           }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border hover:border-violet/40 bg-card backdrop-blur-sm hover:-translate-y-1">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>
+                    <div className={`w-16 h-16 ${item.iconBg} rounded-xl flex items-center justify-center ${item.iconColor}`}>
                       {item.icon}
                     </div>
-                    <Badge variant={
-                      item.color === 'primary' ? 'primary-light' :
-                      item.color === 'aqua' ? 'aqua-light' :
-                      item.color === 'green' ? 'green-light' :
-                      'outline'
-                    } className={item.color === 'orange' ? 'bg-orange/10 text-orange border-orange/20 hover:bg-orange hover:text-white' : ''}>
+                    <Badge className={`${item.badgeBg} ${item.badgeText} border ${item.badgeBorder} font-semibold`}>
                       {item.highlight}
                     </Badge>
                   </div>
