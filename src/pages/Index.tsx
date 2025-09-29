@@ -229,7 +229,7 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto animate-fade-in">
             <div className="mb-8">
-              <Badge className="bg-gradient-primary text-white border-0 mb-6 px-6 py-3 text-base font-bold shadow-glow hover:shadow-ai-glow transition-all duration-300">
+              <Badge className="bg-gradient-to-r from-violet/90 to-purple-pink/80 text-white border border-white/10 mb-6 px-4 py-2 text-sm font-semibold shadow-lg">
                 🏆 India's Leading OEM of 600+ Products with strong R&D
               </Badge>
             </div>
@@ -242,52 +242,52 @@ const Index = () => {
             </h1>
             
             <div className="text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-violet/20 text-violet border border-violet/30 rounded-full font-medium text-sm">Electric Vehicle</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-green/20 text-green border border-green/30 rounded-full font-medium text-sm">Solar</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-purple-pink/20 text-purple-pink border border-purple-pink/30 rounded-full font-medium text-sm">AI & ML</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-cyan/20 text-cyan border border-cyan/30 rounded-full font-medium text-sm">Drone</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-tech-orange/20 text-tech-orange border border-tech-orange/30 rounded-full font-medium text-sm">Automotive</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-electric-blue/20 text-electric-blue border border-electric-blue/30 rounded-full font-medium text-sm">Robotics</span>
-              <span className="inline-block px-2 py-0.5 mx-0.5 my-0.5 bg-glow-cyan/20 text-glow-cyan border border-glow-cyan/30 rounded-full font-medium text-sm">IoT</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-violet/10 text-violet/90 border border-violet/20 rounded-full font-medium text-xs backdrop-blur-sm">Electric Vehicle</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-green/10 text-green border border-green/20 rounded-full font-medium text-xs backdrop-blur-sm">Solar</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-purple-pink/10 text-purple-pink/90 border border-purple-pink/20 rounded-full font-medium text-xs backdrop-blur-sm">AI & ML</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-cyan/10 text-cyan/90 border border-cyan/20 rounded-full font-medium text-xs backdrop-blur-sm">Drone</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-tech-orange/10 text-tech-orange/90 border border-tech-orange/20 rounded-full font-medium text-xs backdrop-blur-sm">Automotive</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-electric-blue/10 text-electric-blue/90 border border-electric-blue/20 rounded-full font-medium text-xs backdrop-blur-sm">Robotics</span>
+              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-glow-cyan/10 text-glow-cyan/90 border border-glow-cyan/20 rounded-full font-medium text-xs backdrop-blur-sm">IoT</span>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <LeadCaptureForm 
                 type="quotation" 
                 trigger={
-                  <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto shadow-glow hover:shadow-ai-glow">
-                    <Play className="w-6 h-6 mr-3" />
+                  <Button variant="hero" size="lg" className="text-base px-9 py-5 h-auto">
+                    <Play className="w-5 h-5 mr-2" />
                     Get a Quotation
                   </Button>
                 } 
               />
-              <LeadCaptureForm type="brochure" trigger={<Button variant="glass" size="lg" className="text-lg px-12 py-7 h-auto border-violet/40 hover:border-violet/60">
-                    <Download className="w-6 h-6 mr-3" />
+              <LeadCaptureForm type="brochure" trigger={<Button variant="glass" size="lg" className="text-base px-9 py-5 h-auto border-violet/30 hover:border-violet/50">
+                    <Download className="w-5 h-5 mr-2" />
                     Download Brochure
                   </Button>} />
             </div>
 
-            {/* Enhanced Metrics - Improved Visibility */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-violet/30 hover:border-violet/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="text-5xl md:text-6xl font-bold text-violet mb-3">60+</div>
-                <div className="text-foreground text-base font-semibold">Labs</div>
-                <div className="text-muted-foreground text-sm mt-2">Across India</div>
+            {/* Enhanced Metrics - Premium & Sophisticated */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              <div className="text-center p-6 bg-gradient-to-br from-card/70 to-card/50 backdrop-blur-md rounded-xl border border-violet/20 hover:border-violet/40 transition-all duration-300 group">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet to-purple-pink bg-clip-text text-transparent mb-2">60+</div>
+                <div className="text-foreground/90 text-sm font-medium">Labs</div>
+                <div className="text-muted-foreground/80 text-xs mt-1">Across India</div>
               </div>
-              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-cyan/30 hover:border-cyan/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="text-5xl md:text-6xl font-bold text-cyan mb-3">30K+</div>
-                <div className="text-foreground text-base font-semibold">Students Trained</div>
-                <div className="text-muted-foreground text-sm mt-2">Annually</div>
+              <div className="text-center p-6 bg-gradient-to-br from-card/70 to-card/50 backdrop-blur-md rounded-xl border border-cyan/20 hover:border-cyan/40 transition-all duration-300 group">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-electric-blue bg-clip-text text-transparent mb-2">30K+</div>
+                <div className="text-foreground/90 text-sm font-medium">Students Trained</div>
+                <div className="text-muted-foreground/80 text-xs mt-1">Annually</div>
               </div>
-              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-purple-pink/30 hover:border-purple-pink/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="text-5xl md:text-6xl font-bold text-purple-pink mb-3">625+</div>
-                <div className="text-foreground text-base font-semibold">Product Category</div>
-                <div className="text-muted-foreground text-sm mt-2">Cutting-edge Tech</div>
+              <div className="text-center p-6 bg-gradient-to-br from-card/70 to-card/50 backdrop-blur-md rounded-xl border border-purple-pink/20 hover:border-purple-pink/40 transition-all duration-300 group">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-pink to-violet bg-clip-text text-transparent mb-2">625+</div>
+                <div className="text-foreground/90 text-sm font-medium">Product Category</div>
+                <div className="text-muted-foreground/80 text-xs mt-1">Cutting-edge Tech</div>
               </div>
-              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-electric-blue/30 hover:border-electric-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <div className="text-5xl md:text-6xl font-bold text-electric-blue mb-3">15+</div>
-                <div className="text-foreground text-base font-semibold">Years Experience</div>
-                <div className="text-muted-foreground text-sm mt-2">Industry Leader</div>
+              <div className="text-center p-6 bg-gradient-to-br from-card/70 to-card/50 backdrop-blur-md rounded-xl border border-electric-blue/20 hover:border-electric-blue/40 transition-all duration-300 group">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-electric-blue to-cyan bg-clip-text text-transparent mb-2">15+</div>
+                <div className="text-foreground/90 text-sm font-medium">Years Experience</div>
+                <div className="text-muted-foreground/80 text-xs mt-1">Industry Leader</div>
               </div>
             </div>
           </div>
