@@ -209,16 +209,17 @@ const Index = () => {
         {/* Navigation */}
         <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ai-grid">
-        <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="SkyySkill Labs EV CoE Solar Lab Automotive CoE training facility" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-primary/80 to-green/70"></div>
+      {/* Hero Section - Futuristic redesign */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 orb-bg">
+        <div className="absolute inset-0 z-0 ai-grid opacity-20">
+          <img src={heroImage} alt="SkyySkill Labs EV CoE Solar Lab Automotive CoE training facility" className="w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-gradient-hero"></div>
+          <div className="absolute inset-0 neural-bg"></div>
           
-          {/* AI Floating Elements - Reduced Glow */}
-          <div className="absolute top-1/4 left-10 w-20 h-20 bg-navy/10 rounded-full blur-xl animate-ai-breathe"></div>
-          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-aqua/10 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-2/3 right-1/4 w-24 h-24 bg-green/10 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
+          {/* Enhanced AI Floating Elements */}
+          <div className="absolute top-1/4 left-10 w-24 h-24 bg-gradient-orb-1 rounded-full blur-xl animate-ai-breathe orb-glow opacity-60"></div>
+          <div className="absolute bottom-1/4 right-10 w-32 h-32 bg-gradient-orb-2 rounded-full blur-xl animate-ai-breathe opacity-40" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-2/3 right-1/4 w-28 h-28 bg-violet/30 rounded-full blur-xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -227,9 +228,9 @@ const Index = () => {
               <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">🏆 India's Leading OEM for EV & Green Skill Labs & CoEs</Badge>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight animate-hologram">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight text-glow">
               EV, Solar & Automotive CoE
-              <span className="block bg-gradient-to-r from-cyan via-electric-blue to-aqua bg-clip-text text-transparent mt-2">Lab Providers in India</span>
+              <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 animate-hologram">Lab Providers in India</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -249,53 +250,54 @@ const Index = () => {
                   </Button>
                 } 
               />
-              <LeadCaptureForm type="brochure" trigger={<Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-navy">
+              <LeadCaptureForm type="brochure" trigger={<Button variant="glass" size="lg" className="text-lg px-10 py-6 h-auto animate-ai-breathe">
                     <Download className="w-6 h-6 mr-3" />
                     Download Brochure
                   </Button>} />
             </div>
 
-            {/* Enhanced Metrics */}
+            {/* Enhanced Metrics with glassmorphism */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-cyan/20 animate-neural-pulse">
-                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3">60+</div>
+              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-violet/30 animate-neural-pulse card-glow">
+                <div className="text-4xl md:text-5xl font-bold text-violet mb-3 text-glow">60+</div>
                 <div className="text-white/90 text-sm font-medium">Labs</div>
-                <div className="text-cyan/70 text-xs mt-1">Across India</div>
+                <div className="text-violet/70 text-xs mt-1">Across India</div>
               </div>
-              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-electric-blue/20 animate-neural-pulse" style={{animationDelay: '0.5s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-electric-blue mb-3">30K+</div>
+              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-cyan/30 animate-neural-pulse card-glow" style={{animationDelay: '0.5s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3 text-glow">30K+</div>
                 <div className="text-white/90 text-sm font-medium">Students Trained</div>
-                <div className="text-electric-blue/70 text-xs mt-1">Annually</div>
+                <div className="text-cyan/70 text-xs mt-1">Annually</div>
               </div>
-              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-aqua/20 animate-neural-pulse" style={{animationDelay: '1s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-aqua mb-3">625+</div>
+              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-purple-pink/30 animate-neural-pulse card-glow" style={{animationDelay: '1s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-purple-pink mb-3 text-glow">625+</div>
                 <div className="text-white/90 text-sm font-medium">Product Category</div>
-                <div className="text-aqua/70 text-xs mt-1">Cutting-edge Tech</div>
+                <div className="text-purple-pink/70 text-xs mt-1">Cutting-edge Tech</div>
               </div>
-              <div className="text-center p-6 bg-dark-navy/40 backdrop-blur-sm rounded-2xl border border-cyan/20 animate-neural-pulse" style={{animationDelay: '1.5s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3">15+</div>
+              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-electric-blue/30 animate-neural-pulse card-glow" style={{animationDelay: '1.5s'}}>
+                <div className="text-4xl md:text-5xl font-bold text-electric-blue mb-3 text-glow">15+</div>
                 <div className="text-white/90 text-sm font-medium">Years Experience</div>
-                <div className="text-cyan/70 text-xs mt-1">Industry Leader</div>
+                <div className="text-electric-blue/70 text-xs mt-1">Industry Leader</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Us Section */}
-      <section id="about" className="py-16 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-aqua/5 rounded-full blur-3xl"></div>
+      {/* Why Us Section - Futuristic */}
+      <section id="about" className="py-16 bg-background relative overflow-hidden orb-bg">
+        {/* Background Elements - Enhanced */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-orb-1 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-orb-2 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute inset-0 neural-bg opacity-40"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <Badge className="bg-gradient-to-r from-aqua/90 to-green/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+            <Badge className="bg-gradient-primary text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-glow hover:shadow-ai-glow transition-all duration-300 hover:scale-105 backdrop-blur-sm animate-pulse-glow">
               ✨ The SkyySkill Advantage
             </Badge>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight text-glow">
               Why Leading Institutions 
-              <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-4">Choose SkyySkill Labs</span>
+              <span className="block bg-gradient-primary bg-clip-text text-transparent mt-4 animate-hologram">Choose SkyySkill Labs</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Research-driven. Industry-aligned. Future-ready.
@@ -339,7 +341,7 @@ const Index = () => {
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
             highlight: "Scalable Solutions",
             color: "aqua"
-          }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border bg-background">
+          }].map((item, index) => <Card key={index} className="group hover:shadow-card transition-all duration-500 border border-violet/20 hover:border-violet/50 bg-gradient-glass backdrop-blur-md hover:-translate-y-1">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>

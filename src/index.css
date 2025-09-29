@@ -8,59 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Keep White Backgrounds */
-    --background: 0 0% 100%;
-    --foreground: 215 50% 15%;
+    /* Dark futuristic theme */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 50% 15%;
+    --card: 224 71% 6%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 15%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Deep Navy Primary */
-    --primary: 220 70% 12%;
-    --primary-foreground: 0 0% 98%;
+    /* Vibrant purple primary */
+    --primary: 263 70% 65%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Light background secondary */
-    --secondary: 210 30% 98%;
-    --secondary-foreground: 215 50% 15%;
+    /* Dark secondary */
+    --secondary: 224 71% 10%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 30% 96%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 224 71% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Bright Aqua/Cyan accent */
-    --accent: 187 85% 55%;
-    --accent-foreground: 220 70% 12%;
+    /* Purple accent */
+    --accent: 280 85% 70%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 15% 90%;
-    --input: 215 15% 95%;
-    --ring: 187 85% 55%;
+    --border: 224 71% 15%;
+    --input: 224 71% 12%;
+    --ring: 263 70% 65%;
 
-    /* SkyySkill AI-Ready Brand Colors */
-    --navy: 220 70% 12%;
-    --dark-navy: 220 80% 8%;
-    --aqua: 187 85% 55%;
-    --cyan: 180 100% 60%;
-    --green: 142 70% 45%;
-    --orange: 25 95% 55%;
-    --electric-blue: 205 100% 75%;
+    /* SkyySkill Futuristic Brand Colors */
+    --navy: 224 71% 4%;
+    --dark-navy: 220 75% 2%;
+    --aqua: 180 100% 70%;
+    --cyan: 189 94% 65%;
+    --green: 142 76% 50%;
+    --orange: 25 95% 58%;
+    --electric-blue: 216 87% 70%;
+    --violet: 263 70% 65%;
+    --purple-pink: 310 85% 75%;
+    --glow-purple: 280 85% 70%;
+    --glow-cyan: 189 94% 65%;
+    --tech-orange: 25 95% 58%;
 
-    /* AI-themed Gradients for Hero Sections */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--dark-navy)), hsl(var(--navy)), hsl(var(--aqua)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-navy)) 0%, hsl(var(--navy)) 30%, hsl(var(--aqua)) 70%, hsl(var(--cyan)) 100%);
-    --gradient-ai: linear-gradient(45deg, hsl(var(--dark-navy)), hsl(var(--electric-blue)), hsl(var(--cyan)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--secondary)));
-    --gradient-glow: radial-gradient(circle, hsl(var(--aqua) / 0.3), transparent 70%);
+    /* Futuristic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--violet)), hsl(var(--purple-pink)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-navy)), hsl(var(--navy)) 50%, hsl(var(--violet)) 100%);
+    --gradient-ai: linear-gradient(45deg, hsl(var(--cyan)), hsl(var(--electric-blue)), hsl(var(--violet)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--glow-purple) / 0.3), hsl(var(--glow-cyan) / 0.2), transparent 70%);
+    --gradient-orb-1: radial-gradient(circle, hsl(var(--violet) / 0.4), hsl(var(--purple-pink) / 0.2), transparent);
+    --gradient-orb-2: radial-gradient(circle, hsl(var(--cyan) / 0.3), hsl(var(--electric-blue) / 0.1), transparent);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
 
-    /* AI Shadows and Glows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--navy) / 0.4);
-    --shadow-glow: 0 0 40px hsl(var(--aqua) / 0.4);
-    --shadow-ai-glow: 0 0 60px hsl(var(--cyan) / 0.3), 0 0 120px hsl(var(--electric-blue) / 0.2);
-    --shadow-neural: 0 0 20px hsl(var(--aqua) / 0.6), inset 0 0 20px hsl(var(--cyan) / 0.1);
+    /* Enhanced Glows and Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--violet) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--glow-purple) / 0.5);
+    --shadow-ai-glow: 0 0 60px hsl(var(--cyan) / 0.4), 0 0 100px hsl(var(--violet) / 0.3);
+    --shadow-neural: 0 0 25px hsl(var(--violet) / 0.6), inset 0 0 25px hsl(var(--cyan) / 0.2);
+    --shadow-card: 0 8px 32px hsl(var(--dark-navy) / 0.8), 0 0 0 1px hsl(var(--violet) / 0.2);
+    --shadow-orb: 0 0 80px hsl(var(--glow-purple) / 0.6), 0 0 120px hsl(var(--glow-cyan) / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,33 +96,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Same as root for consistent dark theme */
+    --background: 224 71% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 224 71% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 224 71% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 263 70% 65%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 224 71% 10%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 224 71% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 280 85% 70%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 224 71% 15%;
+    --input: 224 71% 12%;
+    --ring: 263 70% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -306,17 +317,52 @@ All colors MUST be HSL.
     animation: grid-move 10s linear infinite;
   }
   
-  /* Neural Network Pattern */
+  /* Neural Network Pattern - Enhanced */
   .neural-bg {
     background: 
-      radial-gradient(circle at 20% 50%, hsl(var(--cyan) / 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--electric-blue) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, hsl(var(--aqua) / 0.1) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, hsl(var(--violet) / 0.2) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, hsl(var(--cyan) / 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 40% 40%, hsl(var(--purple-pink) / 0.1) 0%, transparent 50%);
   }
   
-  /* Glow effects */
+  /* Floating orb backgrounds */
+  .orb-bg {
+    position: relative;
+  }
+  
+  .orb-bg::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 80%;
+    height: 120%;
+    background: var(--gradient-orb-1);
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .orb-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 60%;
+    height: 80%;
+    background: var(--gradient-orb-2);
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(60px);
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+  
+  /* Glow effects - Enhanced */
   .glow-cyan {
-    box-shadow: 0 0 20px hsl(var(--cyan) / 0.4);
+    box-shadow: 0 0 20px hsl(var(--cyan) / 0.6);
   }
   
   .glow-ai {
@@ -324,6 +370,14 @@ All colors MUST be HSL.
   }
   
   .text-glow {
-    text-shadow: 0 0 10px hsl(var(--cyan) / 0.6), 0 0 20px hsl(var(--aqua) / 0.4);
+    text-shadow: 0 0 15px hsl(var(--violet) / 0.7), 0 0 30px hsl(var(--purple-pink) / 0.4);
+  }
+  
+  .card-glow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .orb-glow {
+    box-shadow: var(--shadow-orb);
   }
 }

@@ -52,7 +52,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// SkyySkill AI-Ready Brand Colors
+				// SkyySkill AI-Ready Brand Colors - Enhanced Futuristic Palette
 				navy: 'hsl(var(--navy))',
 				'dark-navy': 'hsl(var(--dark-navy))',
 				aqua: 'hsl(var(--aqua))',
@@ -60,6 +60,11 @@ export default {
 				'electric-blue': 'hsl(var(--electric-blue))',
 				green: 'hsl(var(--green))',
 				orange: 'hsl(var(--orange))',
+				violet: 'hsl(var(--violet))',
+				'purple-pink': 'hsl(var(--purple-pink))',
+				'glow-purple': 'hsl(var(--glow-purple))',
+				'glow-cyan': 'hsl(var(--glow-cyan))',
+				'tech-orange': 'hsl(var(--tech-orange))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -191,13 +196,18 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-ai': 'var(--gradient-ai)',
 				'gradient-card': 'var(--gradient-card)',
-				'gradient-glow': 'var(--gradient-glow)'
+				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-orb-1': 'var(--gradient-orb-1)',
+				'gradient-orb-2': 'var(--gradient-orb-2)',
+				'gradient-glass': 'var(--gradient-glass)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
 				'ai-glow': 'var(--shadow-ai-glow)',
-				'neural': 'var(--shadow-neural)'
+				'neural': 'var(--shadow-neural)',
+				'card': 'var(--shadow-card)',
+				'orb': 'var(--shadow-orb)'
 			}
 		}
 	},
