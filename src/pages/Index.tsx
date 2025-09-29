@@ -226,7 +226,7 @@ const Index = () => {
           <div className="max-w-5xl mx-auto animate-fade-in">
             <div className="mb-8">
               <Badge className="bg-gradient-primary text-white border-0 mb-6 px-6 py-3 text-base font-bold shadow-glow hover:shadow-ai-glow transition-all duration-300">
-                🏆 India's Leading OEM for EV & Green Skill Labs & CoEs
+                🏆 India's Leading OEM of 600+ Products with strong R&D
               </Badge>
             </div>
             
