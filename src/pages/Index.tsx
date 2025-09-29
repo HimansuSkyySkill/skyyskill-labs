@@ -263,27 +263,27 @@ const Index = () => {
                   </Button>} />
             </div>
 
-            {/* Enhanced Metrics with glassmorphism */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-violet/30 animate-neural-pulse card-glow">
-                <div className="text-4xl md:text-5xl font-bold text-violet mb-3 text-glow">60+</div>
-                <div className="text-white/90 text-sm font-medium">Labs</div>
-                <div className="text-violet/70 text-xs mt-1">Across India</div>
+            {/* Enhanced Metrics - Improved Visibility */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-violet/30 hover:border-violet/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="text-5xl md:text-6xl font-bold text-violet mb-3">60+</div>
+                <div className="text-foreground text-base font-semibold">Labs</div>
+                <div className="text-muted-foreground text-sm mt-2">Across India</div>
               </div>
-              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-cyan/30 animate-neural-pulse card-glow" style={{animationDelay: '0.5s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-cyan mb-3 text-glow">30K+</div>
-                <div className="text-white/90 text-sm font-medium">Students Trained</div>
-                <div className="text-cyan/70 text-xs mt-1">Annually</div>
+              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-cyan/30 hover:border-cyan/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="text-5xl md:text-6xl font-bold text-cyan mb-3">30K+</div>
+                <div className="text-foreground text-base font-semibold">Students Trained</div>
+                <div className="text-muted-foreground text-sm mt-2">Annually</div>
               </div>
-              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-purple-pink/30 animate-neural-pulse card-glow" style={{animationDelay: '1s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-purple-pink mb-3 text-glow">625+</div>
-                <div className="text-white/90 text-sm font-medium">Product Category</div>
-                <div className="text-purple-pink/70 text-xs mt-1">Cutting-edge Tech</div>
+              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-purple-pink/30 hover:border-purple-pink/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="text-5xl md:text-6xl font-bold text-purple-pink mb-3">625+</div>
+                <div className="text-foreground text-base font-semibold">Product Category</div>
+                <div className="text-muted-foreground text-sm mt-2">Cutting-edge Tech</div>
               </div>
-              <div className="text-center p-6 bg-gradient-glass backdrop-blur-md rounded-2xl border border-electric-blue/30 animate-neural-pulse card-glow" style={{animationDelay: '1.5s'}}>
-                <div className="text-4xl md:text-5xl font-bold text-electric-blue mb-3 text-glow">15+</div>
-                <div className="text-white/90 text-sm font-medium">Years Experience</div>
-                <div className="text-electric-blue/70 text-xs mt-1">Industry Leader</div>
+              <div className="text-center p-8 bg-card/90 backdrop-blur-sm rounded-2xl border border-electric-blue/30 hover:border-electric-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="text-5xl md:text-6xl font-bold text-electric-blue mb-3">15+</div>
+                <div className="text-foreground text-base font-semibold">Years Experience</div>
+                <div className="text-muted-foreground text-sm mt-2">Industry Leader</div>
               </div>
             </div>
           </div>
