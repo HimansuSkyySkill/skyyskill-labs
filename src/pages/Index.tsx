@@ -228,9 +228,11 @@ const Index = () => {
               <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">🏆 India's Leading OEM for EV & Green Skill Labs & CoEs</Badge>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight text-glow">
-              EV, Solar & Automotive CoE
-              <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 animate-hologram">Lab Providers in India</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+              <span className="text-white">India's leading </span>
+              <span className="text-violet">AI Powered</span>
+              <span className="text-white"> Center of Excellence </span>
+              <span className="text-cyan">Eco-System</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
