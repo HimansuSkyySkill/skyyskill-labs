@@ -96,11 +96,11 @@ const SolarLabCoE = () => {
                   <Badge variant="aqua-light">Future Skills</Badge>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90">
+                  <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
                     <ArrowRight className="w-5 h-5 mr-2" />
                     Setup Solar Lab
                   </Button>
-                  <Button variant="outline" size="lg" onClick={handleCTAClick}>
+                  <Button variant="outline" size="lg" onClick={handleCTAClick} className="hover:shadow-[0_0_20px_hsl(var(--green)/0.4)] transition-all duration-300">
                     <Phone className="w-5 h-5 mr-2" />
                     Schedule Demo
                   </Button>
@@ -110,7 +110,7 @@ const SolarLabCoE = () => {
                 <img 
                   src="/lovable-uploads/2586a3d0-b8f9-447f-8717-4424e6582924.png" 
                   alt="Solar lab training with students learning renewable energy technology"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl hover:shadow-[0_0_40px_hsl(var(--green)/0.5)] transition-all duration-500"
                 />
               </div>
             </div>
@@ -139,13 +139,13 @@ const SolarLabCoE = () => {
                   description: "Skills aligned with solar industry job requirements and certifications"
                 }
               ].map((item, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card key={index} className="text-center bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md border border-green/30 shadow-xl hover:shadow-[0_0_40px_hsl(var(--green)/0.4)] transition-all duration-300 hover:-translate-y-2 group">
                   <CardHeader>
-                    <div className="flex justify-center mb-4">{item.icon}</div>
-                    <CardTitle>{item.title}</CardTitle>
+                    <div className="flex justify-center mb-4 transition-transform duration-300 group-hover:scale-110">{item.icon}</div>
+                    <CardTitle className="text-white">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-slate-300">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -162,9 +162,9 @@ const SolarLabCoE = () => {
                 <h3 className="text-2xl font-semibold mb-6">Comprehensive Solar Lab Equipment</h3>
                 <div className="grid gap-4">
                   {equipmentList.map((equipment, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green" />
-                      <span>{equipment}</span>
+                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-green/10 to-transparent border border-green/20 hover:border-green/40 hover:shadow-[0_0_15px_hsl(var(--green)/0.3)] transition-all duration-300 group">
+                      <CheckCircle className="w-5 h-5 text-green group-hover:drop-shadow-[0_0_8px_hsl(var(--green)/0.8)] transition-all duration-300" />
+                      <span className="group-hover:text-green transition-colors duration-300">{equipment}</span>
                     </div>
                   ))}
                 </div>
@@ -173,9 +173,9 @@ const SolarLabCoE = () => {
                 <h3 className="text-2xl font-semibold mb-6">Student Benefits</h3>
                 <div className="grid gap-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-yellow-500" />
-                      <span>{benefit}</span>
+                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-yellow-500/10 to-transparent border border-yellow-500/20 hover:border-yellow-500/40 hover:shadow-[0_0_15px_hsl(45_100%_50%/0.3)] transition-all duration-300 group">
+                      <CheckCircle className="w-5 h-5 text-yellow-500 group-hover:drop-shadow-[0_0_8px_hsl(45_100%_50%/0.8)] transition-all duration-300" />
+                      <span className="group-hover:text-yellow-500 transition-colors duration-300">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -193,7 +193,7 @@ const SolarLabCoE = () => {
                 Partner with leading solar energy companies and green technology providers 
                 to ensure your students learn cutting-edge renewable energy solutions.
               </p>
-              <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90">
+              <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
                 <Mail className="w-5 h-5 mr-2" />
                 Get Partnership Details
               </Button>
@@ -252,7 +252,7 @@ const SolarLabCoE = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join the renewable energy revolution and prepare your students for a sustainable future.
             </p>
-            <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90">
+            <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300 transform hover:scale-105">
               <ArrowRight className="w-5 h-5 mr-2" />
               Start Your Solar Lab Journey
             </Button>
