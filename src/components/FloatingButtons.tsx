@@ -83,7 +83,7 @@ const FloatingButtons = () => {
       <Dialog open={isCallDialogOpen} onOpenChange={setIsCallDialogOpen}>
         <DialogTrigger asChild>
           <Button
-            className="fixed bottom-20 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/20 backdrop-blur-sm animate-[pulse_3s_cubic-bezier(0.4,0,0.6,1)_infinite]"
+            className="fixed bottom-20 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-white/20 backdrop-blur-sm"
             size="icon"
           >
             <Phone className="w-6 h-6 text-white" />
