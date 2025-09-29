@@ -236,7 +236,7 @@ const Index = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-3xl mx-auto">
-              From ITI to IIT, SkyySkill delivers world-class EV CoE, Solar CoE & Automotive CoE solutions
+              Electric Vehicle, Solar, AI & ML, Drone, Automotive, Robotics and IoT
             </p>
             <p className="text-base md:text-lg text-cyan/80 mb-12 leading-relaxed max-w-3xl mx-auto">
               Partnered with IIT Kanpur and top institutions for hands-on training, innovation, and placement.
