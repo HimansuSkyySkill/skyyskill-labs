@@ -395,32 +395,37 @@ const Index = () => {
               </Card>)}
           </div>
 
-          {/* Stats Section */}
-          <div className="bg-gradient-to-r from-navy/10 via-aqua/5 to-green/10 rounded-3xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                Proven Track Record
-              </h3>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our commitment to excellence is reflected in our achievements and client satisfaction.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-navy mb-2">60+</div>
-                <div className="text-sm text-muted-foreground">Labs</div>
+          {/* Stats Section - Enhanced with glassmorphism */}
+          <div className="relative bg-card/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-violet/20 shadow-lg">
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-violet/5 via-transparent to-cyan/5 rounded-3xl pointer-events-none"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  Proven Track Record
+                </h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Our commitment to excellence is reflected in our achievements and client satisfaction.
+                </p>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-aqua mb-2">2.5L+</div>
-                <div className="text-sm text-muted-foreground">Trained Across Our Labs</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green mb-2">600+</div>
-                <div className="text-sm text-muted-foreground">Items Manufactured In House</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange mb-2">ISO</div>
-                <div className="text-sm text-muted-foreground">Certified Quality</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center p-4 rounded-xl bg-violet/5 border border-violet/10">
+                  <div className="text-3xl md:text-4xl font-bold text-violet mb-2">60+</div>
+                  <div className="text-sm text-muted-foreground">Labs</div>
+                </div>
+                <div className="text-center p-4 rounded-xl bg-cyan/5 border border-cyan/10">
+                  <div className="text-3xl md:text-4xl font-bold text-cyan mb-2">2.5L+</div>
+                  <div className="text-sm text-muted-foreground">Trained Across Our Labs</div>
+                </div>
+                <div className="text-center p-4 rounded-xl bg-green/5 border border-green/10">
+                  <div className="text-3xl md:text-4xl font-bold text-green mb-2">600+</div>
+                  <div className="text-sm text-muted-foreground">Items Manufactured In House</div>
+                </div>
+                <div className="text-center p-4 rounded-xl bg-tech-orange/5 border border-tech-orange/10">
+                  <div className="text-3xl md:text-4xl font-bold text-tech-orange mb-2">ISO</div>
+                  <div className="text-sm text-muted-foreground">Certified Quality</div>
+                </div>
               </div>
             </div>
           </div>
@@ -670,11 +675,11 @@ const Index = () => {
       <section id="other-labs" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-aqua/10 text-aqua border-aqua/20 mb-6 px-4 py-2">
+            <Badge className="bg-violet/10 text-violet border border-violet/30 mb-6 px-6 py-2 font-semibold">
               🔬 Technology Labs
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Other Lab/ <span className="text-aqua">CoE Solutions</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Other Lab/ <span className="text-violet">CoE Solutions</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Comprehensive lab solutions across emerging technology domains for future-ready skill development.
@@ -683,28 +688,28 @@ const Index = () => {
 
           <Tabs defaultValue="solar" className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-background/50 backdrop-blur-sm border border-border/50 p-1 h-auto">
-                <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-6 bg-card/80 backdrop-blur-md border border-violet/20 p-1 h-auto rounded-2xl shadow-lg">
+                <TabsTrigger value="solar" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-cyan data-[state=active]:to-cyan/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Sun className="w-8 h-8" />
                   <span className="text-xs font-medium">Solar Lab</span>
                 </TabsTrigger>
-                <TabsTrigger value="drone" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
+                <TabsTrigger value="drone" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-green data-[state=active]:to-green/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Plane className="w-8 h-8" />
                   <span className="text-xs font-medium">Drone Lab</span>
                 </TabsTrigger>
-                <TabsTrigger value="additive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-orange data-[state=active]:text-white">
+                <TabsTrigger value="additive" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-tech-orange data-[state=active]:to-tech-orange/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Printer className="w-8 h-8" />
                   <span className="text-xs font-medium">3D Printing</span>
                 </TabsTrigger>
-                <TabsTrigger value="cnc" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-primary data-[state=active]:text-white">
+                <TabsTrigger value="cnc" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-violet data-[state=active]:to-violet/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Settings className="w-8 h-8" />
                   <span className="text-xs font-medium">CNC Sim</span>
                 </TabsTrigger>
-                <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-aqua data-[state=active]:text-white">
+                <TabsTrigger value="automotive" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-electric-blue data-[state=active]:to-electric-blue/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Wrench className="w-8 h-8" />
                   <span className="text-xs font-medium">Automotive</span>
                 </TabsTrigger>
-                <TabsTrigger value="ai" className="flex flex-col items-center gap-2 px-4 py-3 data-[state=active]:bg-green data-[state=active]:text-white">
+                <TabsTrigger value="ai" className="flex flex-col items-center gap-2 px-4 py-3 rounded-xl data-[state=active]:bg-gradient-to-br data-[state=active]:from-purple-pink data-[state=active]:to-purple-pink/80 data-[state=active]:text-white data-[state=active]:shadow-lg">
                   <Brain className="w-8 h-8" />
                   <span className="text-xs font-medium">AI Labs</span>
                 </TabsTrigger>
@@ -954,8 +959,8 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              What Our <span className="text-aqua">Partners Say</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              What Our <span className="text-violet">Partners Say</span>
             </h2>
           </div>
 
@@ -975,18 +980,21 @@ const Index = () => {
             author: "Dr. Amit Sharma",
             position: "Principal",
             institution: "MNIT Bhopal"
-          }].map((testimonial, index) => <Card key={index} className="border-0 bg-gradient-card shadow-elegant">
-                <CardContent className="p-6">
+          }].map((testimonial, index) => <Card key={index} className="relative bg-card/80 backdrop-blur-md border border-violet/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet/5 via-transparent to-cyan/5 pointer-events-none"></div>
+                
+                <CardContent className="p-8 relative z-10">
                   <div className="flex items-start mb-4">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-orange text-orange" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-tech-orange text-tech-orange" />)}
                   </div>
-                  <blockquote className="text-muted-foreground mb-6 italic">
+                  <blockquote className="text-muted-foreground mb-6 italic text-base leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div>
-                    <div className="font-semibold text-primary">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.position}</div>
-                    <div className="text-sm text-aqua">{testimonial.institution}</div>
+                  <div className="border-t border-border/50 pt-4 mt-4">
+                    <div className="font-semibold text-foreground text-lg">{testimonial.author}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{testimonial.position}</div>
+                    <div className="text-sm text-violet font-medium mt-1">{testimonial.institution}</div>
                   </div>
                 </CardContent>
               </Card>)}
