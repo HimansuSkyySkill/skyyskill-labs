@@ -292,21 +292,21 @@ const Index = () => {
 
       {/* Why Us Section - Futuristic */}
       <section id="about" className="py-16 bg-background relative overflow-hidden orb-bg">
-        {/* Background Elements - Enhanced */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-orb-1 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-orb-2 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute inset-0 neural-bg opacity-40"></div>
+        {/* Background Elements - Subtle */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-violet/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <Badge className="bg-gradient-primary text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-glow hover:shadow-ai-glow transition-all duration-300 hover:scale-105 backdrop-blur-sm animate-pulse-glow">
+          <div className="text-center mb-16">
+            <Badge className="bg-violet/10 text-violet border border-violet/30 mb-6 px-6 py-2 text-base font-semibold">
               ✨ The SkyySkill Advantage
             </Badge>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight text-glow">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Why Leading Institutions 
-              <span className="block bg-gradient-primary bg-clip-text text-transparent mt-4 animate-hologram">Choose SkyySkill Labs</span>
+              <span className="block text-violet mt-2">Choose SkyySkill Labs</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Research-driven. Industry-aligned. Future-ready.
             </p>
           </div>
@@ -348,7 +348,7 @@ const Index = () => {
             description: "From basic school setups to advanced research facilities, fully customizable to your requirements.",
             highlight: "Scalable Solutions",
             color: "aqua"
-          }].map((item, index) => <Card key={index} className="group hover:shadow-card transition-all duration-500 border border-violet/20 hover:border-violet/50 bg-gradient-glass backdrop-blur-md hover:-translate-y-1">
+          }].map((item, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300 border border-border hover:border-violet/40 bg-card backdrop-blur-sm hover:-translate-y-1">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`w-16 h-16 bg-${item.color} rounded-xl flex items-center justify-center text-white`}>
@@ -363,7 +363,7 @@ const Index = () => {
                       {item.highlight}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl font-bold text-primary">
+                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-violet transition-colors">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
