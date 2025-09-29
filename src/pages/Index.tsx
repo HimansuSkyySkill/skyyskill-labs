@@ -225,7 +225,9 @@ const Index = () => {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto animate-fade-in">
             <div className="mb-8">
-              <Badge className="bg-aqua/20 text-aqua border-aqua/30 mb-6 px-4 py-2 text-sm font-medium">🏆 India's Leading OEM for EV & Green Skill Labs & CoEs</Badge>
+              <Badge className="bg-gradient-primary text-white border-0 mb-6 px-6 py-3 text-base font-bold shadow-glow hover:shadow-ai-glow transition-all duration-300">
+                🏆 India's Leading OEM for EV & Green Skill Labs & CoEs
+              </Badge>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
@@ -235,21 +237,27 @@ const Index = () => {
               <span className="text-cyan">Eco-System</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Electric Vehicle, Solar, AI & ML, Drone, Automotive, Robotics and IoT
-            </p>
+            <div className="text-lg md:text-xl mb-12 leading-relaxed max-w-4xl mx-auto">
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-violet/20 text-violet border border-violet/30 rounded-full font-medium">Electric Vehicle</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-green/20 text-green border border-green/30 rounded-full font-medium">Solar</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-purple-pink/20 text-purple-pink border border-purple-pink/30 rounded-full font-medium">AI & ML</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-cyan/20 text-cyan border border-cyan/30 rounded-full font-medium">Drone</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-tech-orange/20 text-tech-orange border border-tech-orange/30 rounded-full font-medium">Automotive</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-electric-blue/20 text-electric-blue border border-electric-blue/30 rounded-full font-medium">Robotics</span>
+              <span className="inline-block px-3 py-1 mx-1 my-1 bg-glow-cyan/20 text-glow-cyan border border-glow-cyan/30 rounded-full font-medium">IoT</span>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
               <LeadCaptureForm 
                 type="quotation" 
                 trigger={
-                  <Button variant="hero" size="lg" className="text-lg px-10 py-6 h-auto">
+                  <Button variant="hero" size="lg" className="text-lg px-12 py-7 h-auto shadow-glow hover:shadow-ai-glow">
                     <Play className="w-6 h-6 mr-3" />
                     Get a Quotation
                   </Button>
                 } 
               />
-              <LeadCaptureForm type="brochure" trigger={<Button variant="glass" size="lg" className="text-lg px-10 py-6 h-auto animate-ai-breathe">
+              <LeadCaptureForm type="brochure" trigger={<Button variant="glass" size="lg" className="text-lg px-12 py-7 h-auto border-violet/40 hover:border-violet/60">
                     <Download className="w-6 h-6 mr-3" />
                     Download Brochure
                   </Button>} />
