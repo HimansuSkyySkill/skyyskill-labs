@@ -1088,7 +1088,7 @@ const Index = () => {
       <section className="py-16 bg-gradient-to-br from-green/5 via-background to-aqua/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-gradient-to-r from-green/90 to-aqua/80 text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
+            <Badge className="bg-gradient-to-r from-green to-aqua text-white border-0 mb-8 px-8 py-4 text-lg font-bold shadow-lg">
               <Calendar className="w-5 h-5 mr-2" />
               News & Events
             </Badge>
@@ -1098,7 +1098,7 @@ const Index = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Stay updated with our latest developments, events, and industry insights.
             </p>
-            <Button onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')} size="lg" className="bg-green hover:bg-green/80 text-white border border-green/30 text-lg px-10 py-6 h-auto hover:shadow-[0_0_30px_hsl(var(--green)/0.6)]">
+            <Button onClick={() => window.open('https://www.evskilllab.com/news-and-events', '_blank')} size="lg" className="bg-green hover:bg-green/90 text-white border border-green/30 text-lg px-10 py-6 h-auto hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
               <Calendar className="w-5 h-5 mr-3" />
               View All News & Events
             </Button>

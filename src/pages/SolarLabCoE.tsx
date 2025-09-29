@@ -96,7 +96,7 @@ const SolarLabCoE = () => {
                   <Badge variant="aqua-light">Future Skills</Badge>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/80 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
+                  <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
                     <ArrowRight className="w-5 h-5 mr-2" />
                     Setup Solar Lab
                   </Button>
@@ -193,7 +193,7 @@ const SolarLabCoE = () => {
                 Partner with leading solar energy companies and green technology providers 
                 to ensure your students learn cutting-edge renewable energy solutions.
               </p>
-              <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/80 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
+              <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300">
                 <Mail className="w-5 h-5 mr-2" />
                 Get Partnership Details
               </Button>
@@ -252,7 +252,7 @@ const SolarLabCoE = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join the renewable energy revolution and prepare your students for a sustainable future.
             </p>
-            <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/80 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300 transform hover:scale-105">
+            <Button size="lg" onClick={handleCTAClick} className="bg-green hover:bg-green/90 text-white border border-green/30 shadow-lg hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] transition-all duration-300 transform hover:scale-105">
               <ArrowRight className="w-5 h-5 mr-2" />
               Start Your Solar Lab Journey
             </Button>

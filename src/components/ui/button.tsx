@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)]",
         hero: "bg-gradient-primary text-white hover:shadow-[0_0_40px_hsl(var(--violet)/0.6)] hover:scale-105",
         cta: "bg-tech-orange text-white hover:bg-tech-orange/90 hover:shadow-[0_0_30px_hsl(var(--tech-orange)/0.5)]",
-        aqua: "bg-aqua text-white hover:bg-aqua/90 hover:shadow-[0_0_30px_hsl(var(--aqua)/0.5)]",
+        aqua: "bg-aqua text-white hover:bg-aqua/90 hover:shadow-[0_0_30px_hsl(var(--aqua)/0.5)] border border-aqua/30",
         green: "bg-green text-white hover:bg-green/80 hover:shadow-[0_0_30px_hsl(var(--green)/0.6)] border border-green/30",
         violet: "bg-violet text-white hover:bg-violet/90 hover:shadow-[0_0_30px_hsl(var(--violet)/0.5)]",
         glass: "bg-gradient-glass backdrop-blur-md border border-violet/20 text-foreground hover:border-violet/40 hover:shadow-[0_0_25px_hsl(var(--violet)/0.3)]",
