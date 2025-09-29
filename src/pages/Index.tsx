@@ -1253,18 +1253,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="py-16 bg-secondary/50">
-        <div className="container mx-auto px-4">
+      {/* Blog Section - Dark Themed with Glow */}
+      <section className="py-16 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+        {/* Enhanced Background Elements with Glowing Orbs */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-violet/20 rounded-full blur-3xl animate-ai-breathe"></div>
+        <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-cyan/15 rounded-full blur-3xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Blogs & <span className="text-aqua">Insights</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-white">Blogs & </span>
+              <span className="bg-gradient-to-r from-violet via-purple-pink to-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_hsl(var(--violet)/0.5)]">Insights</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-slate-300 mb-8">
               Stay updated with the latest in skill development and technology
             </p>
             <Link to="/blogs">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border-violet/30 text-white hover:bg-violet/20 hover:shadow-[0_0_20px_hsl(var(--violet)/0.4)] transition-all duration-300">
                 <BookOpen className="w-5 h-5 mr-2" />
                 View All Blogs
               </Button>
@@ -1290,7 +1295,7 @@ const Index = () => {
             date: "January 5, 2024",
             category: "Education",
             slug: "building-centers-of-excellence-blueprint-success"
-          }].map((article, index) => <Card key={index} className="border-0 bg-gradient-card shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-1">
+          }].map((article, index) => <Card key={index} className="border-0 bg-slate-900/80 backdrop-blur-md border border-violet/20 shadow-2xl hover:shadow-[0_0_40px_hsl(var(--violet)/0.4)] transition-all duration-300 hover:-translate-y-1 group">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="secondary">{article.category}</Badge>
@@ -1299,16 +1304,16 @@ const Index = () => {
                       {article.date}
                     </div>
                   </div>
-                  <CardTitle className="text-xl text-primary line-clamp-2">
+                  <CardTitle className="text-xl text-white line-clamp-2 group-hover:text-violet transition-colors">
                     {article.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base mb-4 line-clamp-3">
+                  <CardDescription className="text-base mb-4 line-clamp-3 text-slate-300">
                     {article.excerpt}
                   </CardDescription>
                   <Link to={`/blog/${article.slug}`}>
-                    <Button variant="ghost" className="p-0 h-auto text-aqua hover:text-aqua/80">
+                    <Button variant="ghost" className="p-0 h-auto text-cyan hover:text-violet hover:drop-shadow-[0_0_10px_hsl(var(--cyan)/0.8)] transition-all">
                       Read More
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>

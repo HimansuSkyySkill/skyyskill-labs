@@ -49,10 +49,11 @@ const FacultyFeedback = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-aqua/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    <section className="py-16 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* Enhanced Background Elements with Glowing Orbs */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-violet/20 rounded-full blur-3xl animate-ai-breathe"></div>
+      <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-cyan/15 rounded-full blur-3xl animate-ai-breathe" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-purple-pink/10 rounded-full blur-3xl animate-ai-breathe" style={{animationDelay: '2s'}}></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
@@ -61,14 +62,14 @@ const FacultyFeedback = () => {
             Faculty Testimonials
           </Badge>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-            What Faculty Say About Our
-            <span className="block bg-gradient-to-r from-aqua via-green to-primary bg-clip-text text-transparent mt-2">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <span className="text-white">What Faculty Say About Our</span>
+            <span className="block bg-gradient-to-r from-violet via-purple-pink to-cyan bg-clip-text text-transparent mt-2 drop-shadow-[0_0_30px_hsl(var(--violet)/0.5)]">
               Centers of Excellence
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Hear directly from educators who have experienced the transformation in their institutions through our advanced lab solutions.
           </p>
         </div>
@@ -77,7 +78,7 @@ const FacultyFeedback = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.id} 
-              className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 bg-background/80 backdrop-blur-sm cursor-pointer"
+              className="group hover:shadow-2xl hover:shadow-violet/20 transition-all duration-300 hover:scale-105 border-0 bg-slate-900/80 backdrop-blur-md border border-violet/20 cursor-pointer"
               onClick={() => handleVideoClick(testimonial.id)}
             >
               <CardContent className="p-0">
@@ -113,15 +114,15 @@ const FacultyFeedback = () => {
                     ))}
                   </div>
                   
-                  <h3 className="text-lg font-semibold text-primary mb-3 line-clamp-2">
+                  <h3 className="text-lg font-semibold text-white mb-3 line-clamp-2 group-hover:text-violet transition-colors">
                     {testimonial.title}
                   </h3>
                   
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-muted-foreground">
+                    <p className="text-sm font-medium text-slate-300">
                       {testimonial.faculty}
                     </p>
-                    <p className="text-xs text-muted-foreground/80">
+                    <p className="text-xs text-slate-400">
                       {testimonial.institution}
                     </p>
                   </div>
@@ -143,33 +144,43 @@ const FacultyFeedback = () => {
           ))}
         </div>
         
-        {/* Call to Action */}
+        {/* Call to Action with Dark Themed Background */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-primary/10 via-aqua/5 to-green/10 rounded-2xl p-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              Join the Growing Community
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Discover how our Centers of Excellence can transform your institution's approach to modern education and skill development.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Badge variant="primary-light" className="px-6 py-2">
-                500+ Satisfied Faculty Members
-              </Badge>
-              
-              <LeadCaptureForm 
-                type="quotation" 
-                trigger={
-                  <Button className="bg-gradient-to-r from-orange to-red-500 hover:from-orange/90 hover:to-red-500/90 text-white px-8 py-3 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0">
-                    <FileText className="w-5 h-5 mr-2" />
-                    Get a Quotation Now
-                  </Button>
-                } 
-              />
-              
-              <Badge variant="aqua-light" className="px-6 py-2">
-                95% Positive Feedback Rate
-              </Badge>
+          <div className="bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md rounded-2xl p-12 relative overflow-hidden border border-violet/30 shadow-2xl">
+            {/* Gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-br from-violet/10 via-transparent to-cyan/10 rounded-2xl pointer-events-none"></div>
+            
+            {/* Floating orb effect */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-pink/20 rounded-full blur-3xl animate-ai-breathe"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-violet via-purple-pink to-cyan bg-clip-text text-transparent drop-shadow-[0_0_30px_hsl(var(--violet)/0.5)]">
+                  Join the Growing Community
+                </span>
+              </h3>
+              <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-lg">
+                Discover how our Centers of Excellence can transform your institution's approach to modern education and skill development.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                <Badge className="px-8 py-3 text-base bg-violet/20 text-violet border border-violet/30 hover:bg-violet/30 hover:shadow-[0_0_20px_hsl(var(--violet)/0.5)] transition-all duration-300">
+                  500+ Satisfied Faculty Members
+                </Badge>
+                
+                <LeadCaptureForm 
+                  type="quotation" 
+                  trigger={
+                    <Button className="bg-gradient-to-r from-orange to-red-500 hover:from-orange/90 hover:to-red-500/90 text-white px-10 py-6 text-base font-semibold shadow-xl hover:shadow-[0_0_40px_hsl(var(--orange)/0.6)] transition-all duration-300 transform hover:scale-105 border-0">
+                      <FileText className="w-5 h-5 mr-2" />
+                      Get a Quotation Now
+                    </Button>
+                  } 
+                />
+                
+                <Badge className="px-8 py-3 text-base bg-cyan/20 text-cyan border border-cyan/30 hover:bg-cyan/30 hover:shadow-[0_0_20px_hsl(var(--cyan)/0.5)] transition-all duration-300">
+                  95% Positive Feedback Rate
+                </Badge>
+              </div>
             </div>
           </div>
         </div>
