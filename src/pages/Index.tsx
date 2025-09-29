@@ -242,13 +242,13 @@ const Index = () => {
             </h1>
             
             <div className="text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-violet/10 text-violet/90 border border-violet/20 rounded-full font-medium text-xs backdrop-blur-sm">Electric Vehicle</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-green/10 text-green border border-green/20 rounded-full font-medium text-xs backdrop-blur-sm">Solar</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-purple-pink/10 text-purple-pink/90 border border-purple-pink/20 rounded-full font-medium text-xs backdrop-blur-sm">AI & ML</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-cyan/10 text-cyan/90 border border-cyan/20 rounded-full font-medium text-xs backdrop-blur-sm">Drone</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-tech-orange/10 text-tech-orange/90 border border-tech-orange/20 rounded-full font-medium text-xs backdrop-blur-sm">Automotive</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-electric-blue/10 text-electric-blue/90 border border-electric-blue/20 rounded-full font-medium text-xs backdrop-blur-sm">Robotics</span>
-              <span className="inline-block px-1.5 py-px mx-0.5 my-0.5 bg-glow-cyan/10 text-glow-cyan/90 border border-glow-cyan/20 rounded-full font-medium text-xs backdrop-blur-sm">IoT</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-violet/15 text-violet border border-violet/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">Electric Vehicle</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-green/15 text-green border border-green/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">Solar</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-purple-pink/15 text-purple-pink border border-purple-pink/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">AI & ML</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-cyan/15 text-cyan border border-cyan/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">Drone</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-tech-orange/15 text-tech-orange border border-tech-orange/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">Automotive</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-electric-blue/15 text-electric-blue border border-electric-blue/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">Robotics</span>
+              <span className="inline-block px-2 py-1 mx-0.5 my-0.5 bg-glow-cyan/15 text-glow-cyan border border-glow-cyan/30 rounded-full font-semibold text-sm backdrop-blur-sm shadow-sm">IoT</span>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
